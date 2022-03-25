@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko  ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시몬스 침대(3조)</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/fullpage.css" />
+    <link rel="stylesheet" href="../css/swiper-bundle.css" />
+    <link href="../css/layout.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/fullpage.min.js"></script>
+    <script src="../js/fullpage.extensions.min.js"></script>
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- 풀페이지 or 마우스이벤트.. -->
+    <header id="header">
+      <div id="menu">
+        <img src="../images/layout/header_menu.png" />
+        <span>메뉴</span>
+      </div>
+      <ul id="gnb">
+        <div class="container">
+          <!-- #lnb 이벤트 효과 다시 지정해야됨 -->
+          <li>
+            <div class="lnb">
+              <span>Beautyrest BLACK</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </div>
+            <ul id="lnb">
+              <li><a href="">the BLACK</a></li>
+              <li><a href="">MATTRESS</a></li>
+              <li><a href="">FOUNDATION</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="lnb">
+              <span>COLLECTION</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </div>
+            <ul id="lnb">
+              <li><a href="">Beautyrest</a></li>
+              <li><a href="">N32</a></li>
+              <li><a href="">KENOSHA</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="lnb">
+              <span>PRODUCT</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </div>
+            <ul id="lnb">
+              <li><a href="">MATTRESS</a></li>
+              <li><a href="">FRAME</a></li>
+              <li><a href="">ROOM SET</a></li>
+              <li><a href="">FOUNDATION</a></li>
+              <li><a href="">FURNITURE</a></li>
+              <li><a href="">BEDDING</a></li>
+              <li><a href="">FRAGRANCE</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.simmons.co.kr/onlinestore/mattress">ONLINE STORE</a></li>
+          <li><a href="https://www.simmons.co.kr/outletstore">OUTLET</a></li>
+          <div class="line"></div>
+          <li>
+            <div class="lnb">
+              <span>ABOUT US</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </div>
+            <ul id="lnb">
+              <li><a href="">HERITAGE</a></li>
+              <li><a href="">MEDIA</a></li>
+              <li><a href="">SIMMONS IN HOTEL</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="lnb">
+              <span>SIMMONS Factorium</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </div>
+            <ul id="lnb">
+              <li><a href="">INTRO</a></li>
+              <li><a href="">R&D</a></li>
+              <li><a href="">TERRACE</a></li>
+              <li><a href="">오시는길</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.simmons.co.kr/gallery/">SIMMONS GALLERY</a></li>
+          <li><a href="https://www.simmons.co.kr/findStore/view">매장 찾기</a></li>
+        </div>
+        <div class="etc">
+          <a href="login.html">로그인</a>
+          <a href="">주문내역</a>
+          <a href="">고객센터</a>
+        </div>
+        <div class="searchBox">
+          <input type="text" name="search" class="search" />
+          <a href="" class="btnSearch"><img src="../images/layout/gnb_search.png" /></a>
+        </div>
+        <div class="sns">
+          <img src="../images/layout/gnb_sns01.png" />
+          <img src="../images/layout/gnb_sns02.png" />
+          <img src="../images/layout/gnb_sns03.png" />
+          <img src="../images/layout/gnb_sns04.png" />
+        </div>
+        <div class="banner">
+          <img src="../images/layout/gnb_n32_banner.jpg" />
+          <img src="../images/layout/gnb_2022_Wedding.jpg" />
+        </div>
+        <div class="gnbClose">
+          <img src="../images/layout/gnb_close.png" />
+        </div>
+      </ul>
+      <div id="logo">
+        <a href="./"><img src="../images/layout/header_logo.png" /></a>
+      </div>
+      <div id="cart">
+        <img src="../images/layout/icon_cart.png" />
+        <span>카트</span>
+      </div>
+      <!-- DB작업  -->
+      <div class="cartBox">
+        <div class="allCount">
+          <h2 class="count cart on">CART <span class="cartCount">(0)</span></h2>
+          <h2 class="count recent">RECENT <span class="recentCount">(0)</span></h2>
+        </div>
+        <div class="cartList">
+          <div class="list cartProduct on">
+            <p>카트에 담긴 상품이 없습니다.</p>
+            <div class="product"></div>
+            <a href="" class="cartLink">CART 바로가기</a>
+          </div>
+          <div class="list recentProduct">
+            <p>최근 본 상품이 없습니다.</p>
+            <div class="product"></div>
+          </div>
+        </div>
+        <!-- CARTLIST DB로 뿌릴 예정 -->
+        <div class="etc">
+          <a href="login.html">로그인</a>
+          <a href="">주문내역</a>
+          <a href="">고객센터</a>
+        </div>
+        <div class="cartClose">
+          <img src="../images/layout/gnb_close.png" />
+        </div>
+      </div>
+      <div class="closePage"></div>
+    </header>
+
+    <main class="fullpage-wrapper" id="main">
+      <div class="section" id="mainSlider">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide video">
+            <video src="https://tv.naver.com/embed/24812078" autoplay muted></video>
+          </li>
+          <li class="swiper-slide"><a href=""></a></li>
+          <li class="swiper-slide"><a href=""></a></li>
+          <li class="swiper-slide"><a href=""></a></li>
+          <li class="swiper-slide"><a href=""></a></li>
+          <li class="swiper-slide"><a href=""></a></li>
+          <li class="swiper-slide"><a href=""></a></li>
+          <li class="swiper-slide"><a href=""></a></li>
+          <li class="swiper-slide"><a href=""></a></li>
+          <li class="swiper-slide"><a href=""></a></li>
+        </ul>
+        <div class="page"></div>
+        <div class="btns">
+          <img src="../images/main/page_left.png" alt="" class="btn pageLeft" />
+          <img src="../images/main/page_right.png" alt="" class="btn pageRight" />
+        </div>
+      </div>
+      <div class="section" id="mainBanner">
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </div>
+
+      <footer id="footer" class="section fp-auto-height hidden">
+        <div class="logo">
+          <div class="logoImg">
+            <img src="../images/layout/footer_logo.png" />
+          </div>
+          <ul>
+            <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+          </ul>
+          <div class="sns">
+            <img src="../images/layout/footer_sns01.png" />
+            <img src="../images/layout/footer_sns02.png" />
+            <img src="../images/layout/footer_sns03.png" />
+            <img src="../images/layout/footer_sns04.png" />
+          </div>
+        </div>
+        <div class="company">
+          <ul>
+            <li>(주)시몬스</li>
+            <li>주소: 경기도 이천시 모가면 사실로 1000</li>
+            <li>대표: 안정호</li>
+            <li>고객센터:1899-8182</li>
+          </ul>
+          <ul>
+            <li>사업자등록번호: 126-81-24808</li>
+            <li><a href="" class="companyCheck">사업자정보 확인</a></li>
+            <li>통신판매업신고: 제2014-경기이천-0135호</li>
+          </ul>
+          <ul>
+            <li>개인정보 관리책임자: 이정호</li>
+            <li>호스팅 서비스 사업자: ㈜가비아</li>
+          </ul>
+        </div>
+        <div class="email">
+          <p>Contact to : <a href="">master @ simmons.co.kr</a></p>
+        </div>
+        <div class="security">
+          <img src="../images/layout/footer_lg.png" />
+          <p>고객님은 안전거래를 위해 현금 등으로 결제 시 모든 금액에 대하여 본 쇼핑몰에서 가입한 <a href="" class="service">구매안전서비스 </a>소비자피해보상보험 서비스를 이용하실 수 있습니다.</p>
+        </div>
+        <div class="copyright">
+          <p>Copyright © by SIMMONS-K, Co., Ltd All Rights Reserved.</p>
+        </div>
+      </footer>
+      <!-- 쿠키작업 -->
+      <div id="popup">
+        <a href=""><img src="../images/layout/pop_W2.jpg" alt="" /></a>
+        <div class="popupClose"></div>
+        <label><input type="checkbox" />오늘 하루 이 창을 열지 않음</label>
+      </div>
+    </main>
+  </body>
+</html>
