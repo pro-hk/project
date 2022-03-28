@@ -33,22 +33,19 @@ $(".closePage").on("click", () => {
 
 // (메뉴) + 표시있는 글 클릭 - + -> - & 다른 li 닫기 & depth02 열기
 $("#gnb .gnbList >li").on("click", function () {
-  $(this).toggleClass("on");
-  $(this).siblings().removeClass("on");
+  $(this).toggleClass("on").siblings().removeClass("on");
 });
 
 // (카트) CART 클릭 - 글자색 변경 & CARTLIST 불러오기
 $(".cartBox .cart").on("click", function () {
-  $(this).addClass("on");
-  $(this).siblings().removeClass("on");
+  $(this).addClass("on").siblings().removeClass("on");
   $(".cartList .cartProduct").addClass("on");
   $(".cartList .recentProduct").removeClass("on");
 });
 
 // (카트) RECENT 클릭 - 글자색 변경 & RECENTLIST 불러오기
 $(".cartBox .recent").on("click", function () {
-  $(this).addClass("on");
-  $(this).siblings().removeClass("on");
+  $(this).addClass("on").siblings().removeClass("on");
   $(".cartList .cartProduct").removeClass("on");
   $(".cartList .recentProduct").addClass("on");
 });
@@ -76,12 +73,12 @@ const swiper = new Swiper("#mainSlider", {
 
 // collection 클릭 - collection 열기
 $("#mainSlider .btnCollection").on("click", () => {
-  $("#mainBanner").addClass("on");
+  $("#banner").addClass("on");
 });
 
 // home 클릭 - home 열기 & footer 닫기
-$("#mainBanner .btnHome").on("click", () => {
-  $("#mainBanner").removeClass("on");
+$("#banner .btnHome").on("click", () => {
+  $("#banner").removeClass("on");
   $("#footer").removeClass("on");
 });
 
@@ -110,4 +107,20 @@ $(".footer").on("wheel", (e) => {
     }
     $("#footer").removeClass("on");
   }
+});
+
+// 고객센터 customerList 클릭
+$(".customerList li").on("click", function () {
+  $(this).addClass("on").siblings().removeClass("on");
+});
+
+// 고객센터 faqTap 클릭
+$(".customerContents .faqTap label").on("click", function () {
+  $(this).addClass("on").siblings().removeClass("on");
+});
+
+// faqMember li 클릭
+$(".faqMember .question").on("click", function () {
+  console.log("hi");
+  $(this).parent("li").toggleClass("on").siblings().removeClass("on");
 });

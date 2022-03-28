@@ -113,4 +113,180 @@
       display: none;
     }
   }
+  .container {
+    width: 1000px;
+    margin: 60px auto 150px;
+    .lnb {
+      display: flex;
+      justify-content: flex-end;
+      font-size: $lnb-size;
+      padding: 20px 0;
+      li {
+        margin-right: 20px;
+        position: relative;
+        &:first-child:after {
+          position: absolute;
+          content: "";
+          display: block;
+          background-color: $border-color;
+          width: 1px;
+          height: 10px;
+          right: -10px;
+          top: 2px;
+        }
+      }
+    }
+    .txtBox {
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
+      h1 {
+        font-size: $h1-size;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 14px;
+        color: $gray-color;
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 3px;
+        background-color: #000;
+        position: absolute;
+        bottom: -40px;
+        left: calc(50% - 40px);
+      }
+      &.lineOff:after {
+        display: none;
+      }
+    }
+    .customerList {
+      margin-top: 150px;
+      display: flex;
+      > li {
+        cursor: pointer;
+        &.on {
+          background-color: #000;
+          > a {
+            color: #fff;
+          }
+        }
+        > a {
+          box-sizing: border-box;
+          width: 200px;
+          padding: 15px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $border-color;
+          border-left: none;
+          pointer-events: none;
+        }
+        &:first-child {
+          border-left: 1px solid $border-color;
+        }
+      }
+    }
+    .customerContents {
+      margin-top: 50px;
+      .faq {
+        .searchBox {
+          display: flex;
+          justify-content: flex-end;
+          input {
+            padding: 5px 10px;
+            border: 1px solid $border-color;
+            width: 250px;
+            height: 30px;
+            box-sizing: border-box;
+          }
+          button {
+            height: 30px;
+            margin-left: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 5px 25px;
+            font-size: 12px;
+          }
+        }
+        .faqTap {
+          margin: 20px 0;
+          display: flex;
+          justify-content: space-between;
+          label {
+            width: calc(1000px / 6);
+            text-align: center;
+            color: $gray-color;
+            font-size: 12px;
+            padding: 10px 0;
+            border: 1px solid $border-color;
+            border-bottom: 2px solid #000;
+            cursor: pointer;
+            input {
+              display: none;
+            }
+            &.on {
+              border: 2px solid #000;
+              border-bottom: none;
+            }
+          }
+        }
+        .faqMember {
+          border-bottom: 2px solid #000;
+          li {
+            &.on {
+              .question {
+                .on {
+                  display: none;
+                }
+                .off {
+                  display: block;
+                }
+              }
+              .answer {
+                display: flex;
+              }
+            }
+            .question {
+              display: flex;
+              height: 40px;
+              justify-content: space-between;
+              align-items: center;
+              border-top: 1px solid $border-color;
+              cursor: pointer;
+              h2 {
+                font-size: 12px;
+                padding-left: 10px;
+              }
+              span {
+                padding-right: 30px;
+              }
+
+              .off {
+                display: none;
+              }
+            }
+            .answer {
+              display: none;
+              padding: 10px;
+              margin-bottom: 40px;
+              h2,
+              p {
+                font-size: 12px;
+                color: $gray-color;
+                line-height: 1.5;
+              }
+              h2 {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

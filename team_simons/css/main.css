@@ -47,3 +47,71 @@
 #main #popup label input { margin-right: 10px; }
 
 #main #popup.off { display: none; }
+
+#main .container { width: 1000px; margin: 60px auto 150px; }
+
+#main .container .lnb { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; font-size: 12px; padding: 20px 0; }
+
+#main .container .lnb li { margin-right: 20px; position: relative; }
+
+#main .container .lnb li:first-child:after { position: absolute; content: ""; display: block; background-color: #ccc; width: 1px; height: 10px; right: -10px; top: 2px; }
+
+#main .container .txtBox { text-align: center; margin: 40px 0; position: relative; }
+
+#main .container .txtBox h1 { font-size: 50px; margin-bottom: 20px; font-weight: bold; }
+
+#main .container .txtBox p { font-size: 14px; color: #999; }
+
+#main .container .txtBox:after { content: ""; display: block; width: 80px; height: 3px; background-color: #000; position: absolute; bottom: -40px; left: calc(50% - 40px); }
+
+#main .container .txtBox.lineOff:after { display: none; }
+
+#main .container .customerList { margin-top: 150px; display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+#main .container .customerList > li { cursor: pointer; }
+
+#main .container .customerList > li.on { background-color: #000; }
+
+#main .container .customerList > li.on > a { color: #fff; }
+
+#main .container .customerList > li > a { -webkit-box-sizing: border-box; box-sizing: border-box; width: 200px; padding: 15px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; border: 1px solid #ccc; border-left: none; pointer-events: none; }
+
+#main .container .customerList > li:first-child { border-left: 1px solid #ccc; }
+
+#main .container .customerContents { margin-top: 50px; }
+
+#main .container .customerContents .faq .searchBox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+
+#main .container .customerContents .faq .searchBox input { padding: 5px 10px; border: 1px solid #ccc; width: 250px; height: 30px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+#main .container .customerContents .faq .searchBox button { height: 30px; margin-left: 10px; background-color: #000; color: #fff; border: none; padding: 5px 25px; font-size: 12px; }
+
+#main .container .customerContents .faq .faqTap { margin: 20px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+#main .container .customerContents .faq .faqTap label { width: calc(1000px / 6); text-align: center; color: #999; font-size: 12px; padding: 10px 0; border: 1px solid #ccc; border-bottom: 2px solid #000; cursor: pointer; }
+
+#main .container .customerContents .faq .faqTap label input { display: none; }
+
+#main .container .customerContents .faq .faqTap label.on { border: 2px solid #000; border-bottom: none; }
+
+#main .container .customerContents .faq .faqMember { border-bottom: 2px solid #000; }
+
+#main .container .customerContents .faq .faqMember li.on .question .on { display: none; }
+
+#main .container .customerContents .faq .faqMember li.on .question .off { display: block; }
+
+#main .container .customerContents .faq .faqMember li.on .answer { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+#main .container .customerContents .faq .faqMember li .question { display: -webkit-box; display: -ms-flexbox; display: flex; height: 40px; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border-top: 1px solid #ccc; cursor: pointer; }
+
+#main .container .customerContents .faq .faqMember li .question h2 { font-size: 12px; padding-left: 10px; }
+
+#main .container .customerContents .faq .faqMember li .question span { padding-right: 30px; }
+
+#main .container .customerContents .faq .faqMember li .question .off { display: none; }
+
+#main .container .customerContents .faq .faqMember li .answer { display: none; padding: 10px; margin-bottom: 40px; }
+
+#main .container .customerContents .faq .faqMember li .answer h2, #main .container .customerContents .faq .faqMember li .answer p { font-size: 12px; color: #999; line-height: 1.5; }
+
+#main .container .customerContents .faq .faqMember li .answer h2 { margin-right: 5px; }

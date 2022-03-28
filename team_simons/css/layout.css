@@ -18,6 +18,8 @@ a { text-decoration: none; color: #000; }
 
 #header #gnb .gnbList .line { padding-top: 20px; border-bottom: 1px solid #ccc; margin-bottom: 20px; }
 
+#header #gnb .gnbList > li { cursor: pointer; }
+
 #header #gnb .gnbList > li.on { color: #a57a42; }
 
 #header #gnb .gnbList > li.on .imgOff { display: none; }

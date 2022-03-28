@@ -2,53 +2,6 @@
 
 #main {
   .container {
-    width: 1000px;
-    margin: 0 auto;
-    margin-top: 60px;
-    .lnb {
-      display: flex;
-      justify-content: flex-end;
-      font-size: $lnb-size;
-      padding: 20px 0;
-      li {
-        margin-right: 20px;
-        position: relative;
-        &:first-child:after {
-          position: absolute;
-          content: "";
-          display: block;
-          background-color: $border-color;
-          width: 1px;
-          height: 10px;
-          right: -10px;
-          top: 2px;
-        }
-      }
-    }
-    .txtBox {
-      text-align: center;
-      margin: 40px 0;
-      position: relative;
-      h1 {
-        font-size: $h1-size;
-        margin-bottom: 20px;
-        font-weight: bold;
-      }
-      p {
-        font-size: 14px;
-        color: $gray-color;
-      }
-      &:after {
-        content: "";
-        display: block;
-        width: 80px;
-        height: 3px;
-        background-color: #000;
-        position: absolute;
-        bottom: -40px;
-        left: calc(50% - 40px);
-      }
-    }
     form {
       margin-top: 150px;
       display: flex;
@@ -98,7 +51,6 @@
         border-top: 1px solid $border-color;
         border-bottom: 1px solid $border-color;
         margin-top: 100px;
-        margin-bottom: 150px;
         padding: 40px 0;
         h2 {
           font-size: 18px;
