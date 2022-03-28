@@ -36,7 +36,7 @@
 
 #main #mainSlider .btnCollection { z-index: 2; position: absolute; bottom: 40px; left: calc(50% - 24px); }
 
-#main #popup { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; position: fixed; top: 70px; right: 10px; background-color: #fff; cursor: pointer; }
+#main #popup { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; position: fixed; top: 70px; right: 10px; background-color: #fff; z-index: 10; cursor: pointer; }
 
 #main #popup img { vertical-align: top; }
 
