@@ -16,6 +16,7 @@ a {
   left: 0;
   right: 0;
   background-color: #fff;
+  border-bottom: 1px solid $border-color;
   #menu,
   #cart {
     display: flex;
@@ -42,14 +43,14 @@ a {
     width: 300px;
     box-sizing: border-box;
     transition: all 0.5s;
-    height: 924px;
+    height: 100vh;
   }
   #gnb {
     left: -300px;
     &.on {
       left: 0;
     }
-    .container {
+    .gnbList {
       padding: 20px 0;
       border-bottom: 1px solid $border-color;
       line-height: 3;
@@ -59,36 +60,33 @@ a {
         margin-bottom: 20px;
       }
       > li {
-        .lnb {
+        &.on {
+          color: $select-color;
+          .imgOff {
+            display: none;
+          }
+          .imgOn {
+            display: block;
+          }
+          .depth02 {
+            height: 100%;
+            display: block;
+          }
+        }
+        > a {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          cursor: pointer;
-          .imgOff {
-            display: block;
-          }
+          pointer-events: none;
           .imgOn {
             display: none;
           }
-          &.on {
-            color: $select-color;
-            .imgOff {
-              display: none;
-            }
-            .imgOn {
-              display: block;
-            }
-          }
         }
-        #lnb {
+        .depth02 {
           transition: all 0.5s;
+          height: 0;
           display: none;
-          opacity: 0;
           padding-left: 20px;
-          &.on {
-            display: block;
-            opacity: 1;
-          }
           li {
             a {
               color: $gray-color;
@@ -104,13 +102,17 @@ a {
       box-sizing: border-box;
       .search {
         border: none;
+        height: 23px;
         padding: 5px 0 5px 10px;
       }
       .btnSearch {
-        margin-top: 5px;
+        margin-top: 10px;
+        padding-right: 5px;
       }
     }
     .sns {
+      display: flex;
+      align-items: center;
       margin-bottom: 20px;
       img {
         margin-right: 15px;
@@ -197,7 +199,7 @@ a {
     display: flex;
     justify-content: space-evenly;
     a {
-      font-size: 12px;
+      font-size: 11px;
       position: relative;
       &:after {
         content: "";
@@ -229,7 +231,69 @@ a {
   }
 }
 
+.footer {
+  #banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    &.on {
+      z-index: 3;
+    }
+    ul {
+      margin-top: 150px;
+      display: flex;
+      justify-content: center;
+      li {
+        position: relative;
+        width: 350px;
+        height: 750px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-left: 40px;
+        &:nth-child(1) {
+          background-image: url("../images/main/main_banner1.jpg");
+        }
+        &:nth-child(2) {
+          background-image: url("../images/main/main_banner2.jpg");
+        }
+        &:nth-child(3) {
+          background-image: url("../images/main/main_banner3.jpg");
+        }
+        &:nth-child(4) {
+          background-image: url("../images/main/main_banner4.jpg");
+        }
+        a {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+        }
+      }
+    }
+    .btnHome {
+      z-index: 2;
+      position: absolute;
+      top: 40px;
+      left: calc(50% - 24px);
+    }
+  }
+  #footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &.on {
+      z-index: 5;
+    }
+  }
+}
 #footer {
+  width: 100%;
   background-color: #111;
   color: $footer-color;
   text-align: center;
@@ -269,13 +333,14 @@ a {
   .logo {
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding-top: 0;
-    width: 1500px;
+    width: 1000px;
     margin: 0 auto;
     ul {
       position: absolute;
+      left: calc(50% - 92px);
       li a {
         color: $border-color;
       }
@@ -289,6 +354,7 @@ a {
     }
   }
   .company {
+    padding-top: 30px;
     border-top: 1px solid $footer-color;
   }
   .email {
@@ -308,36 +374,5 @@ a {
       font-size: 13px;
       font-weight: bold;
     }
-  }
-}
-
-#popup {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 70px;
-  right: 10px;
-  background-color: #fff;
-  cursor: pointer;
-  img {
-    vertical-align: top;
-  }
-  .popupClose {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-  }
-  label {
-    position: absolute;
-    bottom: 5px;
-    left: 15px;
-    input {
-      margin-right: 10px;
-    }
-  }
-  &.off {
-    display: none;
   }
 }

@@ -1,9 +1,12 @@
+@import "vars";
+
 #main {
+  overflow: hidden;
   #mainSlider {
-    overflow: hidden;
     position: relative;
     ul {
       li {
+        background-color: #f00;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -45,7 +48,7 @@
       }
     }
     .page {
-      z-index: 10;
+      z-index: 2;
       position: absolute;
       right: 30px;
       bottom: 40px;
@@ -62,7 +65,7 @@
     }
     .btns {
       .btn {
-        z-index: 10;
+        z-index: 2;
         position: absolute;
         top: calc(50% - 56px / 2);
         left: 50px;
@@ -72,32 +75,42 @@
         }
       }
     }
+    .btnCollection {
+      z-index: 2;
+      position: absolute;
+      bottom: 40px;
+      left: calc(50% - 24px);
+    }
   }
-  #mainBanner {
-    background-color: rgba(0, 0, 0, 0.1);
-    ul {
-      display: flex;
-      justify-content: center;
-      li {
-        width: 350px;
-        height: 800px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        margin-left: 50px;
-        &:nth-child(1) {
-          background-image: url("../images/main/main_banner1.jpg");
-        }
-        &:nth-child(2) {
-          background-image: url("../images/main/main_banner2.jpg");
-        }
-        &:nth-child(3) {
-          background-image: url("../images/main/main_banner3.jpg");
-        }
-        &:nth-child(4) {
-          background-image: url("../images/main/main_banner4.jpg");
-        }
+
+  #popup {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    img {
+      vertical-align: top;
+    }
+    .popupClose {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    label {
+      position: absolute;
+      bottom: 5px;
+      left: 15px;
+      input {
+        margin-right: 10px;
       }
+    }
+    &.off {
+      display: none;
     }
   }
 }
