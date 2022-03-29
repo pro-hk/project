@@ -213,11 +213,12 @@
             font-size: 12px;
           }
         }
-        .faqTap {
+        .faqTab {
           margin: 20px 0;
           display: flex;
           justify-content: space-between;
-          label {
+          span {
+            display: block;
             width: calc(1000px / 6);
             text-align: center;
             color: $gray-color;
@@ -226,18 +227,23 @@
             border: 1px solid $border-color;
             border-bottom: 2px solid #000;
             cursor: pointer;
-            input {
-              display: none;
-            }
-            &.on {
-              border: 2px solid #000;
-              border-bottom: none;
-            }
+          }
+          input {
+            display: none;
+          }
+          input:checked ~ span {
+            border: 2px solid #000;
+            border-bottom: none;
           }
         }
-        .faqMember {
+        .faqContents ul {
           border-bottom: 2px solid #000;
+          display: none;
+          &.on {
+            display: block;
+          }
           li {
+            transition: all 0.5s;
             &.on {
               .question {
                 .on {
@@ -268,6 +274,7 @@
 
               .off {
                 display: none;
+                height: 0;
               }
             }
             .answer {
