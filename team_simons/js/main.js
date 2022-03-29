@@ -136,3 +136,9 @@ $(".faqTab label input").on("change", function () {
     $(".faqEtc").addClass("on").siblings().removeClass("on");
   }
 });
+
+// 테이블 select 선택
+$("form table .email").on("change", function () {
+  const email = $(this).val();
+  $(".domain").val(email);
+});

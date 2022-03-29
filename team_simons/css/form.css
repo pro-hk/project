@@ -1,8 +1,12 @@
-#main .container form { margin-top: 150px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; }
+#main .container form { margin-top: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; }
+
+#main .container form#login { margin-top: 150px; }
 
 #main .container form input, #main .container form button { -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ccc; width: 450px; height: 45px; margin-bottom: 10px; padding-left: 10px; }
 
 #main .container form button { margin-top: 20px; background-color: #000; border-color: #000; color: #fff; }
+
+#main .container form button.tableBtn { width: 200px; }
 
 #main .container form .etcLogin { margin-top: 30px; font-size: 13px; }
 
@@ -21,3 +25,31 @@
 #main .container form .customerCenter h2 strong { font-size: 22px; }
 
 #main .container form .customerCenter p { color: #999; font-size: 11px; }
+
+#main .container form .formTxt { width: 100%; margin-bottom: 10px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+#main .container form .formTxt p { font-size: 8px; color: #ccc; }
+
+#main .container form table { width: 100%; margin-bottom: 40px; }
+
+#main .container form table tbody tr { text-align: left; }
+
+#main .container form table tbody tr.top th { padding-top: 50px; border-top: 2px solid #000; }
+
+#main .container form table tbody tr.top td { border-top: 1px solid #ccc; }
+
+#main .container form table tbody tr.bottom th { padding-bottom: 50px; border-bottom: 2px solid #000; }
+
+#main .container form table tbody tr.bottom td { border-bottom: 1px solid #ccc; }
+
+#main .container form table tbody tr th { font-size: 12px; }
+
+#main .container form table tbody tr td { padding-left: 30px; }
+
+#main .container form table tbody tr td span { display: inline-block; width: 10px; font-size: 12px; }
+
+#main .container form table .phone { width: 90px; }
+
+#main .container form table input, #main .container form table select { width: 200px; height: 30px; }
+
+#main .container form table select { padding-left: 10px; color: #999; }
