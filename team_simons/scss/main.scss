@@ -191,30 +191,30 @@
     }
     .customerContents {
       margin-top: 50px;
-      &.faq {
-        .searchBox {
-          display: flex;
-          justify-content: flex-end;
-          input {
-            padding: 5px 10px;
-            border: 1px solid $border-color;
-            width: 250px;
-            height: 30px;
-            box-sizing: border-box;
-          }
-          button {
-            height: 30px;
-            margin-left: 10px;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 5px 25px;
-            font-size: 12px;
-          }
-          &.off {
-            display: none;
-          }
+      .searchBox {
+        display: flex;
+        justify-content: flex-end;
+        input {
+          padding: 5px 10px;
+          border: 1px solid $border-color;
+          width: 250px;
+          height: 30px;
+          box-sizing: border-box;
         }
+        button {
+          height: 30px;
+          margin-left: 10px;
+          background-color: #000;
+          color: #fff;
+          border: none;
+          padding: 5px 25px;
+          font-size: 12px;
+        }
+        &.off {
+          display: none;
+        }
+      }
+      &.faq {
         .faqTab {
           margin: 20px 0;
           display: flex;
@@ -357,8 +357,8 @@
           }
         }
       }
-      .call,
-      .as {
+      &.counsel,
+      &.as {
         .asFlow {
           h2 {
             width: 20%;
@@ -463,8 +463,8 @@
           }
         }
       }
-      .notice,
-      .qna {
+      &.notice,
+      &.qna {
         .searchBox {
           margin-bottom: 20px;
           select {
