@@ -9,11 +9,11 @@
     <link href="../css/reset.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/swiper-bundle.css" />
     <link href="../css/layout.css" rel="stylesheet" />
-    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/test.css" rel="stylesheet" />
     <link href="../css/form.css" rel="stylesheet" />
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/swiper-bundle.min.js"></script>
-    <script src="../js/main.js" defer></script>
+    <script src="../js/test.js" defer></script>
   </head>
   <body>
     <!-- a링크 주소 미입력 -->
@@ -107,7 +107,7 @@
         <div class="etc">
           <a href="login.html">로그인</a>
           <a href="order.html">주문내역</a>
-          <a href="customer.html">고객센터</a>
+          <a href="cs_faq.html">고객센터</a>
         </div>
 
         <!-- 찾기 / DB작업 -->
@@ -179,7 +179,7 @@
         <div class="etc">
           <a href="login.html">로그인</a>
           <a href="order.html">주문내역</a>
-          <a href="customer.html">고객센터</a>
+          <a href="cs_faq.html">고객센터</a>
         </div>
 
         <!-- 닫기 -->
@@ -209,49 +209,51 @@
           <p>고객님의 질문에 성심껏 답변해 드리겠습니다</p>
         </div>
 
+        <!-- 상단 5개 선택 -->
         <ul class="customerList">
-          <li class="on"><a href="">FAQ</a></li>
-          <li><a href="">Q&A</a></li>
-          <li><a href="">1:1 전화상담 신청</a></li>
-          <li><a href="">A/S 신청</a></li>
-          <li><a href="">공지사항</a></li>
+          <li class="on"><a href="test.html">FAQ</a></li>
+          <li><a href="cs_qna.html">Q&A</a></li>
+          <li><a href="cs_counsel.html">1:1 전화상담 신청</a></li>
+          <li><a href="cs_as.html">A/S 신청</a></li>
+          <li><a href="cs_notice.html">공지사항</a></li>
         </ul>
 
-        <!-- DB작업 -->
-        <div class="customerContents">
-          <div class="faq on">
-            <div class="searchBox">
-              <input type="text" placeholder="검색어를 입력하세요" />
-              <button>검색</button>
-            </div>
-            <div class="faqTab">
-              <label>
-                <input type="radio" name="faqTap" class="member" checked />
-                <span>회원</span>
-              </label>
-              <label>
-                <input type="radio" name="faqTap" class="product" />
-                <span>상품문의</span>
-              </label>
-              <label>
-                <input type="radio" name="faqTap" class="exchange" />
-                <span>교환/환불/반품</span>
-              </label>
-              <label>
-                <input type="radio" name="faqTap" class="as" />
-                <span>AS/품질보증</span>
-              </label>
-              <label>
-                <input type="radio" name="faqTap" class="order" />
-                <span>주문/배송</span>
-              </label>
-              <label>
-                <input type="radio" name="faqTap" class="etc" />
-                <span>기타</span>
-              </label>
-            </div>
-            <div class="faqContents">
-              <ul class="faqMember on">
+        <!-- contents / DB작업 -->
+        <div class="customerContents faq">
+          <!-- as선택시 없어야함 -->
+          <div class="searchBox">
+            <input type="text" placeholder="검색어를 입력하세요" />
+            <button>검색</button>
+          </div>
+          <div class="faqTab">
+            <label>
+              <input type="radio" name="faqTap" value="1" checked />
+              <span>회원</span>
+            </label>
+            <label>
+              <input type="radio" name="faqTap" value="2" />
+              <span>상품문의</span>
+            </label>
+            <label>
+              <input type="radio" name="faqTap" value="3" />
+              <span>교환/환불/반품</span>
+            </label>
+            <label>
+              <input type="radio" name="faqTap" value="4" />
+              <span>AS/품질보증</span>
+            </label>
+            <label>
+              <input type="radio" name="faqTap" value="5" />
+              <span>주문/배송</span>
+            </label>
+            <label>
+              <input type="radio" name="faqTap" value="6" />
+              <span>기타</span>
+            </label>
+          </div>
+          <ul class="faqContents">
+            <li class="on">
+              <ul>
                 <li>
                   <div class="question">
                     <h2>Q. 회원 정보를 변경하고 싶습니다. 어떻게 해야 하나요?</h2>
@@ -307,7 +309,9 @@
                   </div>
                 </li>
               </ul>
-              <ul class="faqProduct">
+            </li>
+            <li>
+              <ul>
                 <li>
                   <div class="question">
                     <h2>Q. 포켓 스프링 베개 높이를 알고 싶어요.</h2>
@@ -570,7 +574,9 @@
                   </div>
                 </li>
               </ul>
-              <ul class="faqExchange">
+            </li>
+            <li>
+              <ul>
                 <li>
                   <div class="question">
                     <h2>Q. 환불 확인은 어디에서 하나요?</h2>
@@ -615,8 +621,169 @@
                   </div>
                 </li>
               </ul>
-              <div class="faqAs"></div>
-              <ul class="faqOrder">
+            </li>
+            <li class="warranty">
+              <div class="txtBox">
+                <div>
+                  <img src="../images/main/cs_warranty.jpg" alt="" />
+                </div>
+                <div>
+                  <h2>
+                    15 Years Warranty<br />
+                    업계 최초 포켓스프링 15년 무상보증.
+                  </h2>
+                  <p>
+                    시몬스의 품질 자부심, 고객서비스로 이어갑니다. <br />
+                    시몬스는 포켓스프링 무상보증정책을 통해 제품의 우수성과 품질관리를 증명하고 있습니다.<br />
+                    공의적인 파손이나 과실로 인한 하자를 제외하고는 15년간 발생하는 스프링 하자에 대하여 무상 서비스를 원칙으로 합니다.<br /><br />
+                    ※ 사업자가 인정하는 제조상의 문제로 발생하는 하자에 한해서 포켓스프링은 15년, 오픈스프링은 5년 무상보증정책을 적용하며, 그 외 일반적인 사항에 대해서는 1년 보증을 원칙으로 합니다.
+                  </p>
+                </div>
+              </div>
+              <table>
+                <colgroup>
+                  <col style="width: 25%" />
+                  <col style="width: 15%" />
+                  <col style="width: 25%" />
+                  <col style="width: 35%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>보증항목</th>
+                    <th>보증기간</th>
+                    <th>보상기준</th>
+                    <th>비고</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>일반적 사항(모터포함)</td>
+                    <td>1년</td>
+                    <td>무상수리</td>
+                    <td rowspan="15">
+                      <h2>※ 보증기간 경과 시에는 유상 수리</h2>
+                      <p>
+                        보증기간은 구입일을 기준으로 하며 구입일 확인이<br />
+                        불가능한 경우에 제조일로부터 3개월이 경과된 시점을<br />
+                        구입일로 합니다.
+                      </p>
+                      <h2>※ 부품 보유기간</h2>
+                      <p>부품보유기간은 해당 모델의 생산중기 후 5년 입니다.</p>
+                      <h2>※ 매트리스 보증</h2>
+                      <p>
+                        사업자가 인정하는 제조상의 문제로 발생하는<br />
+                        하자(스프링꺼짐, 스프링 파손, 스프링 소음 등)에 한해서<br />
+                        포켓스프링은 15년, 오픈스프링은 5년 보증을 적용하고 그<br />
+                        외 일반적인 사항에 대해서는 1년 보증을 원칙으로 합니다.
+                      </p>
+                      <table class="innerTable">
+                        <tr>
+                          <th>구분</th>
+                          <th>보증기간</th>
+                        </tr>
+                        <tr>
+                          <td>포켓스프링</td>
+                          <td>15년</td>
+                        </tr>
+                        <tr>
+                          <td>오픈스프링</td>
+                          <td>5년</td>
+                        </tr>
+                      </table>
+                      <h2>※ 비용부담</h2>
+                      <p>
+                        1. 무상수리: 수리에 소요되는 부품가 및 원자재 비용 등<br />
+                        제비용을 사업자가 부담.
+                      </p>
+                      <p>
+                        2. 유상수리: 수리에 소요되는 순수 부품대, 원자재 비용,<br />
+                        소정의 출장비 및 수리비를 소비자가 부담.
+                      </p>
+                      <h2>※ 교환 및 환불기준</h2>
+                      <p>
+                        1. 제품 교환의 경우 동일제품으로 교환을 원칙으로 하며,<br />
+                        동일제품 교환이 불가능 할 때에는 동종의 유사제품으로<br />
+                        교환합니다.
+                      </p>
+                      <p>
+                        2. 교환 또는 환불의 경우 구입가격(증서 또는 영수증에<br />
+                        기재된 금액)을 기준으로 하며, 다만 구입가격의 입증이<br />
+                        불가능할 때에는 판매가격을 구입가격으로 봅니다.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td rowspan="3">좀 등 벌레발생</td>
+                    <td>10일 이내</td>
+                    <td>제품교환 또는 구입가 환불</td>
+                  </tr>
+                  <tr>
+                    <td>2년 이내</td>
+                    <td>무상수리 또는 부품교환</td>
+                  </tr>
+                  <tr>
+                    <td>동일하자 재발생</td>
+                    <td>제품교환</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="4">좀 등 벌레발생</td>
+                    <td>10일 이내</td>
+                    <td>제품교환 또는 구입가 환불</td>
+                  </tr>
+                  <tr>
+                    <td>6개월 이내</td>
+                    <td>제품교환</td>
+                  </tr>
+                  <tr>
+                    <td>3년 이내</td>
+                    <td>무상수리 또는 부품교환</td>
+                  </tr>
+                  <tr>
+                    <td>동일하자 재발생</td>
+                    <td>제품교환</td>
+                  </tr>
+                  <tr>
+                    <td>색상의 차이</td>
+                    <td>1개월 이내</td>
+                    <td>제품교환 (동일색상이 없을 경우 구입가 환불)</td>
+                  </tr>
+                  <tr>
+                    <td>악취 등 자극성 냄새(화학약품 등)</td>
+                    <td>6개월 이내</td>
+                    <td>제품 교환 또는 구입가 환불</td>
+                  </tr>
+                  <tr>
+                    <td>규격치수 허용오차</td>
+                    <td></td>
+                    <td>제품교환</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">침대품질 불량(스프링, 매트리스)</td>
+                    <td>10일 이내</td>
+                    <td>제품교환 또는 구입가 환불</td>
+                  </tr>
+                  <tr>
+                    <td>5년 이내</td>
+                    <td>부품교환 또는 무상수리</td>
+                  </tr>
+                  <tr>
+                    <td>제조 또는 신제품 인도 시 생긴 흠집</td>
+                    <td>15일 이내</td>
+                    <td>제품교환</td>
+                  </tr>
+                  <tr class="line">
+                    <td>
+                      품질보증 기간 내에 2회 수리를 받았으나<br />
+                      3회 동일하자 발생
+                    </td>
+                    <td></td>
+                    <td>제품교환 또는 구입가 환불</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <ul>
                 <li>
                   <div class="question">
                     <h2>Q. 배송 및 A/S 처리 방법은 어떻게 되나요?</h2>
@@ -891,7 +1058,9 @@
                   </div>
                 </li>
               </ul>
-              <ul class="faqEtc">
+            </li>
+            <li>
+              <ul>
                 <li>
                   <div class="question">
                     <h2>Q. 특판사업 관련하여 문의는 어디로 하면 되나요?</h2>
@@ -939,9 +1108,26 @@
                   </div>
                 </li>
               </ul>
-            </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 고객센터 하단 -->
+        <div class="customerCenter flex">
+          <div class="inner">
+            <h2>고객센터<span class="material-icons"> arrow_right </span><strong>1899-8182</strong></h2>
+            <p>평일 9시-18시 / 토요일.일요일.공휴일 휴무</p>
+          </div>
+          <div class="inner">
+            <h2>특판사업문의<span class="material-icons"> arrow_right </span><strong>1899-8182</strong></h2>
+            <p>E-mail : kbh@simmons.co.kr</p>
           </div>
         </div>
+      </div>
+
+      <!-- 탑 버튼 -->
+      <div class="btnTop">
+        <a href=""><img src="../images/main/btn_top.png" alt="" /></a>
       </div>
     </main>
     <!-- main end -->

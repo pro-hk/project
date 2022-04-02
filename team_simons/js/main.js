@@ -110,35 +110,45 @@ $(".footer").on("wheel", (e) => {
   }
 });
 
-// 고객센터 customerList 클릭
-$(".customerList li").on("click", function () {
-  $(this).addClass("on").siblings().removeClass("on");
-});
+// // 고객센터 customerList 클릭
+// $(".customerList li").on("click", function () {
+//   const num = $(this).index() + 1;
+//   console.log(num);
+//   $(this).addClass("on").siblings().removeClass("on");
+//   $(".customerContents >li:nth-child(" + num + ")")
+//     .addClass("on")
+//     .siblings()
+//     .removeClass("on");
+// });
 
 // 고객센터 faqContents question 클릭
-$(".faqContents .question").on("click", function () {
-  $(this).parent("li").toggleClass("on").siblings().removeClass("on");
+$(".faqContents ul li").on("click", function () {
+  $(this).toggleClass("on").siblings().removeClass("on");
 });
 
 // 고객센터 faqTab 클릭
 $(".faqTab label input").on("change", function () {
-  if ($(this).hasClass("member")) {
-    $(".faqMember").addClass("on").siblings().removeClass("on");
-  } else if ($(this).hasClass("product")) {
-    $(".faqProduct").addClass("on").siblings().removeClass("on");
-  } else if ($(this).hasClass("exchange")) {
-    $(".faqExchange").addClass("on").siblings().removeClass("on");
-  } else if ($(this).hasClass("as")) {
-    $(".faqAs").addClass("on").siblings().removeClass("on");
-  } else if ($(this).hasClass("order")) {
-    $(".faqOrder").addClass("on").siblings().removeClass("on");
+  const num = $(this).val();
+  if (num == 4) {
+    $(".searchBox").addClass("off");
   } else {
-    $(".faqEtc").addClass("on").siblings().removeClass("on");
+    $(".searchBox").removeClass("off");
   }
+  $(".faqContents >li:nth-of-type(" + num + ")")
+    .addClass("on")
+    .siblings()
+    .removeClass("on")
+    .children()
+    .removeClass("on");
 });
 
 // 테이블 select 선택
 $("form table .email").on("change", function () {
   const email = $(this).val();
   $(".domain").val(email);
+});
+
+// 탑 버튼
+$("#main").on("wheel", (e) => {
+  console.log(e.originalEvent);
 });

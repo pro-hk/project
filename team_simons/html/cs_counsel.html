@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko  ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시몬스 침대(3조)</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/swiper-bundle.css" />
+    <link href="../css/layout.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/form.css" rel="stylesheet" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- a링크 주소 미입력 -->
+    <header id="header">
+      <!-- 좌측 메뉴 -->
+      <div id="menu">
+        <img src="../images/layout/header_menu.png" />
+        <span>메뉴</span>
+      </div>
+
+      <!-- 숨겨진 좌측 메뉴 -->
+      <ul id="gnb">
+        <div class="gnbList">
+          <!-- #lnb 이벤트 효과 다시 지정해야됨 -->
+          <li>
+            <a href="">
+              <span>Beautyrest BLACK</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </a>
+            <ul class="depth02">
+              <li><a href="">the BLACK</a></li>
+              <li><a href="">MATTRESS</a></li>
+              <li><a href="">FOUNDATION</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <span>COLLECTION</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </a>
+            <ul class="depth02">
+              <li><a href="">Beautyrest</a></li>
+              <li><a href="">N32</a></li>
+              <li><a href="">KENOSHA</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <span>PRODUCT</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </a>
+            <ul class="depth02">
+              <li><a href="">MATTRESS</a></li>
+              <li><a href="">FRAME</a></li>
+              <li><a href="">ROOM SET</a></li>
+              <li><a href="">FOUNDATION</a></li>
+              <li><a href="">FURNITURE</a></li>
+              <li><a href="">BEDDING</a></li>
+              <li><a href="">FRAGRANCE</a></li>
+            </ul>
+          </li>
+          <li><a href="">ONLINE STORE</a></li>
+          <li><a href="">OUTLET</a></li>
+
+          <!-- 가운데 밑줄 -->
+          <div class="line"></div>
+
+          <li>
+            <a href="">
+              <span>ABOUT US</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </a>
+            <ul class="depth02">
+              <li><a href="">HERITAGE</a></li>
+              <li><a href="">MEDIA</a></li>
+              <li><a href="">SIMMONS IN HOTEL</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <span>SIMMONS Factorium</span>
+              <img src="../images/layout/lnb_plus.png" class="imgOff" />
+              <img src="../images/layout/lnb_minus.png" class="imgOn" />
+            </a>
+            <ul class="depth02">
+              <li><a href="">INTRO</a></li>
+              <li><a href="">R&D</a></li>
+              <li><a href="">TERRACE</a></li>
+              <li><a href="">오시는길</a></li>
+            </ul>
+          </li>
+          <li><a href="">SIMMONS GALLERY</a></li>
+          <li><a href="">매장 찾기</a></li>
+        </div>
+
+        <!-- 기타 / DB작업 -->
+        <div class="etc">
+          <a href="login.html">로그인</a>
+          <a href="order.html">주문내역</a>
+          <a href="cs_faq.html">고객센터</a>
+        </div>
+
+        <!-- 찾기 / DB작업 -->
+        <div class="searchBox">
+          <input type="text" name="search" class="search" />
+          <a href="" class="btnSearch">
+            <img src="../images/layout/gnb_search.png" />
+          </a>
+        </div>
+
+        <!-- sns링크 -->
+        <div class="sns">
+          <a href=""><img src="../images/layout/gnb_sns01.png" /></a>
+          <a href=""><img src="../images/layout/gnb_sns02.png" /></a>
+          <a href=""><img src="../images/layout/gnb_sns03.png" /></a>
+          <a href=""><img src="../images/layout/gnb_sns04.png" /></a>
+        </div>
+
+        <!-- banner링크 -->
+        <div class="banner">
+          <a href="">
+            <img src="../images/layout/gnb_n32_banner.jpg" />
+          </a>
+          <a href="">
+            <img src="../images/layout/gnb_2022_Wedding.jpg" />
+          </a>
+        </div>
+
+        <!-- 닫기버튼 -->
+        <div class="gnbClose">
+          <img src="../images/layout/gnb_close.png" />
+        </div>
+      </ul>
+      <!-- 좌측 메뉴 end -->
+
+      <!-- 로고 -->
+      <div id="logo">
+        <a href="./"><img src="../images/layout/header_logo.png" /></a>
+      </div>
+
+      <!-- 우측 메뉴 -->
+      <div id="cart">
+        <img src="../images/layout/icon_cart.png" />
+        <span>카트</span>
+      </div>
+
+      <!-- 숨겨진 우측 메뉴(카트) / DB작업  -->
+      <div class="cartBox">
+        <!-- 메뉴 리스트 -->
+        <div class="allCount">
+          <h2 class="count cart on">CART <span class="cartCount">(0)</span></h2>
+          <h2 class="count recent">RECENT <span class="recentCount">(0)</span></h2>
+        </div>
+
+        <!-- 카트 리스트 -->
+        <div class="cartList">
+          <div class="list cartProduct on">
+            <p>카트에 담긴 상품이 없습니다.</p>
+            <div class="product"></div>
+            <a href="" class="cartLink">CART 바로가기</a>
+          </div>
+          <div class="list recentProduct">
+            <p>최근 본 상품이 없습니다.</p>
+            <div class="product"></div>
+          </div>
+        </div>
+
+        <!-- CARTLIST DB -->
+        <div class="etc">
+          <a href="login.html">로그인</a>
+          <a href="order.html">주문내역</a>
+          <a href="cs_faq.html">고객센터</a>
+        </div>
+
+        <!-- 닫기 -->
+        <div class="cartClose">
+          <img src="../images/layout/gnb_close.png" />
+        </div>
+      </div>
+      <!-- 우측 메뉴 end -->
+
+      <!-- 블러 처리 / 좌, 우측 메뉴 닫기 -->
+      <div class="closePage"></div>
+    </header>
+    <!-- header end -->
+
+    <!-- main -->
+    <main id="main">
+      <div class="container">
+        <!-- lnb -->
+        <ul class="lnb">
+          <li><a href="">HOME</a></li>
+          <li><a href="">고객센터</a></li>
+        </ul>
+
+        <!-- 메인 화면 -->
+        <div class="txtBox lineOff">
+          <h1>고객센터</h1>
+          <p>고객님의 질문에 성심껏 답변해 드리겠습니다</p>
+        </div>
+
+        <!-- 상단 5개 선택 -->
+        <ul class="customerList">
+          <li><a href="cs_faq.html">FAQ</a></li>
+          <li><a href="cs_qna.html">Q&A</a></li>
+          <li class="on"><a href="cs_counsel.html">1:1 전화상담 신청</a></li>
+          <li><a href="cs_as.html">A/S 신청</a></li>
+          <li><a href="cs_notice.html">공지사항</a></li>
+        </ul>
+
+        <!-- contents / DB작업 -->
+        <div class="customerContents">
+          <div class="call">
+            <div class="contentsBox">
+              <h2><span>개인정보수집 및 이용에 대한 안내</span></h2>
+              <p>
+                ■ 수집하는 개인정보의 항목 및 수집방법<br /><br />
+                회사는 회원가입, 비회원구매, 상담, 서비스 신청 등을 위해 아래와 같은 방법에 따라 개인정보를 수집하고 있습니다. <br /><br />
+                <회원가입 시><br />
+                ο 필수항목 :이름, ID, 비밀번호, 주소, 이메일, 휴대전화번호, 성별, 아이핀 인증결과, 상담신청여부,쿠키, 결제기록<br />
+                ο 선택항목 :자택 전화번호, 생년월일, 성별, 결혼여부, 직업, SMS 수신, 이벤트정보수신, 주문정보수신, 추천인ID<br /><br />
+                <비회원 구매 시><br />
+                ο 필수항목 :주문자 이름, 주문자 휴대전화번호, 수령자 이름, 수령자 휴대전화번호, 배송지 주소, 결제정보(은행계좌정보, 휴대폰결제 정보, 현금영수증정보)<br />
+                ο 선택항목 : 없음<br />
+                ο 비회원 주문 시에는 적립혜택을 받으실 수 없습니다.<br /><br />
+                <상담 시><br />
+                ο 필수항목 :이름, 휴대전화번호<br />
+                ο 선택항목 :자택 전화번호, 통화가능시간, 거주지역, 나이, 침대경험정도, 이메일<br /><br />
+                ■ 개인정보의 수집 및 이용목적<br /><br />
+                회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br />
+                ο 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산 콘텐츠제공 , 구매 및 요금 결제 , 물품배송 또는 청구지 등 발송 , 금융거래 본인 인증 및 금융 서비스<br />
+                ο 회원관리<br />
+                회원제 서비스 이용에 따른 본인확인, 개인 식별, 불량회원의 부정 이용 방지와 비인가 사용방지, 가입 의사 확인, 연령확인, 불만처리 등 민원처리, 고지사항 전달<br />
+                ο 마케팅 및 광고에 활용<br />
+                이벤트 등 광고성 정보 전달, 접속 빈도 파악 또는 회원의 서비스 이용에 대한 통계<br /><br />
+                ■ 개인정보의 보유 및 이용기간<br /><br />
+                원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 상법 및 ‘전자상거래등에서 소비자보호에 관한 법률’ 등 관련 법령의 규정에 의하여 다음과 같이
+                거래 관련 관리 의무 관계의 확인 등을 이유로 일정기간 보유하여야 할 필요가 있을 경우에는 일정기간 보유합니다.<br />
+                ο 상업장부와 영업에 관한 중요서류: 10년(상법)<br />
+                ο 전표 또는 이와 유사한 서류: 5년(상법)<br />
+                ο 계약 또는 청약철회 등에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)<br />
+                ο 대금결제 및 재화 등의 공급에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)<br />
+                ο 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년 (전자상거래등에서의 소비자보호에 관한 법률)<br />
+                ο 설문조사, 이벤트 등 일시적 목적을 위하여 수집한 경우 : 당해 설문조사, 이벤트 등의 종료 시점
+              </p>
+            </div>
+            <div class="agreeBox">
+              <span>위의 개인정보취급방침에 동의하십니까?(필수)</span>
+              <input type="checkbox" name="" id="privacy" />
+            </div>
+            <div class="contentsBox">
+              <h2><span>마케팅 및 광고에 활용</span></h2>
+              <p>
+                이벤트 등 광고성 정보 전달, 접속 빈도 파악 또는 회원의 서비스 이용에 대한 통계 등을 위해 활용합니다.<br />
+                귀하는 개인정보 수집·이용에 동의하지 않을 권리가 있으며, 동의를 거부할 경우에는 마케팅 활동 및 이벤트 참여기회 제공 등 사이트 서비스 이용에 제한될 수 있습니다.
+              </p>
+            </div>
+            <div class="agreeBox">
+              <span>위의 마케팅 및 광고 활용 이용에 동의하십니까?(선택)</span>
+              <input type="checkbox" name="" id="marketing" />
+            </div>
+            <div class="contentsBox">
+              <p>
+                ※귀하는 개인정보 수집·이용에 동의하지 않을 권리가 있으며, 동의를 거부할 경우에는 회원가입을 통한 상품 구매, 고객상담, 이벤트 참여기회 제공 등 사이트 서비스 이용에 제한될 수 있습니다.
+              </p>
+            </div>
+
+            <!-- form -->
+            <form action="" method="post" id="order">
+              <div class="formTxt">
+                <h2>신청서 작성</h2>
+                <p>* 항목은 필수 입력해주세요</p>
+              </div>
+              <table>
+                <colgroup>
+                  <col style="width: 20%" />
+                  <col style="width: 80%" />
+                </colgroup>
+                <tbody>
+                  <tr class="top">
+                    <th>이름 *</th>
+                    <td><input type="text" /></td>
+                  </tr>
+                  <tr>
+                    <th>제목 *</th>
+                    <td>
+                      <input type="text" class="title" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>연락처 *</th>
+                    <td>
+                      <input type="text" class="phone01 phone" />
+                      <span>-</span>
+                      <input type="text" class="phone02 phone" />
+                      <span>-</span>
+                      <input type="text" class="phone03 phone" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>통화가능시간 *</th>
+                    <td>
+                      <input type="text" class="callTime" placeholder="예) 오후 1시" />
+                      <span>* 평일 9시-17시 / 토요일.일요일.공휴일 휴무</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>거주지역 *</th>
+                    <td>
+                      <select class="city">
+                        <option value="">지역을 선택하세요</option>
+                        <option value="서울">서울</option>
+                        <option value="인천">인천</option>
+                        <option value="경기">경기</option>
+                        <option value="강원">강원</option>
+                        <option value="충남">충남</option>
+                        <option value="충북">충북</option>
+                        <option value="대전">대전</option>
+                        <option value="대구">대구</option>
+                        <option value="경북">경북</option>
+                        <option value="울산">울산</option>
+                        <option value="부산">부산</option>
+                        <option value="경남">경남</option>
+                        <option value="전북">전북</option>
+                        <option value="광주">광주</option>
+                        <option value="전남">전남</option>
+                        <option value="제주">제주</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>이메일 *</th>
+                    <td>
+                      <input type="text" />
+                      <span>@</span>
+                      <!-- 직접 입력시 readonly 풀기 -->
+                      <input type="text" class="domain" readonly />
+                      <span></span>
+                      <select class="email">
+                        <option value="">직접 입력</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                        <option value="hotmail.com">hotmail.com</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="daum.net">daum.net</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr class="bottom">
+                    <th>상세내용(전화상담이 필요한 부분) *</th>
+                    <td class="textarea">
+                      <textarea name="counsel" id="counsel" cols="30" rows="10"></textarea>
+                      <p>0 / 4000자</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="submit">신청하기</button>
+            </form>
+            <!-- form end -->
+          </div>
+        </div>
+
+        <!-- 고객센터 하단 -->
+        <div class="customerCenter flex">
+          <div class="inner">
+            <h2>고객센터<span class="material-icons"> arrow_right </span><strong>1899-8182</strong></h2>
+            <p>평일 9시-18시 / 토요일.일요일.공휴일 휴무</p>
+          </div>
+          <div class="inner">
+            <h2>특판사업문의<span class="material-icons"> arrow_right </span><strong>1899-8182</strong></h2>
+            <p>E-mail : kbh@simmons.co.kr</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 탑 버튼 -->
+      <div class="btnTop">
+        <a href=""><img src="../images/main/btn_top.png" alt="" /></a>
+      </div>
+    </main>
+    <!-- main end -->
+
+    <!-- footer -->
+    <footer id="footer">
+      <div class="logo">
+        <div class="logoImg">
+          <img src="../images/layout/footer_logo.png" />
+        </div>
+        <ul>
+          <li><a href="">이용약관</a></li>
+          <li><a href="">개인정보처리방침</a></li>
+        </ul>
+        <div class="sns">
+          <a href=""><img src="../images/layout/footer_sns01.png" /></a>
+          <a href=""><img src="../images/layout/footer_sns02.png" /></a>
+          <a href=""><img src="../images/layout/footer_sns03.png" /></a>
+          <a href=""><img src="../images/layout/footer_sns04.png" /></a>
+        </div>
+      </div>
+      <div class="company">
+        <ul>
+          <li>(주)시몬스</li>
+          <li>주소: 경기도 이천시 모가면 사실로 1000</li>
+          <li>대표: 안정호</li>
+          <li>고객센터:1899-8182</li>
+        </ul>
+        <ul>
+          <li>사업자등록번호: 126-81-24808</li>
+          <li><a href="" class="companyCheck">사업자정보 확인</a></li>
+          <li>통신판매업신고: 제2014-경기이천-0135호</li>
+        </ul>
+        <ul>
+          <li>개인정보 관리책임자: 이정호</li>
+          <li>호스팅 서비스 사업자: ㈜가비아</li>
+        </ul>
+      </div>
+      <div class="email">
+        <p>Contact to : <a href="">master @ simmons.co.kr</a></p>
+      </div>
+      <div class="security">
+        <img src="../images/layout/footer_lg.png" />
+        <p>고객님은 안전거래를 위해 현금 등으로 결제 시 모든 금액에 대하여 본 쇼핑몰에서 가입한 <a href="" class="service">구매안전서비스 </a>소비자피해보상보험 서비스를 이용하실 수 있습니다.</p>
+      </div>
+      <div class="copyright">
+        <p>Copyright © by SIMMONS-K, Co., Ltd All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- footer end -->
+  </body>
+</html>
