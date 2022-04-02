@@ -12,7 +12,9 @@
 
 #main .container form button { margin-top: 20px; background-color: #000; border-color: #000; color: #fff; }
 
-#main .container form button.tableBtn { width: 200px; }
+#main .container form button.btn { width: 200px; }
+
+#main .container form button#file, #main .container form button#address { width: 100px; height: 30px; margin: 0; margin-left: 5px; font-size: 12px; border: none; }
 
 #main .container form .etcLogin { margin-top: 30px; font-size: 13px; }
 
@@ -44,13 +46,17 @@
 
 #main .container form table tbody tr td { padding-left: 30px; }
 
-#main .container form table tbody tr td span { padding-top: 7px; font-size: 12px; margin-bottom: 10px; }
+#main .container form table tbody tr td span { display: inline-block; font-size: 12px; margin-bottom: 10px; }
 
 #main .container form table .title, #main .container form table .file { width: 550px; }
 
-#main .container form table .address { width: 400px; }
+#main .container form table .address { width: 330px; }
 
-#main .container form table .phone { width: 100px; }
+#main .container form table .phone, #main .container form table .date { width: 100px; }
+
+#main .container form table .address:-moz-read-only { background-color: #eee; }
+
+#main .container form table .address:read-only { background-color: #eee; }
 
 #main .container form table input, #main .container form table select { -webkit-box-sizing: border-box; box-sizing: border-box; width: 220px; height: 30px; }
 
@@ -60,4 +66,8 @@
 
 #main .container form table .textarea textarea { padding: 10px; width: calc(100% - 20px); resize: none; border: 1px solid #ccc; }
 
-#main .container form #file, #main .container form #address { width: 110px; height: 30px; margin: 0; margin-left: 5px; font-size: 12px; border: none; }
+#main .container form table label { margin-right: 50px; }
+
+#main .container form table label span { vertical-align: middle; }
+
+#main .container form table input[type="radio"] { width: 20px; height: 20px; margin-right: 10px; margin-bottom: 17px; }

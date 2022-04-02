@@ -44,8 +44,17 @@
         background-color: #000;
         border-color: #000;
         color: #fff;
-        &.tableBtn {
+        &.btn {
           width: 200px;
+        }
+        &#file,
+        &#address {
+          width: 100px;
+          height: 30px;
+          margin: 0;
+          margin-left: 5px;
+          font-size: 12px;
+          border: none;
         }
       }
       .etcLogin {
@@ -116,7 +125,7 @@
             td {
               padding-left: 30px;
               span {
-                padding-top: 7px;
+                display: inline-block;
                 font-size: 12px;
                 margin-bottom: 10px;
               }
@@ -128,10 +137,14 @@
           width: 550px;
         }
         .address {
-          width: 400px;
+          width: 330px;
         }
-        .phone {
+        .phone,
+        .date {
           width: 100px;
+        }
+        .address:read-only {
+          background-color: #eee;
         }
         input,
         select {
@@ -156,15 +169,18 @@
             border: 1px solid $border-color;
           }
         }
-      }
-      #file,
-      #address {
-        width: 110px;
-        height: 30px;
-        margin: 0;
-        margin-left: 5px;
-        font-size: 12px;
-        border: none;
+        label {
+          margin-right: 50px;
+          span {
+            vertical-align: middle;
+          }
+        }
+        input[type="radio"] {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+          margin-bottom: 17px;
+        }
       }
     }
   }
