@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 별명짓기 -->
+	<typeAliases>
+		<typeAlias type="com.simmons.model.MemberDto" alias="MemberDto"/>
+		<typeAlias type="com.simmons.model.ProductDto" alias="ProductDto"/>
+		<typeAlias type="com.simmons.model.CsDto" alias="CsDto"/>
+	</typeAliases>
+</configuration>
