@@ -28,7 +28,9 @@ a { text-decoration: none; color: #000; }
 
 #header #gnb .gnbList > li.on .depth02 { height: 100%; display: block; }
 
-#header #gnb .gnbList > li > a { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; pointer-events: none; }
+#header #gnb .gnbList > li > a { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+#header #gnb .gnbList > li > a.openA { pointer-events: none; }
 
 #header #gnb .gnbList > li > a .imgOn { display: none; }
 

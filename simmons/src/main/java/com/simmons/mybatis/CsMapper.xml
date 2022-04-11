@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.simmons.mybatis.cs"></mapper>
+<mapper namespace="com.simmons.mybatis.cs">
+	<insert id="FaqWrite" parameterType="FaqDto">
+		insert into faq values(seq_faq.nextval,
+							   #{faqCategory},
+							   #{question},
+							   #{answer}
+		)
+	</insert>
+
+	<select id="FaqList" parameterType="String" resultType="FaqDto">
+		select * from faq where faqcategory = #{faqCategory}
+	</select>
+</mapper>

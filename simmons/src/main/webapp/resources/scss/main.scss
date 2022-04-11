@@ -6,7 +6,6 @@
     position: relative;
     ul {
       li {
-        background-color: #f00;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -564,6 +563,17 @@
       p {
         color: $gray-color;
         font-size: 11px;
+      }
+    }
+    .write {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      a {
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        font-size: 12px;
       }
     }
   }

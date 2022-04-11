@@ -1,0 +1,659 @@
+@import "vars";
+
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Lexend", "Noto Sans KR", sans-serif;
+  font-size: 1.6rem;
+  color: $text-color;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+.hidden {
+  display: none;
+}
+
+.container {
+  .banner {
+    position: relative;
+    height: 340px;
+    background: url("../images/aboutus/heritage/history_visual.jpg") no-repeat 50% 0;
+    &.hotelBanner {
+      background: url("../images/aboutus/hotel/media_visual.jpg") no-repeat 50% 0;
+    }
+    &.factoriumBanner {
+      background: url("../images/factorium/factorium_bg.jpg") no-repeat 50% 0;
+    }
+    &.zoningBanner {
+      background: url("../images/factorium/rnd/zoning_visual.jpg") no-repeat 50% 0;
+    }
+    .firstMenu {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      top: 86px;
+      .firstLi {
+        display: flex;
+        padding-left: 10px;
+        margin-right: 10px;
+        font-size: 12px;
+        color: #fff;
+        background: url(../images/aboutus/heritage/location_bar.gif) no-repeat 0 50%;
+        a {
+          padding-right: 10px;
+          background: url(../images/aboutus/heritage/location_arrow2.gif) no-repeat 100% 50%;
+        }
+        .secondMenu {
+          display: none;
+          position: absolute;
+          text-align: left;
+          a {
+            padding: 10px;
+            display: block;
+          }
+        }
+      }
+      .firstLi:first-child {
+        background: none;
+        a {
+          margin: 0;
+          padding: 0;
+          background: none;
+        }
+      }
+    }
+    .d {
+      height: 259px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.5;
+      h1 {
+        padding: 100px 0 10px 0;
+        color: #fff;
+        font-size: 50px;
+        font-weight: 400;
+        text-align: center;
+      }
+      p {
+        color: #c7c7c7;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  }
+  .threeTap {
+    padding: 75px 0 40px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    li {
+      display: flex;
+
+      a {
+        width: 330px;
+        height: 43px;
+        line-height: 43px;
+        text-align: center;
+        font-size: 16px;
+        border: 1px solid #dedede;
+        border-left: none;
+        color: $light-gray-color;
+      }
+    }
+    li:first-child {
+      border-left: 1px solid #dedede;
+    }
+    .on a {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  .jumpLink {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      &:hover {
+        transition: 1s;
+        .hoverBox {
+          opacity: 1;
+        }
+        img {
+          transform: scale(1.15);
+        }
+      }
+
+      a {
+        position: relative;
+        display: flex;
+        img {
+          width: 100%;
+          transition: 1s ease;
+        }
+        .hoverBox {
+          text-align: center;
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          display: flex;
+          align-items: center;
+          opacity: 0;
+          transition: 1s;
+          span {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 150px;
+            color: #fff;
+            font-weight: 400;
+            background: url(../../images/cf_play.png) no-repeat 50% 70px;
+            p {
+              font-size: 40px;
+            }
+            em {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #btn_tvadd {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    padding-bottom: 45px;
+    margin: 53px auto 0 auto;
+    background: url(../images/aboutus/media/cf_plus.png) no-repeat 50% 100%;
+    color: #000;
+    font-size: $normal-size;
+  }
+  .searchBox {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 20px;
+    width: 1000px;
+    margin: 0 auto;
+
+    select {
+      color: $gray-color;
+      width: 100px;
+      height: 30px;
+      margin-right: 10px;
+      padding-left: 10px;
+      border: 1px solid #dedede;
+      font-size: $small-size;
+    }
+    input {
+      padding: 0 15px;
+      border: 1px solid #dedede;
+      font-size: $small-size;
+    }
+    a {
+      font-size: $small-size;
+      width: 70px;
+      height: 30px;
+      background: #000;
+      color: $white-color;
+      line-height: 30px;
+      text-align: center;
+      margin-left: 10px;
+    }
+  }
+  .articleList {
+    width: 1000px;
+    margin: 0 auto;
+    border: 2px solid #000;
+    border-width: 2px 0;
+    .col2 {
+      width: 260px;
+    }
+    th {
+      height: 50px;
+      font-size: $normal-size;
+      vertical-align: middle;
+    }
+    tbody {
+      tr {
+        td {
+          height: 50px;
+          border-top: 1px solid $light-gray-color;
+          font-size: $normal-size;
+          vertical-align: middle;
+          text-align: center;
+          color: $light-gray-color;
+        }
+        .sub {
+          text-align: left;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+  .paging {
+    #pageNavi {
+      display: flex;
+      justify-content: center;
+      padding-top: 17px;
+      ol {
+        display: flex;
+        li {
+          margin-left: 5px;
+          font-size: $small-size;
+
+          a {
+            display: flex;
+            justify-content: center;
+            width: 19px;
+            height: 19px;
+
+            line-height: 19px;
+          }
+          .on {
+            background: #000;
+            color: $white-color;
+          }
+        }
+      }
+      .prev {
+        width: 15px;
+        height: 19px;
+        margin-right: 22px;
+        background: url(../images/aboutus/media/paging_left.png) no-repeat 50% 50%;
+      }
+      .next {
+        width: 15px;
+        height: 19px;
+        margin-left: 22px;
+        background: url(../images/aboutus/media/paging_right.png) no-repeat 50% 50%;
+      }
+    }
+  }
+  .hotel {
+    margin: 45px auto;
+    width: 100%;
+    h3 {
+      padding: 50px 0 23px 0;
+      font-size: 25px;
+      text-align: center;
+      font-weight: 400;
+      background: url(../images/aboutus/hotel/hotel_bg.gif) no-repeat 50% 100%;
+      letter-spacing: -2px;
+    }
+    p {
+      padding: 60px 0 115px 0;
+      color: $light-gray-color;
+      text-align: center;
+      font-size: $normal-size;
+      line-height: 1.5;
+    }
+    div img {
+      width: 100%;
+    }
+    span {
+      display: flex;
+      justify-content: end;
+      width: 1000px;
+      margin: 0 auto;
+      padding: 90px 0 8px 0;
+      color: $gray-color;
+      font-size: $small-size;
+    }
+    .hotelTap {
+      width: 1000px;
+      margin: 0 auto;
+      border-bottom: 2px solid #000;
+      display: flex;
+      justify-content: center;
+      li {
+        width: 332px;
+        border-top: 1px solid #a1a1a1;
+        border-left: 1px solid #a1a1a1;
+        a {
+          display: flex;
+          justify-content: center;
+          height: 32px;
+          background: url(../images/aboutus/hotel/hotel_tab_off.png) no-repeat 230px 50%;
+          font-size: $small-size;
+          line-height: 32px;
+        }
+      }
+      li:last-child {
+        border-right: 1px solid #a1a1a1;
+      }
+      li.on {
+        a {
+          background: url(../images/aboutus/hotel/hotel_tab_on.png) no-repeat 230px 50% #000;
+          color: #fff;
+        }
+      }
+    }
+    .simmonsList {
+      width: 1000px;
+      padding-top: 35px;
+      margin: 0 auto;
+      ul {
+        width: 1040px;
+        height: 900px;
+
+        display: flex;
+
+        overflow: hidden;
+        li {
+          width: 220px;
+          height: 39px;
+          font-size: 11px;
+          border-bottom: 1px solid #a1a1a1;
+          line-height: 39px;
+          letter-spacing: -2px;
+        }
+
+        > li {
+          width: 25%;
+          height: auto;
+          border-bottom: none;
+        }
+      }
+    }
+    .info {
+      width: 1000px;
+      margin: 150px auto 0 auto;
+      padding: 25px 0 35px 0;
+      border: 1px solid $light-gray-color;
+      background-color: #f1f1f1;
+
+      dl {
+        display: flex;
+        justify-content: center;
+      }
+      .q {
+        padding-bottom: 2px;
+        line-height: 30px;
+        dt {
+          font-size: $medium-size;
+
+          padding-right: 25px;
+          margin-right: 15px;
+          background: url(../images/aboutus/hotel/hotel_info_arrow.png) no-repeat 100% 50%;
+        }
+        dd {
+          font-size: $h4;
+        }
+      }
+      .mail {
+        color: $light-gray-color;
+        font-size: $small-size;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  .contents {
+    position: relative;
+    width: 100%;
+    margin: 50px auto;
+    background: url(../images/aboutus/heritage/history_pointer.png) no-repeat 50% 460px;
+    .hTitle {
+      padding: 80px 0 245px 0;
+      text-align: center;
+      background: url(../images/aboutus/heritage/list_bg.jpg) no-repeat 50% 60%;
+      h4 {
+        color: $gray-color2;
+        font-size: 45px;
+        font-weight: 500;
+        padding-bottom: 40px;
+        line-height: 1.25;
+      }
+      .subtitle {
+        p {
+          color: $gray-color2;
+          font-size: 20px;
+        }
+      }
+    }
+    .yearTitle {
+      margin: 0 0 60px 0;
+
+      text-align: center;
+      h1 {
+        font-size: 35px;
+        padding-bottom: 15px;
+      }
+      p {
+        font-size: 16px;
+        color: $gray-color2;
+      }
+    }
+    .year {
+      background-repeat: no-repeat;
+      background-position: 50% 15px;
+      width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      .picture {
+        width: 400px;
+        padding-right: 80px;
+        text-align: right;
+      }
+      .cont {
+        display: flex;
+        ul {
+          margin-left: 10px;
+          width: 550px;
+          height: 380px;
+          li {
+            background: url(../images/aboutus/heritage/history_bullet.png) no-repeat 2.5px 15px;
+            padding: 0 0 40px 45px;
+            font-size: $small-size;
+            line-height: 1.5;
+            em {
+              padding-bottom: 10px;
+              display: flex;
+              font-size: 28px;
+            }
+            span {
+              font-weight: 600;
+              display: inline-block;
+            }
+            p {
+              color: $light-gray-color;
+              word-spacing: -3px;
+            }
+          }
+        }
+      }
+    }
+    .year1 {
+      background-image: url(../images/aboutus/heritage/history_bg1.gif);
+    }
+    .year2 {
+      background-image: url(../images/aboutus/heritage/history_bg2.gif);
+      height: 300px;
+      .picture {
+        padding-top: 50px;
+      }
+    }
+
+    .paper {
+      padding-bottom: 75px;
+      ul {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 1000px;
+        li {
+          .name {
+            padding-top: 15px;
+            text-align: center;
+            p {
+              font-size: $normal-size;
+              padding-bottom: 5px;
+            }
+            span {
+              font-size: $small-size;
+              color: $light-gray-color;
+            }
+          }
+        }
+      }
+    }
+    .year3 {
+      background-image: url(../images/aboutus/heritage/history_bg3.gif);
+      height: 430px;
+      .picture {
+        padding: 0 115px;
+      }
+    }
+    .year3_1 {
+      background-image: url(../images/aboutus/heritage/history_bg3.gif);
+      background-position: 50% -5px;
+      margin-bottom: 30px;
+    }
+    .year4 {
+      background-image: url(../images/aboutus/heritage/history_bg4.gif);
+      height: 500px;
+    }
+    .year5 {
+      background-image: url(../images/aboutus/heritage/history_bg5.png);
+      background-position: 50% -5px;
+      height: 1200px;
+      .cont {
+        ul {
+          padding-top: 75px;
+          li {
+            padding-bottom: 0;
+            p {
+              padding-bottom: 40px;
+            }
+          }
+        }
+      }
+
+      .picture {
+        padding-top: 75px;
+      }
+    }
+
+    .yearVideo {
+      position: relative;
+      width: 1000px;
+      height: 220px;
+      margin: 0 auto;
+      a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 50;
+      }
+      iframe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 655px;
+        display: none;
+      }
+    }
+    .award {
+      width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      .scrollBox {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        max-width: 100%;
+        ul {
+          width: 1820px;
+          height: 300px;
+          display: flex;
+          li {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            width: 185px;
+            margin-right: 18px;
+            p {
+              padding-top: 190px;
+              font-size: 11px;
+              line-height: 1.25;
+              word-spacing: -2px;
+            }
+            em {
+              height: 28px;
+              font-size: $normal-size;
+              text-align: center;
+            }
+            span {
+              font-size: $small-size;
+              text-align: center;
+              color: $light-gray-color;
+            }
+          }
+          li:nth-child(1) {
+            background-image: url(../images/aboutus/heritage/history_award_01.jpg);
+          }
+          li:nth-child(2) {
+            background-image: url(../images/aboutus/heritage/history_award_02.jpg);
+          }
+          li:nth-child(3) {
+            background-image: url(../images/aboutus/heritage/history_award_03.jpg);
+          }
+          li:nth-child(4) {
+            background-image: url(../images/aboutus/heritage/history_award_04.jpg);
+          }
+          li:nth-child(5) {
+            background-image: url(../images/aboutus/heritage/history_award_05.jpg);
+          }
+          li:nth-child(6) {
+            background-image: url(../images/aboutus/heritage/history_award_06.jpg);
+          }
+          li:nth-child(7) {
+            margin-right: 0;
+            background-image: url(../images/aboutus/heritage/history_award_07.jpg);
+          }
+        }
+      }
+      .scroll {
+        height: 100%;
+        .draggerContainer {
+          position: absolute;
+          width: 1000px;
+          height: 2px;
+          background-color: $light-gray-color;
+          opacity: 0.75;
+          margin: 6px auto;
+        }
+        .draggerbar {
+          position: absolute;
+          width: 550px;
+          height: 4px;
+          background-color: $gray-color2;
+          margin: 5px 0;
+          border-radius: 16px;
+        }
+      }
+    }
+  }
+}

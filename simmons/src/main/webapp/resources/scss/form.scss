@@ -57,6 +57,22 @@
           border: none;
         }
       }
+      .btns {
+        display: flex;
+        align-items: center;
+        .cancel {
+          display: block;
+          box-sizing: border-box;
+          margin-left: 10px;
+          background-color: #000;
+          color: #fff;
+          width: 200px;
+          height: 43px;
+          font-size: 14px;
+          margin-top: 10px;
+          padding: 15px 0;
+        }
+      }
       .etcLogin {
         margin-top: 30px;
         font-size: 13px;
@@ -132,6 +148,9 @@
             }
           }
         }
+        .question {
+          width: 100%;
+        }
         .title,
         .file {
           width: 550px;
@@ -167,6 +186,9 @@
             width: calc(100% - 20px);
             resize: none;
             border: 1px solid $border-color;
+          }
+          .answer {
+            height: 400px;
           }
         }
         label {

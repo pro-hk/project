@@ -1,0 +1,290 @@
+#gallery {
+  min-width: 1000px;
+  min-height: 650px;
+  background: #fff;
+
+  .gallery {
+    background: url(../images/gallery/gallery_visual.jpg) no-repeat 50% 0;
+  }
+  .visualSub {
+    height: 340px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 62px;
+    width: 100%;
+    padding: 0;
+    .locationBox {
+      .location {
+        display: flex;
+        justify-content: right;
+        margin: 26px 30px 0 0;
+
+        li {
+          padding-left: 11px;
+          margin-left: 10px;
+          background: url(../images/gallery/location_bar.gif) no-repeat 0 50%;
+          a {
+            padding-right: 11px;
+            color: #fff;
+            font-size: 11px;
+            display: flex;
+            background: url(../images/gallery/location_arrow2.gif) no-repeat 100% 50%;
+          }
+        }
+        li:first-child {
+          background: none;
+          a {
+            margin: 0;
+            padding: 0;
+            background: none;
+          }
+        }
+      }
+      h2 {
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        margin-top: 100px;
+      }
+    }
+  }
+  .mainContent {
+    padding-top: 340px;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 150px;
+    text-align: center;
+    p {
+      color: #a7a7a7;
+      text-align: center;
+      padding: 140px 0 60px 0;
+      font-size: 21px;
+      line-height: 26px;
+      background: url(../images/gallery/gallery_line.gif) no-repeat 50% 100%;
+    }
+    .gallery01 {
+      h3 {
+        padding: 50px 0 23px 0;
+        color: #000;
+        font-size: 35px;
+        letter-spacing: 8px;
+        background: url(../images/gallery/lab_tt_bg.gif) no-repeat 50% 100%;
+      }
+      p {
+        padding: 58px 0 41px 0;
+        color: #acacac;
+        font-size: 14px;
+        line-height: 23px;
+        background: none;
+      }
+    }
+    .gallery02 {
+      background: url(../images/gallery/gallery_bar.gif) no-repeat 50% 40px;
+      h3 {
+        padding: 124px 0 23px 0;
+        color: #000;
+        font-size: 35px;
+        letter-spacing: 8px;
+        background: url(../images/gallery/lab_tt_bg.gif) no-repeat 50% 100%;
+      }
+      p {
+        padding: 58px 0 41px 0;
+        color: #acacac;
+        font-size: 14px;
+        line-height: 23px;
+        background: none;
+      }
+    }
+    .multiSlider {
+      margin: 0 auto;
+      position: relative;
+      width: 1000px;
+      ul {
+        height: 410px;
+        position: relative;
+        li {
+          position: absolute;
+          left: 0;
+          top: 0;
+          img {
+            width: 1000px;
+          }
+        }
+        li:first-child {
+          display: block;
+          z-index: 50;
+        }
+      }
+      ol {
+        padding-top: 40px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        .on {
+          a {
+            background-image: url(../images/gallery/gallery_multi_on.png);
+          }
+        }
+        li {
+          margin-left: 20px;
+          a {
+            display: block;
+            width: 14px;
+            height: 14px;
+            background: url(../images/gallery/gallery_multi_off.png) no-repeat 0 0;
+          }
+        }
+        li:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+    .gallery_arrow {
+      margin-top: 180px;
+      height: 571px;
+      overflow: hidden;
+      .slider_wrap {
+        position: relative;
+        margin: 5px auto 0 auto;
+        width: 1000px;
+        .imgBox {
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 1;
+          transition: 5s ease-out;
+          .controls {
+            .next {
+              display: block;
+              position: absolute;
+              right: 15px;
+              top: 257px;
+              width: 28px;
+              height: 56px;
+              background: url(../images/gallery/btn_next.png) no-repeat 0 0;
+              z-index: 60;
+              opacity: 1;
+              font-size: 0;
+            }
+            .prev {
+              display: block;
+              position: absolute;
+              left: 15px;
+              top: 257px;
+              width: 28px;
+              height: 56px;
+              background: url(../images/gallery/btn_prev.png) no-repeat 0 0;
+              z-index: 60;
+              opacity: 1;
+              font-size: 0;
+            }
+          }
+        }
+      }
+    }
+    .gallery03 {
+      width: 1000px;
+      margin: 0 auto;
+      margin-top: 75px;
+
+      h3 {
+        padding: 124px 0 23px 0;
+        background: url(../images/gallery/lab_tt_bg.gif) no-repeat 50% 100%;
+        color: #000;
+        font-size: 35px;
+        letter-spacing: 8px;
+      }
+      .myTable01 {
+        font-size: 13px;
+        margin-top: 25px;
+        border-top: 1px solid #dedede;
+        border-bottom: 2px solid #000;
+        .col1 {
+          width: 185px;
+        }
+        .col2 {
+          width: 340px;
+        }
+        tr {
+          cursor: pointer;
+        }
+        tr:first-child td {
+          padding-top: 22px;
+        }
+        tr:last-child td {
+          padding-bottom: 22px;
+        }
+        th {
+          border-bottom: 1px solid #dedede;
+          height: 40px;
+          text-align: center;
+          font-weight: 400;
+          vertical-align: middle;
+        }
+        td {
+          height: 30px;
+          padding-left: 30px;
+          text-align: left;
+          color: #777;
+          vertical-align: middle;
+        }
+        .num {
+          width: 130px;
+        }
+        .time {
+          text-align: center;
+          padding-left: 0;
+        }
+      }
+      #pageNavi {
+        display: flex;
+        justify-content: center;
+        padding-top: 17px;
+        font-size: 12px;
+
+        .prev {
+          width: 15px;
+          height: 19px;
+          margin-right: 20px;
+          background: url(../images/gallery/paging_left.png) no-repeat 50% 50%;
+        }
+        .next {
+          width: 15px;
+          height: 19px;
+          margin-left: 20px;
+          background: url(../images/gallery/paging_right.png) no-repeat 50% 50%;
+        }
+        ol {
+          display: flex;
+          justify-content: center;
+          li {
+            margin-left: 5px;
+            > .on {
+              background-color: #000;
+              color: #fff;
+            }
+            a {
+              display: flex;
+              justify-content: center;
+              width: 19px;
+              height: 19px;
+              text-align: center;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+      #p_agencynm {
+        padding: 50px 0 10px 0;
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        background: none;
+      }
+    }
+  }
+}

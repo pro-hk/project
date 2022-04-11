@@ -93,6 +93,7 @@ $("#main").on("wheel", (e) => {
     }
     $("#banner").addClass("on");
     swiper.disable();
+    video.paused();
   }
 });
 
@@ -106,6 +107,7 @@ $(".footer").on("wheel", (e) => {
       }
       $("#footer").removeClass("on");
       // swiper.enable(); 재시작 찾아야됨
+      video.play();
     }
   }
 });
@@ -137,9 +139,9 @@ $(".faqTab label input").on("change", function () {
   $(".faqContents >li:nth-of-type(" + num + ")")
     .addClass("on")
     .siblings()
-    .removeClass("on")
-    .children()
     .removeClass("on");
+  $(".faqContents ul li").removeClass("on");
+  $(".faq .search").val("");
 });
 
 // 테이블 select 선택

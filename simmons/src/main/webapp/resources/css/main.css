@@ -2,7 +2,7 @@
 
 #main #mainSlider { position: relative; }
 
-#main #mainSlider ul li { background-color: #f00; background-repeat: no-repeat; background-position: center; background-size: cover; height: 100vh; }
+#main #mainSlider ul li { background-repeat: no-repeat; background-position: center; background-size: cover; height: 100vh; }
 
 #main #mainSlider ul li.video video { width: 100%; height: 100vh; -o-object-fit: contain; object-fit: contain; }
 
@@ -223,6 +223,10 @@
 #main .container .customerCenter h2 strong { font-size: 22px; }
 
 #main .container .customerCenter p { color: #999; font-size: 11px; }
+
+#main .container .write { margin-top: 20px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+
+#main .container .write a { padding: 10px; background-color: #000; color: #fff; font-size: 12px; }
 
 #main .btnTop { position: absolute; bottom: 30px; right: 30px; display: none; }
 

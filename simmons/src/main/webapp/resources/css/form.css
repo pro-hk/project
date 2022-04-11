@@ -16,6 +16,10 @@
 
 #main .container form button#file, #main .container form button#address { width: 100px; height: 30px; margin: 0; margin-left: 5px; font-size: 12px; border: none; }
 
+#main .container form .btns { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+#main .container form .btns .cancel { display: block; -webkit-box-sizing: border-box; box-sizing: border-box; margin-left: 10px; background-color: #000; color: #fff; width: 200px; height: 43px; font-size: 14px; margin-top: 10px; padding: 15px 0; }
+
 #main .container form .etcLogin { margin-top: 30px; font-size: 13px; }
 
 #main .container form .etcLogin a { margin-right: 20px; color: #999; position: relative; }
@@ -48,6 +52,8 @@
 
 #main .container form table tbody tr td span { display: inline-block; font-size: 12px; margin-bottom: 10px; }
 
+#main .container form table .question { width: 100%; }
+
 #main .container form table .title, #main .container form table .file { width: 550px; }
 
 #main .container form table .address { width: 330px; }
@@ -65,6 +71,8 @@
 #main .container form table .textarea { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
 
 #main .container form table .textarea textarea { padding: 10px; width: calc(100% - 20px); resize: none; border: 1px solid #ccc; }
+
+#main .container form table .textarea .answer { height: 400px; }
 
 #main .container form table label { margin-right: 50px; }
 
