@@ -4,8 +4,8 @@
 <configuration>
 	<!-- 별명짓기 -->
 	<typeAliases>
-		<typeAlias type="com.simmons.model.MemberDto" alias="MemberDto"/>
-		<typeAlias type="com.simmons.model.ProductDto" alias="ProductDto"/>
-		<typeAlias type="com.simmons.model.FaqDto" alias="FaqDto"/>
+		<typeAlias type="com.simmons.model.MemberDto" alias="memberDto"/>
+		<typeAlias type="com.simmons.model.ProductDto" alias="productDto"/>
+		<typeAlias type="com.simmons.model.FaqDto" alias="faqDto"/>
 	</typeAliases>
 </configuration>

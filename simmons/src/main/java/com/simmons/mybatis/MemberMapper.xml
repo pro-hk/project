@@ -1,4 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.simmons.mybatis.member"></mapper>
+<mapper namespace="com.simmons.mybatis.member">
+	<insert id="insert" parameterType="memberDto">
+		insert into member values(seq_member.nextval,
+								  #{name},
+								  #{id},
+								  #{password},
+								  #{address},
+								  #{zipCode},
+								  #{email},
+								  #{phone},
+								  #{homePhone},
+								  #{birthday},
+								  #{job},
+								  #{married},
+								  #{sms},
+								  #{event},
+								  #{delivery},
+								  #{serviceCall},
+								  <choose>
+								  	<when test="id=='simmons'">
+									  	'관리자'
+								  	</when>
+								  	<otherwise>
+										'일반회원'
+								  	</otherwise>
+								  </choose> 
+		)
+	</insert>
+	
+	<select id="getLoggedMember" parameterType="memberDto" resultType="memberDto">
+		select * from member where id = #{id} and password = #{password}
+	</select>
+</mapper>

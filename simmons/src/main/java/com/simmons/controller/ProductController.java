@@ -80,4 +80,9 @@ public class ProductController {
 	public String list(HttpServletResponse response) {
 		return "product/list";
 	}
+	
+	@RequestMapping("/Order")
+	public String order() {
+		return "product/order";
+	}
 }

@@ -13,7 +13,7 @@
 		</ul>
 		
 	<!-- form -->
-	<form action="" method="post" id="order">
+	<form action="JoinProcess" method="post" id="order">
 	  <div class="formTxt">
 	    <h2>회원가입 양식</h2>
 	    <p>* 항목은 필수 입력해주세요</p>
@@ -26,54 +26,54 @@
 	<tbody>
 	  <tr class="top">
 	    <th>이름 *</th>
-	    <td><input type="text" class="name" /></td>
+	    <td><input type="text" class="name" name="name" /></td>
 	  </tr>
 	  <tr>
 	    <th>아이디 *</th>
 	    <td>
-	      <input type="text" class="id" />
+	      <input type="text" class="id" name="id" />
 	    </td>
 	  </tr>
 	  <tr>
 	    <th>비밀번호 *</th>
 	    <td>
-	      <input type="text" class="password" />
+	      <input type="password" class="password" name="password" />
 	    </td>
 	  </tr>
 	  <tr>
 	    <th>비밀번호 확인*</th>
 	    <td>
-	      <input type="text" class="passwordCheck" />
+	      <input type="password" class="passwordCheck" />
 	    </td>
 	  </tr>
 	  <tr>
 	    <th rowspan="3">주소 *</th>
 	    <td>
-	      <input type="text" class="zipcode" />
+	      <input type="number" class="zipcode" name="zipCode" />
 	      <button id="address">우편번호 찾기</button>
 	    </td>
 	  </tr>
 	  <tr>
 	    <td>
-	      <input type="text" class="address addr01" placeholder="도로명주소" />
-	      <input type="text" class="address addr03" placeholder="상세주소" />
+	      <input type="text" class="address addr01" name="addr01" placeholder="도로명주소" />
+	      <input type="text" class="address addr03" name="addr03" placeholder="상세주소" />
 	    </td>
 	  </tr>
 	  <tr>
 	    <td>
-	      <input type="text" class="address addr02" placeholder="지번주소" />
+	      <input type="text" class="address addr02"  name="addr02" placeholder="지번주소" />
 	      <input type="text" class="address addr04" readonly />
 	    </td>
 	  </tr>
 	  <tr>
 	    <th>이메일 *</th>
 	    <td>
-	      <input type="text" />
+	      <input type="text" name="email01" />
 	      <span>@</span>
 	      <!-- 직접 입력시 readonly 풀기 -->
 	          <input type="text" class="domain" readonly />
 	          <span></span>
-	          <select class="email">
+	          <select class="email" name="email02" >
 	            <option value="">직접 입력</option>
 	            <option value="naver.com">naver.com</option>
 	            <option value="hanmail.net">hanmail.net</option>
@@ -87,17 +87,17 @@
 	      <tr>
 	        <th>휴대전화 *</th>
 	        <td>
-	          <input type="text" class="phone01 phone" />
+	          <input type="text" class="phone01 phone" name="phone01" />
 	          <span>-</span>
-	          <input type="text" class="phone02 phone" />
+	          <input type="text" class="phone02 phone" name="phone02" />
 	          <span>-</span>
-	          <input type="text" class="phone03 phone" />
+	          <input type="text" class="phone03 phone" name="phone03" />
 	        </td>
 	      </tr>
 	      <tr>
 	        <th>일반전화 *</th>
 	        <td>
-	          <select class="phone">
+	          <select class="phone" name="homePhone01">
 	            <option value="">직접 입력</option>
 	            <option value="02">서울 (02)</option>
 	            <option value="031">경기 (031)</option>
@@ -120,19 +120,19 @@
 	            <option value="0505">평생번호 (0505)</option>
 	          </select>
 	          <span>-</span>
-	          <input type="text" class="phone02 phone" />
+	          <input type="text" class="phone02 phone"  name="homePhone02" />
 	          <span>-</span>
-	          <input type="text" class="phone03 phone" />
+	          <input type="text" class="phone03 phone"  name="homePhone03" />
 	        </td>
 	      </tr>
 	      <tr>
 	        <th>생일</th>
 	        <td>
-	          <input type="text" class="date year" />
+	          <input type="text" class="date year" name="year" />
 	          <span>년</span>
-	          <input type="text" class="date month" />
+	          <input type="text" class="date month" name="month" />
 	          <span>월</span>
-	          <input type="text" class="date day" />
+	          <input type="text" class="date day" name="day" />
 	          <span>일</span>
 	        </td>
 	      </tr>
@@ -170,11 +170,11 @@
 	        <th>결혼여부</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="marry" />
+	            <input type="radio" name="married" value="미혼" checked />
 	            <span>미혼</span>
 	          </label>
 	          <label>
-	            <input type="radio" name="marry" />
+	            <input type="radio" name="married" value="기혼" />
 	            <span>기혼</span>
 	          </label>
 	        </td>
@@ -183,11 +183,11 @@
 	        <th>SMS 수신</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="sns" />
+	            <input type="radio" name="sms" value="수신" checked />
 	            <span>수신</span>
 	          </label>
 	          <label>
-	            <input type="radio" name="sns" />
+	            <input type="radio" name="sms" value="수신거부" />
 	            <span>수신거부</span>
 	          </label>
 	        </td>
@@ -196,11 +196,11 @@
 	        <th>이벤트 정보 수신</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="event" />
+	            <input type="radio" name="event" value="수신" checked/>
 	            <span>수신</span>
 	          </label>
 	          <label>
-	            <input type="radio" name="event" />
+	            <input type="radio" name="event" value="수신거부" />
 	            <span>수신거부</span>
 	          </label>
 	        </td>
@@ -209,11 +209,11 @@
 	        <th>주문정보 수신</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="order" />
+	            <input type="radio" name="delivery" value="수신" checked/>
 	            <span>수신</span>
 	          </label>
 	          <label>
-	            <input type="radio" name="order" />
+	            <input type="radio" name="delivery" value="수신거부" />
 	            <span>수신거부</span>
 	          </label>
 	        </td>
@@ -222,11 +222,11 @@
 	        <th>전문가와의 전화상담 *</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="counsel" />
+	            <input type="radio" name="serviceCall" value="신청" checked />
 	            <span>신청</span>
 	          </label>
 	          <label>
-	            <input type="radio" name="counsel" />
+	            <input type="radio" name="serviceCall" value="미신청" />
 	            <span>미신청</span>
 	          </label>
 	        </td>

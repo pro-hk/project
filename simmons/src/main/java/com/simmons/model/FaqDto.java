@@ -12,7 +12,7 @@ import lombok.ToString;
 @Component
 public class FaqDto {
 	private int no;
-	private String faqCategory;
+	private String category;
 	private String question;
 	private String answer;
 }

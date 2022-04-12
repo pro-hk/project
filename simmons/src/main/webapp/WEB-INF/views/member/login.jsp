@@ -19,7 +19,7 @@
 	</div>
 	
 	<!-- form -->
-	<form action="" method="post" id="login">
+	<form action="LoginProcess" method="post" id="login">
 	  <input type="text" name="id" placeholder="아이디를 입력해주세요." />
 	  <input type="password" name="password" placeholder="비밀번호를 입력해주세요." />
 	  <button type="submit">로그인</button>

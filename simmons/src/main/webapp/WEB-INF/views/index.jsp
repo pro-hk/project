@@ -1,14 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
-<html lang="ko  ">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SIMMONS</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
-    <link rel="shortcut icon" href="../images/simmons/logo_simmons_large_icon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/simmons/logo_simmons_large_icon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
@@ -110,11 +111,22 @@
         </ul>
 
         <!-- 기타 / DB작업 -->
-        <div class="etc">
-          <a href="member/Login">로그인</a>
-          <a href="product/Order">주문내역</a>
-          <a href="cs/Faq">고객센터</a>
-        </div>
+        <c:choose>
+	        <c:when test="${empty loggedMember}">
+	        <div class="etc">
+	          <a href="member/Login">로그인</a>
+	          <a href="product/Order">주문내역</a>
+	          <a href="cs/Faq">고객센터</a>
+	        </div>
+	        </c:when>
+	        <c:otherwise>
+	        <div class="etc">
+	          <a href="member/Logout">로그아웃</a>
+	          <a href="member/MyPage">MY PAGE</a>
+	          <a href="cs/Faq">고객센터</a>
+	        </div>
+	        </c:otherwise>
+        </c:choose>
 
         <!-- 찾기 / DB작업 -->
         <div class="searchBox">
@@ -182,11 +194,22 @@
         </div>
 
         <!-- CARTLIST DB -->
-        <div class="etc">
-          <a href="member/Login">로그인</a>
-          <a href="product/Order">주문내역</a>
-          <a href="cs/Faq">고객센터</a>
-        </div>
+        <c:choose>
+	        <c:when test="${empty loggedMember}">
+	        <div class="etc">
+	          <a href="member/Login">로그인</a>
+	          <a href="product/Order">주문내역</a>
+	          <a href="cs/Faq">고객센터</a>
+	        </div>
+	        </c:when>
+	        <c:otherwise>
+	        <div class="etc">
+	          <a href="member/Logout">로그아웃</a>
+	          <a href="member/MyPage">MY PAGE</a>
+	          <a href="cs/Faq">고객센터</a>
+	        </div>
+	        </c:otherwise>
+        </c:choose>
 
         <!-- 닫기 -->
         <div class="cartClose">
@@ -194,6 +217,17 @@
         </div>
       </div>
       <!-- 우측 메뉴 end -->
+      
+	<!-- 관리자 페이지 -->
+	<c:if test="${loggedMember.grade=='관리자'}">
+	<!-- 관리자 페이지 -->
+	<div id="managerLink">
+		<a href="manager/">
+	  	<img src="images/layout/manage.png" />
+	  	<span>관리자</span>
+		</a>
+	</div>
+	</c:if>
 
       <!-- 블러 처리 / 좌, 우측 메뉴 닫기 -->
       <div class="closePage"></div>

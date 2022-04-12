@@ -318,11 +318,6 @@
         </ul>
       </li>
     </ul>
-  	<%-- <c:if test="${not empty loggedId} }"> --%>
-	<div class="write">
-    	<a href="FaqWrite">글쓰기</a>
-    </div>
-    <%-- </c:if> --%>
   </div>
 
   <!-- 고객센터 하단 -->

@@ -2,15 +2,35 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.simmons.mybatis.cs">
-	<insert id="FaqWrite" parameterType="FaqDto">
+	<insert id="FaqWrite" parameterType="faqDto">
 		insert into faq values(seq_faq.nextval,
-							   #{faqCategory},
+							   #{category},
 							   #{question},
 							   #{answer}
 		)
 	</insert>
 
-	<select id="FaqList" parameterType="String" resultType="FaqDto">
-		select * from faq where faqcategory = #{faqCategory}
+	<select id="FaqList" parameterType="String" resultType="faqDto">
+		select * from faq where category = #{category}
 	</select>
+	
+	<select id="FaqAllList" resultType="faqDto">
+		select * from faq
+	</select>
+	
+	<select id="FaqSelectOne" parameterType="integer" resultType="faqDto">
+		select * from faq where no = #{no}
+	</select>
+	
+	<select id="FaqTotal" resultType="integer">
+		select count(*) as total from faq
+	</select>
+
+	<update id="FaqUpdate" parameterType="faqDto">
+		update faq set category = #{category}, question = #{question}, answer = #{answer} where no = #{no}
+	</update>
+	
+	<delete id="FaqDelete" parameterType="integer">
+		delete from faq where no = #{no}
+	</delete>
 </mapper>
