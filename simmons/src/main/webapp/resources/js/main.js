@@ -1,3 +1,69 @@
+// collection js
+const swiper1 = new Swiper("#collection .sliderBox", {
+  speed: 1000,
+  //effect: "fade",
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: "#collection .bullet",
+    type: "bullets",
+    clickable: "true",
+  },
+  navigation: {
+    prevEl: "#collection .galleryLeft",
+    nextEl: "#collection .galleryRight",
+  },
+});
+
+$("#collection .start").on("click", function () {
+  swiper1.autoplay.start();
+  $("#collection .start").removeClass("on");
+  $("#collection .stop").addClass("on");
+  return false;
+});
+$("#collection .stop").on("click", function () {
+  swiper1.autoplay.stop();
+  $("#collection .stop").removeClass("on");
+  $("#collection .start").addClass("on");
+  return false;
+});
+
+$("#collection .firstLi .collection").on("click", function () {
+  $("#collection .BeautyrestMenu").removeClass("on");
+  $("#collection .collectionMenu").toggleClass("on");
+  return false;
+});
+
+$("#collection .firstLi .Beautyrest").on("click", function () {
+  $("#collection .collectionMenu").removeClass("on");
+  $("#collection .BeautyrestMenu").toggleClass("on");
+  return false;
+});
+
+$("#collection .sns a").on("click", function () {
+  $("#collection .sns ul").toggleClass("on");
+  return false;
+});
+
+const scrollBox1 = new Swiper("#collection .SliderScrollBox", {
+  speed: 500,
+  direction: "horizontal",
+  slidesPerView: "auto",
+  spaceBetween: 10,
+  mousewheel: true,
+  debugger: true,
+  scrollbar: {
+    el: "#collection .swiper-scrollbar",
+    draggable: true,
+  },
+});
+
+
+
+
 // 메뉴 클릭 - 숨겨진 메뉴 열기 & 좌측 메뉴 닫기 & 전체화면 블러
 $("#menu").on("click", () => {
   $("#gnb").addClass("on");

@@ -1,0 +1,197 @@
+main {
+  #black {
+    text-align: center;
+    .mainImg {
+      width: 100%;
+      height: 340px;
+      margin-top: 60px;
+      overflow: hidden;
+      background: url("../images/black/theblack_bg.jpg") no-repeat 50% 0;
+      .miniMenu {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+        padding-top: 20px;
+        > li {
+          margin-right: 20px;
+          ul {
+            display: none;
+            &.on {
+              display: block;
+              color: #fff;
+            }
+          }
+          a {
+            color: #fff;
+          }
+        }
+      }
+      .mainTxt {
+        text-align: center;
+        margin-top: 80px;
+        h2 {
+          color: #fff;
+          font-size: 50px;
+        }
+        > p {
+          color: #c7c7c7;
+          font-size: 16px;
+          line-height: 3;
+          padding-top: 0;
+        }
+      }
+    }
+    .theBackTitle {
+      width: 100%;
+      padding: 140px 0 65px;
+      text-align: center;
+      background: url("../images/black/heritage/list_bg.jpg") no-repeat 50% 100%;
+      margin-bottom: -90px;
+      img {
+        margin: 0 auto;
+      }
+    }
+    h3 {
+      background: url("../images/black/intro/lab_tt_bg.gif") no-repeat 50% 100%;
+      font-size: 35px;
+      letter-spacing: 8px;
+      padding: 25px 0;
+      margin-top: 150px;
+    }
+    p {
+      padding: 60px 0 40px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #acacac;
+    }
+    div {
+      overflow: hidden;
+      > ul.Slider {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 500%;
+        li {
+          width: 100%;
+        }
+      }
+      .layList {
+        display: flex;
+        width: 1000px;
+        margin: 0 auto;
+        padding-top: 60px;
+        li {
+          background: url("../images/black/theblack_bg03.png") no-repeat 0 0;
+          width: 480px;
+          margin-left: 40px;
+          &:first-child {
+            margin-left: 0;
+          }
+          h4 {
+            padding-top: 40px;
+            font-size: 18px;
+          }
+          p {
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+  }
+  #blackContents {
+    margin-top: 60px;
+    width: 100%;
+    .proTop {
+      position: relative;
+      .miniMenu {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        background-color: #111;
+        border-radius: 12.5px;
+        li {
+          padding: 5px 20px;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            color: #fff;
+          }
+          ul {
+            display: none;
+          }
+        }
+      }
+    }
+    .Slider {
+      overflow: hidden;
+      ul {
+        width: 400%;
+        display: flex;
+        flex-wrap: nowrap;
+        li {
+          width: 100%;
+          img {
+            width: 100%;
+            height: 100vh;
+          }
+        }
+      }
+    }
+    .sns {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        background: url(../images/black/menu03.png) no-repeat 10px 0;
+        display: block;
+        width: 50px;
+        padding-top: 30px;
+        font-size: 11px;
+      }
+    }
+    h2 {
+      text-align: center;
+      font-size: 50px;
+      padding: 80px 0 20px;
+    }
+    .proList {
+      .option {
+        width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 30px 0;
+        .mat {
+          display: flex;
+          padding-top: 10px;
+          justify-content: center;
+          dd {
+            label {
+              display: none;
+            }
+            .select {
+              width: 125px;
+              height: 30px;
+              border: none;
+              border-bottom: 1px solid #000;
+            }
+            .select2 {
+              margin-right: 60px;
+            }
+          }
+        }
+      }
+    }
+    .sliderBox {
+      ul {
+        display: flex;
+        li {
+          padding: 45px;
+          width: 378px;
+          height: 522px;
+        }
+      }
+    }
+  }
+}

@@ -42,9 +42,9 @@
               <img src="images/layout/lnb_minus.png" class="imgOn" />
             </a>
             <ul class="depth02">
-              <li><a href="">the BLACK</a></li>
-              <li><a href="">MATTRESS</a></li>
-              <li><a href="">FOUNDATION</a></li>
+              <li><a href="black/Black">the BLACK</a></li>
+              <li><a href="black/Mattress">MATTRESS</a></li>
+              <li><a href="black/Foundation">FOUNDATION</a></li>
             </ul>
           </li>
           <li>
@@ -54,9 +54,9 @@
               <img src="images/layout/lnb_minus.png" class="imgOn" />
             </a>
             <ul class="depth02">
-              <li><a href="">Beautyrest</a></li>
-              <li><a href="">N32</a></li>
-              <li><a href="">KENOSHA</a></li>
+              <li><a href="collection/Beautyrest">Beautyrest</a></li>
+              <li><a href="collection/N32">N32</a></li>
+              <li><a href="collection/Kenosha">KENOSHA</a></li>
             </ul>
           </li>
           <li>
@@ -67,12 +67,12 @@
             </a>
             <ul class="depth02">
               <li><a href="product/Mattress">MATTRESS</a></li>
-              <li><a href="">FRAME</a></li>
-              <li><a href="">ROOM SET</a></li>
-              <li><a href="">FOUNDATION</a></li>
-              <li><a href="">FURNITURE</a></li>
-              <li><a href="">BEDDING</a></li>
-              <li><a href="">FRAGRANCE</a></li>
+              <li><a href="product/Frame">FRAME</a></li>
+              <li><a href="product/RoomSet">ROOM SET</a></li>
+              <li><a href="product/Foundation">FOUNDATION</a></li>
+              <li><a href="product/Furniture">FURNITURE</a></li>
+              <li><a href="product/Bedding">BEDDING</a></li>
+              <li><a href="product/Fragrance">FRAGRANCE</a></li>
             </ul>
           </li>
           <li><a href="">ONLINE STORE</a></li>
