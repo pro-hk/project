@@ -19,7 +19,7 @@
     </div>
 
     <!-- form -->
-    <form action="" method="post" id="order">
+    <form action="OrderInfo" method="post" id="order">
       <div class="formTxt">
         <h2>주문자정보로 조회하기</h2>
         <p>* 비회원 구매 시 입력했던 주문자명/휴대전화/이메일로 조회해주세요.</p>
@@ -65,7 +65,9 @@
           </tr>
         </tbody>
       </table>
-      <button type="submit" class="btn orderSearch">주문조회</button>
+      <div class="btns">
+      	<button type="submit" class="btn orderSearch">주문조회</button>
+      </div>
     </form>
     <!-- form end -->
   </div>

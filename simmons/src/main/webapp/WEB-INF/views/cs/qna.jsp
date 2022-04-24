@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../include/header.jsp"%>
 
@@ -45,17 +46,23 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>2022-03-10</td>
-                  <td>[공지사항] 2022년 2월 AS만족도 설문조사 추첨결과 발표</td>
-                  <td>ㅇㅇ</td>
-                </tr>
-                <!-- 아무 내용이 없을 때 -->
-                <tr>
-                  <td colspan="3">문의 내역이 존재하지 않습니다</td>
-                </tr>
+                 <c:choose>
+                 	<c:when test="${empty qnaList }">
+                  		<td colspan="3">문의 내역이 존재하지 않습니다</td>
+                 	</c:when>
+                 	<c:otherwise>
+                 		<c:forEach items="${qnaList}" var="qnaDto">
+			                <tr>
+			                  <td>${qnaDto.regDate }</td>
+			                  <td><a href="QnaView?no=${qnaDto.no }">${qnaDto.title }</a></td>
+			                  <td>${qnaDto.answer=='' or qnaDto.answer==null ? "X" : "O" }</td>
+			                </tr>
+                 		</c:forEach>
+                 	</c:otherwise>
+                 </c:choose>
               </tbody>
             </table>
-            <a href="" class="apply">신청하기</a>
+            <a href="QnaWrite" class="apply">문의하기</a>
           </form>
         </div>
 

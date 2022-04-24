@@ -1,0 +1,194 @@
+#find {
+  min-width: 1000px;
+  min-height: 650px;
+  background: #fff;
+  .visualSub {
+    background: url(../images/find/find_visual.jpg) no-repeat 50% 0;
+    height: 340px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 62px;
+    width: 100%;
+    padding: 0;
+    .locationBox {
+      .location {
+        display: flex;
+        justify-content: right;
+        margin: 26px 30px 0 0;
+
+        li {
+          padding-left: 11px;
+          margin-left: 10px;
+          background: url(../images/find/location_bar.gif) no-repeat 0 50%;
+          a {
+            padding-right: 11px;
+            color: #fff;
+            font-size: 11px;
+            display: flex;
+            background: url(../images/find/location_arrow2.gif) no-repeat 100% 50%;
+          }
+        }
+        li:first-child {
+          background: none;
+          a {
+            margin: 0;
+            padding: 0;
+            background: none;
+          }
+        }
+      }
+      h2 {
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        margin-top: 100px;
+      }
+    }
+  }
+  .mainContent {
+    padding-top: 453px;
+    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 150px;
+    .gallery03 {
+      width: 1000px;
+      margin: 0 auto;
+      margin-top: 75px;
+      .myTable01 {
+        font-size: 13px;
+        margin-top: 25px;
+        border-top: 1px solid #dedede;
+        border-bottom: 2px solid #000;
+        .col1 {
+          width: 185px;
+        }
+        .col2 {
+          width: 340px;
+        }
+        tr {
+          cursor: pointer;
+        }
+        tr:first-child td {
+          padding-top: 22px;
+        }
+        tr:last-child td {
+          padding-bottom: 22px;
+        }
+        th {
+          border-bottom: 1px solid #dedede;
+          height: 40px;
+          text-align: center;
+          font-weight: 400;
+          vertical-align: middle;
+        }
+        td {
+          height: 30px;
+          padding-left: 30px;
+          text-align: left;
+          color: #777;
+          vertical-align: middle;
+        }
+        .num {
+          width: 130px;
+        }
+        .time {
+          text-align: center;
+          padding-left: 0;
+        }
+      }
+      #pageNavi {
+        display: flex;
+        justify-content: center;
+        padding-top: 17px;
+        font-size: 12px;
+
+        .prev {
+          width: 15px;
+          height: 19px;
+          margin-right: 20px;
+          background: url(../images/find/paging_left.png) no-repeat 50% 50%;
+        }
+        .next {
+          width: 15px;
+          height: 19px;
+          margin-left: 20px;
+          background: url(../images/find/paging_right.png) no-repeat 50% 50%;
+        }
+        ol {
+          display: flex;
+          justify-content: center;
+          li {
+            margin-left: 5px;
+            > .on {
+              background-color: #000;
+              color: #fff;
+            }
+            a {
+              display: flex;
+              justify-content: center;
+              width: 19px;
+              height: 19px;
+              text-align: center;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+      #p_agencynm {
+        padding: 50px 0 10px 0;
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        background: none;
+      }
+    }
+    h3 {
+      padding-bottom: 6px;
+      color: #000;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center;
+    }
+    .findStore {
+      padding: 15px 30px;
+      border: 1px solid #dedede;
+      border-width: 1px 0;
+      background: #f5f5f5;
+      .search {
+        display: flex;
+      }
+
+      select {
+        color: #777;
+        width: 220px;
+        height: 30px;
+        margin-right: 20px;
+        padding-left: 10px;
+        border: 1px solid #dedede;
+      }
+      input {
+        width: 190px;
+        height: 28px;
+        margin-right: 10px;
+        padding: 0 15px;
+        border: 1px solid #dedede;
+        font-size: 13px;
+        line-height: 28px;
+      }
+      a {
+        width: 70px;
+        height: 30px;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 12px;
+      }
+    }
+  }
+}

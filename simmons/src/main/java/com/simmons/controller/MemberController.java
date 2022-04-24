@@ -1,5 +1,7 @@
 package com.simmons.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -7,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.simmons.model.CartDao;
+import com.simmons.model.CartDto;
 import com.simmons.model.MemberDao;
 import com.simmons.model.MemberDto;
 import com.simmons.util.ScriptWriter;
@@ -16,6 +20,9 @@ import com.simmons.util.ScriptWriter;
 public class MemberController {
 	@Autowired
 	MemberDao memberDao;
+	
+	@Autowired
+	CartDao cartDao;
 	
 	@RequestMapping("/Login")
 	public String login() {
@@ -28,6 +35,13 @@ public class MemberController {
 		if(memberDto!=null) {
 			ScriptWriter.alertAndNext(response, memberDto.getName()+"님 로그인되었습니다.", "../");
 			session.setAttribute("loggedMember", memberDto);
+			session.setAttribute("loggedID", memberDto.getId());
+			List<CartDto> cartList = cartDao.CartSelectList(memberDto.getId());
+			List<CartDto> recentList = cartDao.RecentSelectList(memberDto.getId());
+			session.setAttribute("cartList", cartList);
+			session.setAttribute("cartCount", cartList.size());
+			session.setAttribute("recentList", recentList);
+			session.setAttribute("recentCount", recentList.size());
 		} else {
 			ScriptWriter.alertAndBack(response, "아이디 또는 비밀번호를 확인하세요");
 		}
@@ -46,8 +60,8 @@ public class MemberController {
 	
 	@RequestMapping("/JoinProcess")
 	public void joinProcess(MemberDto memberDto, HttpServletResponse response) {
-		String addr01 = memberDto.getAddr01(); 
-		String addr02 = memberDto.getAddr03(); 
+		String address01 = memberDto.getAddress01(); 
+		String address03 = memberDto.getAddress03(); 
 		String email01 = memberDto.getEmail01();
 		String email02 = memberDto.getEmail02();
 		String phone01 = memberDto.getPhone01(); 
@@ -60,7 +74,7 @@ public class MemberController {
 		String month = memberDto.getMonth(); 
 		String day = memberDto.getDay(); 
 		
-		memberDto.setAddress(addr01 + addr02);
+		memberDto.setAddress(address01 + address03);
 		memberDto.setEmail(email01+"@"+email02);
 		memberDto.setPhone(phone01+"-"+phone02+"-"+phone03);
 		memberDto.setHomePhone(Hphone01+"-"+Hphone02+"-"+Hphone03);

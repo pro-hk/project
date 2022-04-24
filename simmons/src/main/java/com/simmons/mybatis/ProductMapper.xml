@@ -14,11 +14,11 @@
 								   #{precaution},
 								   #{test},
 								   #{img},
-								   #{realImg},		
+								   #{realImg},
 								   #{contents},		
 								   #{hardness},		
 								   #{type},
-								   #{pattern}		
+								   #{pattern}
 		)
 	</insert>
 	
@@ -26,7 +26,98 @@
 		insert into sizes values(#{pname},
 								 #{sizes},
 								 #{spec},
-								 #{price}
+								 #{price},
+								 <choose>
+								  	<when test="sizes=='GK'">
+									  	'그레이트킹'
+								  	</when>
+								  	<when test="sizes=='KK'">
+									  	'킹오브킹'
+								  	</when>
+								  	<when test="sizes=='LK'">
+									  	'라지킹'
+								  	</when>
+								  	<when test="sizes=='QE'">
+									  	'퀸'
+								  	</when>
+								  	<when test="sizes=='SS'">
+									  	'슈퍼싱글'
+								  	</when>
+								  </choose> 
 		)
 	</insert>
+	
+	<select id=""></select>
+	
+	<insert id="colorInsert" parameterType="Map">
+		insert into color values(#{pname},
+								 #{sizes},
+								 #{color},
+								 0
+		)
+	</insert>
+	
+	<select id="SelectOne" parameterType="integer" resultType="productDto">
+		select * from product where no = #{no}
+	</select>
+	
+	<select id="getHContents" parameterType="String" resultType="String">
+		select contents from hardness where class = #{hardness}
+	</select>
+	
+	<select id="getSizes" parameterType="String" resultType="productSizeDto">
+		select * from sizes where pname = #{pname} order by price desc
+	</select>
+	
+	<select id="getProductAllList" resultType="productDto">
+		select * from product order by no
+	</select>
+	
+	<select id="getProductSList" parameterType="String" resultType="productDto">
+		select * from product where pname = any(select pname from sizes where sizes=#{sizes}) order by no
+	</select>
+	
+	<select id="getProductHList" parameterType="String" resultType="productDto">
+		select * from product where hardness = (select class from hardness where class=#{hardness}) order by no
+	</select>
+	
+	<select id="getProductSHList" parameterType="Map" resultType="productDto">
+		select * from product where pname = any(select pname from sizes where sizes=#{sizes}) and hardness = (select class from hardness where class=#{hardness}) order by no
+	</select>
+	
+	<select id="getPrice" parameterType="Map" resultType="integer">
+		select price from sizes where sizes = #{sizes} and pname = #{pname}
+	</select>
+	
+	<insert id="CartInsert" parameterType="cartDto">
+		insert into cart values(#{no}, #{pname}, #{img}, #{count}, #{price}, #{sizes}, #{id}, sysdate, 'cart')
+	</insert>
+	
+	<select id="CartSelectList" parameterType="String" resultType="cartDto" >
+		select * from cart where id = #{id} and etc = 'cart' order by regdate
+	</select>
+	
+	<update id="CartUpdate" parameterType="cartDto">
+		update cart set count = #{count}, price = #{price} where pname = #{pname} and sizes = #{sizes} and etc = 'cart'
+	</update>
+	
+	<delete id="CartDelete" parameterType="cartDto">
+		delete from cart where pname = #{pname} and sizes = #{sizes} and etc = 'cart'
+	</delete>
+	
+	<insert id="RecentInsert" parameterType="cartDto">
+		insert into cart values(#{no}, #{pname}, #{img}, '', '', '', #{id}, sysdate, 'recent')
+	</insert>
+	
+	<select id="RecentSelectList" parameterType="String" resultType="cartDto" >
+		select * from cart where id = #{id} and etc = 'recent' order by regdate
+	</select>
+	
+	<delete id="RecentDelete" parameterType="cartDto">
+		delete from cart where pname = #{pname} and etc = 'recent'
+	</delete>
+	
+	<select id="GetPname" parameterType="Integer" resultType="String">
+		select pname from product where no = #{no}
+	</select>
 </mapper>

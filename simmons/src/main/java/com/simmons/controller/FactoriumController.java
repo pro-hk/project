@@ -26,4 +26,8 @@ public class FactoriumController {
 	public String rndZoing() {
 		return "factorium/rndZoning";
 	}
+	@RequestMapping("/RndLayering")
+	public String rndLayering() {
+		return "factorium/rndLayering";
+	}
 }

@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 @Component
 public class NoticeDto {
+	private int num;
 	private int no;
 	private String title;
 	private String contents;

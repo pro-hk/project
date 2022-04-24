@@ -2,6 +2,7 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.simmons.mybatis.cs">
+	<!-- FAQ Mapper -->
 	<insert id="FaqWrite" parameterType="faqDto">
 		insert into faq values(seq_faq.nextval,
 							   #{category},
@@ -14,8 +15,12 @@
 		select * from faq where category = #{category}
 	</select>
 	
-	<select id="FaqAllList" resultType="faqDto">
-		select * from faq
+	<select id="FaqSearchList" parameterType="Map" resultType="faqDto">
+		select * from faq where question like '%'||#{txt}||'%' and category = #{category}
+	</select>
+	
+	<select id="FaqAllList" parameterType="Map" resultType="faqDto">
+		select * from faq where no between #{startNum} and #{endNum}
 	</select>
 	
 	<select id="FaqSelectOne" parameterType="integer" resultType="faqDto">
@@ -33,4 +38,115 @@
 	<delete id="FaqDelete" parameterType="integer">
 		delete from faq where no = #{no}
 	</delete>
+	
+	<!-- QNA Mapper -->
+	<insert id="QnaWrite" parameterType="qnaDto">
+		insert into qna values(seq_qna.nextval,
+							   #{id},
+							   #{title},
+							   #{contents},
+							   #{regDate},
+							   ''
+		)
+	</insert>
+	
+	<select id="QnaAllList" resultType="qnaDto" parameterType="String">
+		select * from qna where id = #{id}
+	</select>
+	
+	<select id="QnaView" resultType="qnaDto" parameterType="Map">
+		select * from qna where id = #{id} and no = #{no}
+	</select>
+	
+	<!-- Counsel Mapper -->
+	<insert id="CounselWrite" parameterType="counselDto">
+		insert into counsel values(seq_counsel.nextval,
+								   #{name},	
+								   #{title},	
+								   #{phone01},	
+								   #{phone02},	
+								   #{phone03},	
+								   #{callTime},	
+								   #{city},	
+								   #{email01},	
+								   #{email02},	
+								   #{contents},	
+								   #{privacy},	
+								   #{marketing},	
+								   sysdate	
+		)
+	</insert>
+	
+	<!-- AS Mapper -->
+	<insert id="AsWrite" parameterType="asDto">
+		insert into cs_as values(seq_as.nextval,
+								 #{name},
+								 #{phone01},
+								 #{phone02},
+								 #{phone03},
+								 #{zipCode},
+								 #{address01},
+								 #{address02},
+								 #{address03},
+								 #{email01},
+								 #{email02},
+								 #{buyDate},
+								 #{buyPlace},
+								 #{category},
+								 #{standard},
+								 #{pname},
+								 #{title},
+								 #{contents},
+								 #{fileName},
+								 #{realFileName},
+								 #{privacy},
+								 #{marketing}
+		)
+	</insert>
+	
+	<!-- NOTICE Mapper -->
+	<select id="NoticeList" parameterType="Map" resultType="noticeDto">
+		select * from (select rownum as num, n.* from (select * from notice order by no desc) n) where num between #{startNum} and #{endNum}
+	</select>
+	
+	<select id="NoticeSearchList" parameterType="Map" resultType="noticeDto">
+		select * from (select rownum as num, n.* from (select * from notice where ${option} like '%'||#{txt}||'%' order by no desc) n) where num between #{startNum} and #{endNum}
+	</select>
+	
+	<select id="NoticeAllList" resultType="noticeDto">
+		select * from notice order by no
+	</select>
+	
+	<select id="NoticeNum" parameterType="Integer" resultType="Integer">
+		select num from (select rownum as num, n.* from (select * from notice order by no desc) n) where no = #{no}
+	</select>
+	
+	<select id="NoticePrevSelect" resultType="noticeDto">
+		select * from (select rownum as num, n.* from (select * from notice order by no desc) n) where num = #{num} - 1
+	</select>
+	
+	<select id="NoticeNextSelect" resultType="noticeDto">
+		select * from (select rownum as num, n.* from (select * from notice order by no desc) n) where num = #{num} + 1
+	</select>
+	
+	<insert id="NoticeWrite" parameterType="noticeDto">
+		insert into notice values(seq_notice.nextval,
+								  #{title},
+								  #{contents},
+								  sysdate
+		)
+	</insert>
+	
+	<select id="NoticeSelectOne" parameterType="integer" resultType="noticeDto">
+		select * from notice where no = #{no}
+	</select>
+	
+	<select id="NoticeTotal" resultType="Integer">
+		select count(*) as total from notice
+	</select>
+	
+	<select id="NoticeSearchTotal" parameterType="Map" resultType="Integer">
+		select count(*) as total from notice where ${option} like '%'||#{txt}||'%'
+	</select>
+	
 </mapper>

@@ -62,16 +62,16 @@
 	<div class="page">
 	  <span class="material-icons"> arrow_left </span>
 	  <ul>
-	    <li class="on"><a href="">1</a></li>
-	    <li><a href="">2</a></li>
-	    <li><a href="">3</a></li>
-	    <li><a href="">4</a></li>
-	    <li><a href="">5</a></li>
-	    <li><a href="">6</a></li>
-	    <li><a href="">7</a></li>
-	    <li><a href="">8</a></li>
-	    <li><a href="">9</a></li>
-	    <li><a href="">10</a></li>
+	    <li ${param.page==1 or param.page==null ? "class='on'" : "" }><a href="FaqList?page=1">1</a></li>
+	    <li ${param.page==2 ? "class='on'" : "" }><a href="FaqList?page=2">2</a></li>
+	    <li><a href="FaqList?page=3">3</a></li>
+	    <li><a href="FaqList?page=4">4</a></li>
+	    <li><a href="FaqList?page=5">5</a></li>
+	    <li><a href="FaqList?page=6">6</a></li>
+	    <li><a href="FaqList?page=7">7</a></li>
+	    <li><a href="FaqList?page=8">8</a></li>
+	    <li><a href="FaqList?page=9">9</a></li>
+	    <li><a href="FaqList?page=10">10</a></li>
 	  </ul>
 	  <span class="material-icons"> arrow_right </span>
 	</div>

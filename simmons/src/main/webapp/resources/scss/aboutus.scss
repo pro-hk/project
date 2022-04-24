@@ -21,75 +21,78 @@ button {
   display: none;
 }
 
-.container {
-  .banner {
-    position: relative;
-    height: 340px;
-    background: url("../images/aboutus/heritage/history_visual.jpg") no-repeat 50% 0;
-    &.hotelBanner {
-      background: url("../images/aboutus/hotel/media_visual.jpg") no-repeat 50% 0;
-    }
-    &.factoriumBanner {
-      background: url("../images/factorium/factorium_bg.jpg") no-repeat 50% 0;
-    }
-    &.zoningBanner {
-      background: url("../images/factorium/rnd/zoning_visual.jpg") no-repeat 50% 0;
-    }
-    .firstMenu {
+.banner {
+  position: relative;
+  height: 340px;
+  background: url("../images/aboutus/heritage/history_visual.jpg") no-repeat 50% 0;
+  &.hotelBanner {
+    background: url("../images/aboutus/hotel/media_visual.jpg") no-repeat 50% 0;
+  }
+  &.factoriumBanner {
+    background: url("../images/factorium/factorium_bg.jpg") no-repeat 50% 0;
+  }
+  &.zoningBanner {
+    background: url("../images/factorium/rnd/zoning_visual.jpg") no-repeat 50% 0;
+  }
+  &.layeringBanner {
+    background: url("../images/factorium/rnd/layering_visual.jpg") no-repeat 50% 0;
+  }
+  .firstMenu {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 86px;
+    .firstLi {
       display: flex;
-      position: absolute;
-      right: 20px;
-      top: 86px;
-      .firstLi {
-        display: flex;
-        padding-left: 10px;
-        margin-right: 10px;
-        font-size: 12px;
-        color: #fff;
-        background: url(../images/aboutus/heritage/location_bar.gif) no-repeat 0 50%;
+      padding-left: 10px;
+      margin-right: 10px;
+      font-size: 12px;
+      color: #fff;
+      background: url(../images/aboutus/heritage/location_bar.gif) no-repeat 0 50%;
+      a {
+        padding-right: 10px;
+        background: url(../images/aboutus/heritage/location_arrow2.gif) no-repeat 100% 50%;
+      }
+      .secondMenu {
+        display: none;
+        position: absolute;
+        text-align: left;
         a {
-          padding-right: 10px;
-          background: url(../images/aboutus/heritage/location_arrow2.gif) no-repeat 100% 50%;
-        }
-        .secondMenu {
-          display: none;
-          position: absolute;
-          text-align: left;
-          a {
-            padding: 10px;
-            display: block;
-          }
+          padding: 10px;
+          display: block;
         }
       }
-      .firstLi:first-child {
+    }
+    .firstLi:first-child {
+      background: none;
+      a {
+        margin: 0;
+        padding: 0;
         background: none;
-        a {
-          margin: 0;
-          padding: 0;
-          background: none;
-        }
-      }
-    }
-    .d {
-      height: 259px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      line-height: 1.5;
-      h1 {
-        padding: 100px 0 10px 0;
-        color: #fff;
-        font-size: 50px;
-        font-weight: 400;
-        text-align: center;
-      }
-      p {
-        color: #c7c7c7;
-        font-size: 16px;
-        text-align: center;
       }
     }
   }
+  .d {
+    height: 259px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5;
+    h1 {
+      padding: 100px 0 10px 0;
+      color: #fff;
+      font-size: 50px;
+      font-weight: 400;
+      text-align: center;
+    }
+    p {
+      color: #c7c7c7;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+}
+.container {
   .threeTap {
     padding: 75px 0 40px 0;
     width: 100%;
@@ -165,7 +168,7 @@ button {
             height: 150px;
             color: #fff;
             font-weight: 400;
-            background: url(../../images/cf_play.png) no-repeat 50% 70px;
+            background: url(../images/aboutus/media/cf_play.png) no-repeat 50% 70px;
             p {
               font-size: 40px;
             }
@@ -456,7 +459,7 @@ button {
       .cont {
         display: flex;
         ul {
-          margin-left: 10px;
+          margin-left: 90px;
           width: 550px;
           height: 380px;
           li {

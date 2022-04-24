@@ -100,15 +100,12 @@
     }
     .multiSlider {
       margin: 0 auto;
-      position: relative;
       width: 1000px;
+      overflow: hidden;
       ul {
         height: 410px;
         position: relative;
         li {
-          position: absolute;
-          left: 0;
-          top: 0;
           img {
             width: 1000px;
           }
@@ -118,27 +115,26 @@
           z-index: 50;
         }
       }
-      ol {
+      .bullet {
         padding-top: 40px;
         text-align: center;
         display: flex;
         justify-content: center;
-        .on {
-          a {
-            background-image: url(../images/gallery/gallery_multi_on.png);
-          }
-        }
-        li {
+        .swiper-pagination-bullet {
+          margin-right: 2px;
+          width: 10px;
+          height: 10px;
+          background: url(../images/gallery/gallery_multi_off.png) no-repeat 0 0;
           margin-left: 20px;
-          a {
-            display: block;
-            width: 14px;
-            height: 14px;
-            background: url(../images/gallery/gallery_multi_off.png) no-repeat 0 0;
+          width: 14px;
+          height: 14px;
+          opacity: 1;
+          &-active {
+            background: url(../images/gallery/gallery_multi_on.png) no-repeat 0 0;
           }
-        }
-        li:first-child {
-          margin-left: 0;
+          &:first-child {
+            margin: 0;
+          }
         }
       }
     }
@@ -148,40 +144,37 @@
       overflow: hidden;
       .slider_wrap {
         position: relative;
+        overflow: hidden;
         margin: 5px auto 0 auto;
         width: 1000px;
-        .imgBox {
+        .galleryRight {
+          display: flex;
           position: absolute;
-          left: 0;
-          top: 0;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+
+          width: 35px;
+          height: 65px;
+          background: url(../images/gallery/btn_next.png) no-repeat 0 0;
+          z-index: 60;
           opacity: 1;
-          transition: 5s ease-out;
-          .controls {
-            .next {
-              display: block;
-              position: absolute;
-              right: 15px;
-              top: 257px;
-              width: 28px;
-              height: 56px;
-              background: url(../images/gallery/btn_next.png) no-repeat 0 0;
-              z-index: 60;
-              opacity: 1;
-              font-size: 0;
-            }
-            .prev {
-              display: block;
-              position: absolute;
-              left: 15px;
-              top: 257px;
-              width: 28px;
-              height: 56px;
-              background: url(../images/gallery/btn_prev.png) no-repeat 0 0;
-              z-index: 60;
-              opacity: 1;
-              font-size: 0;
-            }
-          }
+          font-size: 0;
+          cursor: pointer;
+        }
+        .galleryLeft {
+          display: flex;
+          position: absolute;
+          left: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 35px;
+          height: 65px;
+          background: url(../images/gallery/btn_prev.png) no-repeat 0 0;
+          z-index: 60;
+          opacity: 1;
+          font-size: 0;
+          cursor: pointer;
         }
       }
     }

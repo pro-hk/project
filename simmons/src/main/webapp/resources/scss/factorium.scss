@@ -65,6 +65,10 @@ main {
         height: 563px;
         overflow: hidden;
       }
+      .img {
+        display: flex;
+        justify-content: center;
+      }
       ul {
         position: relative;
         height: 400px;
@@ -80,6 +84,25 @@ main {
         }
         li:first-child {
           z-index: 50;
+        }
+      }
+      .layering {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 100px;
+        height: 150px;
+        p {
+          display: block;
+          width: 310px;
+          height: 100px;
+          background: url(../images/factorium/rnd/layering_bg1.jpg) no-repeat 0 0;
+          margin: 42px 0 0 20px;
+          border-bottom: 1px solid $light-gray-color;
+          font-size: 13px;
+          line-height: 18px;
+          text-align: center;
+          color: #acacac;
+          padding-top: 42px;
         }
       }
       ol {
@@ -150,6 +173,77 @@ main {
         color: #d9d9d9;
         font-size: $small-size;
         margin-bottom: 30px;
+      }
+    }
+    .use {
+      h5 {
+        padding: 25px 0 30px 0;
+        background: url(../images/factorium/rnd/layering_bg_line2.jpg) no-repeat 0 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+      }
+      ul {
+        display: flex;
+        justify-content: center;
+        li {
+          font-size: 13px;
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          width: 158px;
+          padding-top: 88px;
+          margin-left: 10px;
+          text-align: center;
+        }
+      }
+      ul:nth-child(2) {
+        li:nth-child(1) {
+          background-image: url(../images/factorium/rnd/layering_use_01.jpg);
+          margin-left: 0;
+        }
+        li:nth-child(2) {
+          background-image: url(../images/factorium/rnd/layering_use_02.jpg);
+        }
+        li:nth-child(3) {
+          background-image: url(../images/factorium/rnd/layering_use_03.jpg);
+        }
+        li:nth-child(4) {
+          background-image: url(../images/factorium/rnd/layering_use_04.jpg);
+        }
+        li:nth-child(5) {
+          background-image: url(../images/factorium/rnd/layering_use_05.jpg);
+        }
+      }
+      ul:nth-child(4) {
+        li:nth-child(1) {
+          background-image: url(../images/factorium/rnd/layering_cutton_01.jpg);
+          margin-left: 0;
+        }
+        li:nth-child(2) {
+          background-image: url(../images/factorium/rnd/layering_cutton_02.jpg);
+        }
+        li:nth-child(3) {
+          background-image: url(../images/factorium/rnd/layering_cutton_03.jpg);
+        }
+        li:nth-child(4) {
+          background-image: url(../images/factorium/rnd/layering_cutton_04.jpg);
+        }
+      }
+    }
+    .fill {
+      width: 1000px;
+      margin: 0 auto;
+      ul {
+        display: flex;
+        justify-content: center;
+        li {
+          width: 185px;
+          height: 45px;
+          padding-top: 205px;
+          background: url(../images/factorium/rnd/layering_bg21.jpg) no-repeat 0 0;
+          font-size: 15px;
+          text-align: center;
+        }
       }
     }
     .secGal {

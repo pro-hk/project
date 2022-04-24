@@ -172,6 +172,8 @@ main #view .bottom .sum { display: -webkit-box; display: -ms-flexbox; display: f
 
 main #view .bottom .sum dd { width: 165px; height: 30px; }
 
+main #view .bottom #orderprice { margin-top: auto; border-top: none; padding: 0; }
+
 main #view .bottom p { margin-top: 30px; border-top: 2px solid #dedede; padding: 15px 0 10px 0; font-size: 15px; text-align: center; font-weight: 900; }
 
 main #view .bottom button { width: 100%; height: 45px; border: none; background-color: #808080; margin-bottom: 15px; }
@@ -180,6 +182,12 @@ main #view .bottom .menu { display: -webkit-box; display: -ms-flexbox; display: 
 
 main #view .bottom .menu li { padding: 0 10px; }
 
+main #view .bottom .menu li div { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; cursor: pointer; }
+
+main #view .bottom .menu li div img { width: 20px; height: 18px; margin-bottom: 10px; }
+
+main #view .bottom .menu li div span { font-size: 9px; }
+
 main #view .bottom .menu li a img { width: 20px; height: 18px; margin-bottom: 10px; }
 
 main #view .bottom .menu li a span { font-size: 9px; display: block; }
@@ -187,3 +195,23 @@ main #view .bottom .menu li a span { font-size: 9px; display: block; }
 main #view .bottom .nav ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; padding: 10px 0; }
 
 main #view .bottom .nav ul li a { font-size: 11px; font-weight: 600; color: #777; }
+
+main #orderInfo { padding-top: 100px; }
+
+main #orderInfo .formTxt h2 { font-size: 32px; text-align: center; padding-top: 20px; }
+
+main #orderInfo .formTxt p { font-size: 12px; text-align: center; color: #ccc; }
+
+main #orderInfo table { border-collapse: collapse; text-align: center; vertical-align: middle; height: 40px; width: 100%; }
+
+main #orderInfo table th { width: 200px; border-top: 2px solid #000; border-bottom: 1px solid #ccc; }
+
+main #orderInfo table td { height: auto; border-bottom: 2px solid #000; }
+
+main #orderInfo table .bk { background: #ccc; }
+
+main #orderInfo .Boxline { border: 1px solid #000; }
+
+main #orderInfo .Boxline th, main #orderInfo .Boxline td { border: none; text-align: left; padding-left: 100px; }
+
+main #orderInfo .listbogi { text-align: center; border: 3px solid #000; height: 30px; width: 200px; display: center; }

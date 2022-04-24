@@ -8,33 +8,35 @@ button { background: none; border: none; outline: none; }
 
 .hidden { display: none; }
 
-.container .banner { position: relative; height: 340px; background: url("../images/aboutus/heritage/history_visual.jpg") no-repeat 50% 0; }
+.banner { position: relative; height: 340px; background: url("../images/aboutus/heritage/history_visual.jpg") no-repeat 50% 0; }
 
-.container .banner.hotelBanner { background: url("../images/aboutus/hotel/media_visual.jpg") no-repeat 50% 0; }
+.banner.hotelBanner { background: url("../images/aboutus/hotel/media_visual.jpg") no-repeat 50% 0; }
 
-.container .banner.factoriumBanner { background: url("../images/factorium/factorium_bg.jpg") no-repeat 50% 0; }
+.banner.factoriumBanner { background: url("../images/factorium/factorium_bg.jpg") no-repeat 50% 0; }
 
-.container .banner.zoningBanner { background: url("../images/factorium/rnd/zoning_visual.jpg") no-repeat 50% 0; }
+.banner.zoningBanner { background: url("../images/factorium/rnd/zoning_visual.jpg") no-repeat 50% 0; }
 
-.container .banner .firstMenu { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; right: 20px; top: 86px; }
+.banner.layeringBanner { background: url("../images/factorium/rnd/layering_visual.jpg") no-repeat 50% 0; }
 
-.container .banner .firstMenu .firstLi { display: -webkit-box; display: -ms-flexbox; display: flex; padding-left: 10px; margin-right: 10px; font-size: 12px; color: #fff; background: url(../images/aboutus/heritage/location_bar.gif) no-repeat 0 50%; }
+.banner .firstMenu { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; right: 20px; top: 86px; }
 
-.container .banner .firstMenu .firstLi a { padding-right: 10px; background: url(../images/aboutus/heritage/location_arrow2.gif) no-repeat 100% 50%; }
+.banner .firstMenu .firstLi { display: -webkit-box; display: -ms-flexbox; display: flex; padding-left: 10px; margin-right: 10px; font-size: 12px; color: #fff; background: url(../images/aboutus/heritage/location_bar.gif) no-repeat 0 50%; }
 
-.container .banner .firstMenu .firstLi .secondMenu { display: none; position: absolute; text-align: left; }
+.banner .firstMenu .firstLi a { padding-right: 10px; background: url(../images/aboutus/heritage/location_arrow2.gif) no-repeat 100% 50%; }
 
-.container .banner .firstMenu .firstLi .secondMenu a { padding: 10px; display: block; }
+.banner .firstMenu .firstLi .secondMenu { display: none; position: absolute; text-align: left; }
 
-.container .banner .firstMenu .firstLi:first-child { background: none; }
+.banner .firstMenu .firstLi .secondMenu a { padding: 10px; display: block; }
 
-.container .banner .firstMenu .firstLi:first-child a { margin: 0; padding: 0; background: none; }
+.banner .firstMenu .firstLi:first-child { background: none; }
 
-.container .banner .d { height: 259px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; line-height: 1.5; }
+.banner .firstMenu .firstLi:first-child a { margin: 0; padding: 0; background: none; }
 
-.container .banner .d h1 { padding: 100px 0 10px 0; color: #fff; font-size: 50px; font-weight: 400; text-align: center; }
+.banner .d { height: 259px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; line-height: 1.5; }
 
-.container .banner .d p { color: #c7c7c7; font-size: 16px; text-align: center; }
+.banner .d h1 { padding: 100px 0 10px 0; color: #fff; font-size: 50px; font-weight: 400; text-align: center; }
+
+.banner .d p { color: #c7c7c7; font-size: 16px; text-align: center; }
 
 .container .threeTap { padding: 75px 0 40px 0; width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
@@ -62,7 +64,7 @@ button { background: none; border: none; outline: none; }
 
 .container .jumpLink li a .hoverBox { text-align: center; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; opacity: 0; -webkit-transition: 1s; transition: 1s; }
 
-.container .jumpLink li a .hoverBox span { position: absolute; display: block; width: 100%; height: 150px; color: #fff; font-weight: 400; background: url(../../images/cf_play.png) no-repeat 50% 70px; }
+.container .jumpLink li a .hoverBox span { position: absolute; display: block; width: 100%; height: 150px; color: #fff; font-weight: 400; background: url(../images/aboutus/media/cf_play.png) no-repeat 50% 70px; }
 
 .container .jumpLink li a .hoverBox span p { font-size: 40px; }
 
@@ -162,7 +164,7 @@ button { background: none; border: none; outline: none; }
 
 .container .contents .year .cont { display: -webkit-box; display: -ms-flexbox; display: flex; }
 
-.container .contents .year .cont ul { margin-left: 10px; width: 550px; height: 380px; }
+.container .contents .year .cont ul { margin-left: 90px; width: 550px; height: 380px; }
 
 .container .contents .year .cont ul li { background: url(../images/aboutus/heritage/history_bullet.png) no-repeat 2.5px 15px; padding: 0 0 40px 45px; font-size: 12px; line-height: 1.5; }
 

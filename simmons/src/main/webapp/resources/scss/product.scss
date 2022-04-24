@@ -450,6 +450,11 @@ main {
           height: 30px;
         }
       }
+      #orderprice {
+        margin-top: auto;
+        border-top: none;
+        padding: 0;
+      }
       p {
         margin-top: 30px;
         border-top: 2px solid #dedede;
@@ -473,6 +478,19 @@ main {
         margin-bottom: 15px;
         li {
           padding: 0 10px;
+          div {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            img {
+              width: 20px;
+              height: 18px;
+              margin-bottom: 10px;
+            }
+            span {
+              font-size: 9px;
+            }
+          }
           a {
             img {
               width: 20px;
@@ -502,6 +520,56 @@ main {
           }
         }
       }
+    }
+  }
+  #orderInfo {
+    padding-top: 100px;
+    .formTxt {
+      h2 {
+        font-size: 32px;
+        text-align: center;
+        padding-top: 20px;
+      }
+      p {
+        font-size: 12px;
+        text-align: center;
+        color: #ccc;
+      }
+    }
+    table {
+      border-collapse: collapse;
+      text-align: center;
+      vertical-align: middle;
+      height: 40px;
+      width: 100%;
+      th {
+        width: 200px;
+        border-top: 2px solid #000;
+        border-bottom: 1px solid #ccc;
+      }
+      td {
+        height: auto;
+        border-bottom: 2px solid #000;
+      }
+      .bk {
+        background: #ccc;
+      }
+    }
+    .Boxline {
+      border: 1px solid #000;
+      th,
+      td {
+        border: none;
+        text-align: left;
+        padding-left: 100px;
+      }
+    }
+    .listbogi {
+      text-align: center;
+      border: 3px solid #000;
+      height: 30px;
+      width: 200px;
+      display: center;
     }
   }
 }

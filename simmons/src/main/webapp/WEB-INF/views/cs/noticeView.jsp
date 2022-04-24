@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../include/header.jsp" %>
 
@@ -14,48 +15,44 @@
         </ul>
 
 		<div class="txtBox lineOff">
-		    <h1>FAQ 등록</h1>
+      <h1>고객센터</h1>
+      <p>고객님의 질문에 성심껏 답변해 드리겠습니다</p>
+    	</div>
+	
+		<div class="view">
+			<div class="titleBox">
+				<h2>${noticeDto.title }</h2>
+				<p>${noticeDto.regDate.split(" ")[0] }</p>
+			</div>
+			<div class="contentsBox">
+				${noticeDto.contents }
+			</div>
+	        <div class="pages">
+	        		<c:if test="${not empty prevNoticeDto }">
+	        		<div class="page">
+	        			<div class="pageNav">
+	        				<span class="material-icons">keyboard_arrow_up</span><span>이전</span>
+	        			</div>
+	        			<div class="pageTitle">
+	        				<a href="NoticeView?no=${prevNoticeDto.no }&num=${param.num - 1}">${prevNoticeDto.title.split("]")[1] }</a>
+	        			</div>
+	        		</div>
+	        		</c:if>
+	        		<c:if test="${not empty nextNoticeDto }">
+	        		<div class="page">
+	        			<div class="pageNav">
+	        				<span class="material-icons">keyboard_arrow_down</span><span>다음</span>
+	        			</div>
+	        			<div class="pageTitle">
+	        				<a href="NoticeView?no=${nextNoticeDto.no }&num=${param.num + 1}">${nextNoticeDto.title.split("]")[1] }</a>
+	        			</div>
+	        		</div>
+	        		</c:if>
+	        </div>
+	        <div class="btns">
+	        	<a href="Notice" class="cancel">목록</a>
+	        </div>
 		</div>
-
-        <!-- form -->
-        <form action="FaqWriteProcess" method="post" id="FaqWriteProcess">
-          
-          <table>
-            <colgroup>
-              <col style="width: 20%" />
-              <col style="width: 80%" />
-            </colgroup>
-            <tbody>
-                <tr class="top">
-            	<th>카테고리</th>
-            	<td>
-            		<select name="faqCategory" class="faqCategory">
-            			<option value="회원">회원</option>
-            			<option value="상품문의">상품문의</option>
-            			<option value="교환/환불/반품">교환/환불/반품</option>
-            			<option value="주문/배송">주문/배송</option>
-            			<option value="기타">기타</option>
-            		</select>
-            	</td>
-        		</tr>
-            	<tr>
-                <th>질문</th>
-                <td><input type="text" name="question" class="question" /></td>
-              </tr>
-              <tr class="bottom">
-                <th>답변</th>
-                <td class="textarea">
-                  <textarea name="answer" class="answer"></textarea>
-                </td>
-              </tr>              
-            </tbody>
-          </table>
-          <div class="btns">
-            <button type="submit" class="comfirm btn">글쓰기</button>
-            <a href="Faq" class="cancel btn">취소</a>
-          </div>
-        </form>
-        <!-- form end -->
       </div>
     </main>
     <!-- main end -->

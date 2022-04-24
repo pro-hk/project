@@ -41,50 +41,16 @@
 	        <th>제목</th>
 	        <th>등록일</th>
 	      </tr>
+	      <c:forEach items="${noticeList}" var="noticeDto">
 	      <tr>
-	        <td class="left"><a href="NoticeView?no=${noticeList.no }">[공지사항] 2022년 2월 AS만족도 설문조사 추첨결과 발표</a></td>
-	        <td>2022-03-10</td>
+	        <td class="left"><a href="NoticeView?no=${noticeDto.no }">${noticeDto.title}</a></td>
+	        <td>${noticeDto.regDate }</td>
 	      </tr>
-	      <tr>
-	        <td class="left">[공지사항] 2022년 2월 배송만족도 설문조사 추첨결과 발표</td>
-	        <td>2022-03-10</td>
-	      </tr>
-	      <tr>
-	        <td class="left">[공지사항] 2022년 1월 AS만족도 설문조사 추첨결과 발표</td>
-	        <td>2022-02-08</td>
-	      </tr>
-	      <tr>
-	        <td class="left">[공지사항] 2022년 1월 배송만족도 설문조사 추첨결과 발표</td>
-	        <td>2022-02-08</td>
-	      </tr>
-	      <tr>
-	        <td class="left">[공지사항] 2021년 12월 AS만족도 설문조사 추첨결과 발표</td>
-	        <td>2022-01-06</td>
-	      </tr>
-	      <tr>
-	        <td class="left">[공지사항] 2021년 12월 배송만족도 설문조사 추첨결과 발표</td>
-	        <td>2022-01-06</td>
-	      </tr>
-	      <tr>
-	        <td class="left">[공지사항] 2021년 11월 AS만족도 설문조사 추첨결과 발표</td>
-	        <td>2021-12-07</td>
-	      </tr>
-	      <tr>
-	        <td class="left">[공지사항] 2021년 11월 배송만족도 설문조사 추첨결과 발표</td>
-	        <td>2021-12-07</td>
-	      </tr>
-	      <tr>
-	        <td class="left">[공지사항] 2021년 10월 AS만족도 설문조사 추첨결과 발표</td>
-	        <td>2021-11-05</td>
-	      </tr>
-	      <tr>
-	        <td class="left">[공지사항] 2021년 10월 배송만족도 설문조사 추첨결과 발표</td>
-	        <td>2021-11-05</td>
-	      </tr>
+	      </c:forEach>
 	    </table>
 	    
 	    <div class="write">
-	    	<a href="WriteNotice">글쓰기</a>
+	    	<a href="NoticeWrite">글쓰기</a>
 	    </div>
 	    
 	    <div class="page">

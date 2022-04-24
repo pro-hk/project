@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
 <!DOCTYPE html>
 <html lang="ko">
@@ -19,7 +20,7 @@
     <link href="css/main.css" rel="stylesheet" />
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/main.js" defer></script>
+    <script src="js/index.js" defer ></script>
   </head>
   <body>
     <!-- a링크 주소 미입력 -->
@@ -106,8 +107,8 @@
               <li><a href="factorium/Come">오시는길</a></li>
             </ul>
           </li>
-          <li><a href="gallery/">SIMMONS GALLERY</a></li>
-          <li><a href="">매장 찾기</a></li>
+          <li><a href="Gallery/">SIMMONS GALLERY</a></li>
+          <li><a href="Map/">매장 찾기</a></li>
         </ul>
 
         <!-- 기타 / DB작업 -->
@@ -167,30 +168,79 @@
       </div>
 
       <!-- 우측 메뉴 -->
+      <div id="RightMenu">
+      <!-- 관리자 페이지 -->
+		<c:if test="${loggedMember.grade=='관리자'}">
+		<!-- 관리자 페이지 -->
+		<div id="managerLink">
+			<a href="manager/">
+		  		<img src="images/layout/manage.png" />
+		  		<span>관리자</span>
+			</a>
+		</div>
+		</c:if>
       <div id="cart">
-        <img src="images/layout/icon_cart.png" />
+        <img id="cartImg" src=${cartCount==0 ? "images/layout/icon_cart.png" : "images/layout/icon_cart_on.png" } />
         <span>카트</span>
+      </div>
       </div>
 
       <!-- 숨겨진 우측 메뉴(카트) / DB작업  -->
       <div class="cartBox">
         <!-- 메뉴 리스트 -->
         <div class="allCount">
-          <h2 class="count cart on">CART <span class="cartCount">(0)</span></h2>
-          <h2 class="count recent">RECENT <span class="recentCount">(0)</span></h2>
+          <h2 class="count cart on">CART <span class="cartCount">(${cartCount==0 ? 0 : cartCount })</span></h2>
+          <h2 class="count recent">RECENT <span class="recentCount">(${recentCount==0 ? 0 : recentCount })</span></h2>
         </div>
 
         <!-- 카트 리스트 -->
         <div class="cartList">
-          <div class="list cartProduct on">
-            <p>카트에 담긴 상품이 없습니다.</p>
-            <div class="product"></div>
-            <a href="" class="cartLink">CART 바로가기</a>
-          </div>
-          <div class="list recentProduct">
-            <p>최근 본 상품이 없습니다.</p>
-            <div class="product"></div>
-          </div>
+           <ul class="list cartProduct on">
+           	<c:if test="${empty cartList }">
+           	<li>카트에 담긴 상품이 없습니다.</li>
+           	</c:if>
+           	<c:forEach items="${cartList }" var="cart">
+           	<li>
+           		<a href="product/Detail?no=${cart.no }">
+           			<div class="Title">
+           				<h2 id="cartName">${cart.pname } ${cart.sizes }</h2>
+           				<img class="recentDelete" alt="recentDelete" src="images/layout/del.png">
+           			</div>
+           			<div class="Contents">
+           				<div class="cartImg">
+           					<img alt="카트 제품 이미지" src="${cart.img }">
+           				</div>
+           				<div class="cartTxt">
+           					<p>수량: ${cart.count }개</p>
+           					<fmt:formatNumber value="${cart.price }" pattern="###,###,###" var="price" />
+           					<p class="cartPrice">￦ ${price }</p>
+           				</div>
+           			</div>
+           		</a>
+           	</li>
+           	</c:forEach>
+           </ul>
+			<div class="cartLink on"><a href="#">CART 바로가기</a></div>
+          <ul class="list recentProduct">
+            <c:if test="${empty recentList }">
+            <li>최근 본 상품이 없습니다.</li>
+           	</c:if>
+           	<c:forEach items="${recentList }" var="recent">
+           	<li>
+           		<a href="product/Detail?no=${recent.no }">
+           			<div class="Title">
+           				<h2 id="recentName">${recent.pname }</h2>
+           				<img class="recentDelete" alt="삭제" src="images/layout/del.png">
+           			</div>
+           			<div class="Contents">
+           				<div class="recentImg">
+           					<img alt="카트 제품 이미지" src="${recent.img }">
+           				</div>
+           			</div>
+           		</a>
+           	</li>
+           	</c:forEach>
+          </ul>
         </div>
 
         <!-- CARTLIST DB -->
@@ -217,17 +267,6 @@
         </div>
       </div>
       <!-- 우측 메뉴 end -->
-      
-	<!-- 관리자 페이지 -->
-	<c:if test="${loggedMember.grade=='관리자'}">
-	<!-- 관리자 페이지 -->
-	<div id="managerLink">
-		<a href="manager/">
-	  	<img src="images/layout/manage.png" />
-	  	<span>관리자</span>
-		</a>
-	</div>
-	</c:if>
 
       <!-- 블러 처리 / 좌, 우측 메뉴 닫기 -->
       <div class="closePage"></div>
@@ -235,7 +274,7 @@
     <!-- header end -->
 
     <!-- main -->
-    <main id="main">
+    <main id="main" class="mainOver">
       <div id="mainSlider">
         <ul class="swiper-wrapper">
           <!-- 네이버 비디오 방법 찾는 중.. -->
@@ -272,13 +311,15 @@
       </div>
 
       <!-- popup / 쿠키작업 -->
+      <c:if test="${empty cookieOff }">
       <div id="popup">
         <a href="">
           <img src="images/layout/pop_W2.jpg" alt="" />
         </a>
         <div class="popupClose"></div>
-        <label><input type="checkbox" />오늘 하루 이 창을 열지 않음</label>
+        <label><input type="checkbox" />24시간 이 창을 열지 않음</label>
       </div>
+      </c:if>
     </main>
     <!-- main end -->
 

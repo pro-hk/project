@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../include/header.jsp" %>
-    
+
 <!-- main -->
 <main id="main">
   <div class="container">
@@ -22,7 +22,7 @@
   <!-- 상단 5개 선택 -->
   <ul class="customerList">
     <li class="on"><a href="Faq">FAQ</a></li>
-    <li><a href="Qna">Q&A</a></li>
+    <li class="Qna"><a href="Qna">Q&A</a></li>
     <li><a href="Counsel">1:1 전화상담 신청</a></li>
     <li><a href="As">A/S 신청</a></li>
     <li><a href="Notice">공지사항</a></li>
@@ -32,7 +32,7 @@
   <div class="customerContents faq">
     <!-- as선택시 없어야함 -->
     <div class="searchBox">
-      <input type="text" placeholder="검색어를 입력하세요" class="search" />
+      <input type="text" placeholder="검색어를 입력하세요" class="faqTxt" />
       <button class="faqSearch">검색</button>
     </div>
     <div class="faqTab">
@@ -63,7 +63,7 @@
     </div>
     <ul class="faqContents">
       <li class="on">
-        <ul>
+        <ul id="faqList01">
         <c:forEach items="${faqList01 }" var="faqDto">
           <li>
             <div class="question">
@@ -82,7 +82,7 @@
         </ul>
       </li>
       <li>
-        <ul>
+        <ul id="faqList02">
       	<c:forEach items="${faqList02 }" var="faqDto">
           <li>
             <div class="question">
@@ -101,7 +101,7 @@
         </ul>
       </li>
       <li>
-        <ul>
+        <ul id="faqList03">
           <c:forEach items="${faqList03 }" var="faqDto">
           <li>
             <div class="question">
@@ -280,8 +280,8 @@
         </table>
       </li>
       <li>
-        <ul>
-          <c:forEach items="${faqList04 }" var="faqDto">
+        <ul id="faqList05">
+          <c:forEach items="${faqList05 }" var="faqDto">
           <li>
             <div class="question">
               <h2>Q. ${faqDto.question }</h2>
@@ -299,8 +299,8 @@
         </ul>
       </li>
       <li>
-        <ul>
-          <c:forEach items="${faqList05 }" var="faqDto">
+        <ul id="faqList06">
+          <c:forEach items="${faqList06 }" var="faqDto" varStatus="index">
           <li>
             <div class="question">
               <h2>Q. ${faqDto.question }</h2>
@@ -339,5 +339,5 @@
   </div>
 </main>
 <!-- main end -->
-
+<%@ include file="../include/qna.jsp" %>
 <%@ include file="../include/footer.jsp" %>

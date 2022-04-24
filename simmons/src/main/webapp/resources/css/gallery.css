@@ -30,35 +30,29 @@
 
 #gallery .mainContent .gallery02 p { padding: 58px 0 41px 0; color: #acacac; font-size: 14px; line-height: 23px; background: none; }
 
-#gallery .mainContent .multiSlider { margin: 0 auto; position: relative; width: 1000px; }
+#gallery .mainContent .multiSlider { margin: 0 auto; width: 1000px; overflow: hidden; }
 
 #gallery .mainContent .multiSlider ul { height: 410px; position: relative; }
-
-#gallery .mainContent .multiSlider ul li { position: absolute; left: 0; top: 0; }
 
 #gallery .mainContent .multiSlider ul li img { width: 1000px; }
 
 #gallery .mainContent .multiSlider ul li:first-child { display: block; z-index: 50; }
 
-#gallery .mainContent .multiSlider ol { padding-top: 40px; text-align: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+#gallery .mainContent .multiSlider .bullet { padding-top: 40px; text-align: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
-#gallery .mainContent .multiSlider ol .on a { background-image: url(../images/gallery/gallery_multi_on.png); }
+#gallery .mainContent .multiSlider .bullet .swiper-pagination-bullet { margin-right: 2px; width: 10px; height: 10px; background: url(../images/gallery/gallery_multi_off.png) no-repeat 0 0; margin-left: 20px; width: 14px; height: 14px; opacity: 1; }
 
-#gallery .mainContent .multiSlider ol li { margin-left: 20px; }
+#gallery .mainContent .multiSlider .bullet .swiper-pagination-bullet-active { background: url(../images/gallery/gallery_multi_on.png) no-repeat 0 0; }
 
-#gallery .mainContent .multiSlider ol li a { display: block; width: 14px; height: 14px; background: url(../images/gallery/gallery_multi_off.png) no-repeat 0 0; }
-
-#gallery .mainContent .multiSlider ol li:first-child { margin-left: 0; }
+#gallery .mainContent .multiSlider .bullet .swiper-pagination-bullet:first-child { margin: 0; }
 
 #gallery .mainContent .gallery_arrow { margin-top: 180px; height: 571px; overflow: hidden; }
 
-#gallery .mainContent .gallery_arrow .slider_wrap { position: relative; margin: 5px auto 0 auto; width: 1000px; }
+#gallery .mainContent .gallery_arrow .slider_wrap { position: relative; overflow: hidden; margin: 5px auto 0 auto; width: 1000px; }
 
-#gallery .mainContent .gallery_arrow .slider_wrap .imgBox { position: absolute; left: 0; top: 0; opacity: 1; -webkit-transition: 5s ease-out; transition: 5s ease-out; }
+#gallery .mainContent .gallery_arrow .slider_wrap .galleryRight { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; right: 30px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 35px; height: 65px; background: url(../images/gallery/btn_next.png) no-repeat 0 0; z-index: 60; opacity: 1; font-size: 0; cursor: pointer; }
 
-#gallery .mainContent .gallery_arrow .slider_wrap .imgBox .controls .next { display: block; position: absolute; right: 15px; top: 257px; width: 28px; height: 56px; background: url(../images/gallery/btn_next.png) no-repeat 0 0; z-index: 60; opacity: 1; font-size: 0; }
-
-#gallery .mainContent .gallery_arrow .slider_wrap .imgBox .controls .prev { display: block; position: absolute; left: 15px; top: 257px; width: 28px; height: 56px; background: url(../images/gallery/btn_prev.png) no-repeat 0 0; z-index: 60; opacity: 1; font-size: 0; }
+#gallery .mainContent .gallery_arrow .slider_wrap .galleryLeft { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; left: 30px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 35px; height: 65px; background: url(../images/gallery/btn_prev.png) no-repeat 0 0; z-index: 60; opacity: 1; font-size: 0; cursor: pointer; }
 
 #gallery .mainContent .gallery03 { width: 1000px; margin: 0 auto; margin-top: 75px; }
 

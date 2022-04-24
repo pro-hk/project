@@ -22,7 +22,9 @@
 	<form action="LoginProcess" method="post" id="login">
 	  <input type="text" name="id" placeholder="아이디를 입력해주세요." />
 	  <input type="password" name="password" placeholder="비밀번호를 입력해주세요." />
-	  <button type="submit">로그인</button>
+	  <div class="btns">
+	  	<button type="submit">로그인</button>
+	  </div>
 	
 	  <!-- 아이디찾기/비밀번호찾기/회원가입 -->
 	  <div class="etcLogin">

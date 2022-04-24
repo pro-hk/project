@@ -43,7 +43,7 @@ public class FaqDao {
 		faqMap.put("endNum", endNum);
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		faqList = sqlSession.selectList("FaqAllList");
+		faqList = sqlSession.selectList("FaqAllList", faqMap);
 		sqlSession.close();
 		
 		return faqList;
@@ -89,5 +89,19 @@ public class FaqDao {
 		sqlSession.close();
 		
 		return result;
+	}
+
+	public List<FaqDto> FaqSearchList(String txt, String category) {
+		List<FaqDto> searchList = null;
+		
+		Map<String, String> map = new HashMap<>();
+		map.put("txt", txt);
+		map.put("category", category);
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		searchList = sqlSession.selectList("FaqSearchList", map);
+		sqlSession.close();
+		
+		return searchList;
 	}
 }

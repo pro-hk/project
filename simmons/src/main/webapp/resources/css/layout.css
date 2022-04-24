@@ -6,13 +6,17 @@ a { text-decoration: none; color: #000; }
 
 #header.managerHeader { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
-#header #managerLink { position: fixed; right: 100px; top: 10px; }
+#header #RightMenu { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
-#header #managerLink a { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 12px; cursor: pointer; }
+#header #managerLink a { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 12px; margin-right: 20px; cursor: pointer; }
 
-#header #managerLink a img { margin-bottom: 5px; }
+#header #managerLink a:hover { text-decoration: none; color: inherit; }
 
-#header #menu, #header #cart { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 12px; cursor: pointer; }
+#header #managerLink a img { height: 25px; margin-bottom: 5px; }
+
+#header #menu, #header #cart { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; cursor: pointer; }
+
+#header #menu span, #header #cart span { font-size: 12px; }
 
 #header #menu { padding-top: 10px; padding-left: 30px; }
 
@@ -70,7 +74,9 @@ a { text-decoration: none; color: #000; }
 
 #header .cartBox.on { right: 0; }
 
-#header .cartBox .allCount { display: -webkit-box; display: -ms-flexbox; display: flex; padding: 20px 0; margin-bottom: 30px; color: #999; }
+#header .cartBox .allCount { display: -webkit-box; display: -ms-flexbox; display: flex; padding: 20px 0; color: #999; }
+
+#header .cartBox .allCount h2 { font-size: 14px; margin: 0; }
 
 #header .cartBox .allCount .count { cursor: pointer; }
 
@@ -80,13 +86,35 @@ a { text-decoration: none; color: #000; }
 
 #header .cartBox .allCount .count:first-child:after { content: ""; display: block; background-color: #ccc; width: 2px; height: 10px; position: absolute; right: -30px; top: 2px; }
 
-#header .cartBox .cartList .list { display: none; }
+#header .cartBox .cartList .list { display: none; height: 600px; padding-top: 16px; overflow: hidden; }
 
-#header .cartBox .cartList .on { display: block; }
+#header .cartBox .cartList .list.on { display: block; }
 
-#header .cartBox .cartList .product { height: 600px; }
+#header .cartBox .cartList .list li { margin-bottom: 10px; }
 
-#header .cartBox .cartList .cartLink { margin-top: 50px; display: block; text-align: center; padding: 15px 20px; background-color: #000; color: #fff; font-size: 14px; }
+#header .cartBox .cartList .list li a { display: block; }
+
+#header .cartBox .cartList .list li a:hover { text-decoration: none; color: inherit; }
+
+#header .cartBox .cartList .list li a .Title { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin-bottom: 10px; }
+
+#header .cartBox .cartList .list li a .Title h2 { font-size: 12px; margin: 0; }
+
+#header .cartBox .cartList .list li a .Contents { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+#header .cartBox .cartList .list li a .Contents img { width: 80px; height: 50px; }
+
+#header .cartBox .cartList .list li a .Contents .cartTxt { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; margin-left: 10px; }
+
+#header .cartBox .cartList .list li a .Contents .cartTxt p { margin: 0; font-size: 12px; }
+
+#header .cartBox .cartList .list li a .Contents .cartTxt p.cartPrice { color: #a57a42; font-weight: 700; }
+
+#header .cartBox .cartList .cartLink { display: none; margin-top: 50px; width: 200px; height: 40px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #000; font-size: 14px; }
+
+#header .cartBox .cartList .cartLink a { color: #fff; }
+
+#header .cartBox .cartList .cartLink.on { display: -webkit-box; display: -ms-flexbox; display: flex; }
 
 #header .cartBox .cartClose { position: absolute; top: 20px; right: 20px; cursor: pointer; }
 

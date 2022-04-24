@@ -1,7 +1,9 @@
 @import "vars";
 
 #main {
-  overflow: hidden;
+  &.mainOver {
+    overflow: hidden;
+  }
   #mainSlider {
     position: relative;
     ul {
@@ -189,7 +191,16 @@
       }
     }
     .customerContents {
+      width: 1000px;
       margin-top: 50px;
+      h2 {
+        font-size: 16px;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+
       .searchBox {
         display: flex;
         justify-content: flex-end;
@@ -306,6 +317,10 @@
             }
             ul {
               li {
+                h2 {
+                  margin-top: 0;
+                  margin-bottom: 0;
+                }
                 &.on {
                   .material-icons {
                     &.on {
@@ -358,6 +373,7 @@
       }
       &.counsel,
       &.as {
+        margin-top: 100px;
         .asFlow {
           h2 {
             width: 20%;
@@ -426,6 +442,7 @@
           }
         }
         .contentsBox {
+          text-align: left;
           h2 {
             margin-bottom: 3px;
             span {
@@ -574,6 +591,92 @@
         background-color: #000;
         color: #fff;
         font-size: 12px;
+      }
+    }
+    .view {
+      margin-top: 100px;
+      border-top: 1px solid #000;
+      padding-top: 20px;
+      .titleBox {
+        padding: 0 20px 10px 20px;
+        border-bottom: 1px solid $border-color;
+        h2 {
+          font-size: 20px;
+        }
+        p {
+          font-size: 12px;
+          color: $gray-color;
+        }
+      }
+      .pages {
+        padding: 20px;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        .page {
+          display: flex;
+          font-size: 12px;
+          &:first-child {
+            margin-bottom: 20px;
+          }
+          .pageNav {
+            display: flex;
+            align-items: center;
+            color: $gray-color;
+            margin-right: 100px;
+            .material-icons {
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+      .contentsBox {
+        padding: 50px 20px;
+        margin-bottom: 50px;
+      }
+      table {
+        width: 100%;
+        font-size: 14px;
+        th {
+          font-size: 14px;
+          vertical-align: top;
+          transform: translateY(5px);
+        }
+        td {
+          .full {
+            width: 100%;
+            padding: 0 10px;
+            margin-bottom: 20px;
+          }
+          textarea {
+            width: 100%;
+            height: 300px;
+            resize: none;
+            padding: 5px 10px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+      .btns {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .cancel {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #fff;
+          border: 1px solid #000;
+          color: #000;
+          width: 200px;
+          height: 40px;
+          font-size: 14px;
+        }
+        .confirm {
+          width: 200px;
+          height: 40px;
+          font-size: 12px;
+        }
       }
     }
   }

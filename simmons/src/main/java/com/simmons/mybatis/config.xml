@@ -6,6 +6,12 @@
 	<typeAliases>
 		<typeAlias type="com.simmons.model.MemberDto" alias="memberDto"/>
 		<typeAlias type="com.simmons.model.ProductDto" alias="productDto"/>
+		<typeAlias type="com.simmons.model.ProductSizeDto" alias="productSizeDto"/>
+		<typeAlias type="com.simmons.model.CartDto" alias="cartDto"/>
 		<typeAlias type="com.simmons.model.FaqDto" alias="faqDto"/>
+		<typeAlias type="com.simmons.model.QnaDto" alias="qnaDto"/>
+		<typeAlias type="com.simmons.model.CounselDto" alias="counselDto"/>
+		<typeAlias type="com.simmons.model.AsDto" alias="asDto"/>
+		<typeAlias type="com.simmons.model.NoticeDto" alias="noticeDto"/>
 	</typeAliases>
 </configuration>

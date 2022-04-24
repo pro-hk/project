@@ -16,9 +16,9 @@ public class MemberDto {
 	private String id;
 	private String password;
 	private String address;
-	private String addr01;
-	private String addr02;
-	private String addr03;
+	private String address01;
+	private String address02;
+	private String address03;
 	private int zipCode;
 	private String email;
 	private String email01;

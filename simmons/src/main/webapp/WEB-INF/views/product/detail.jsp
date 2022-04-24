@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../include/header.jsp" %>
 
@@ -39,11 +40,9 @@
 	    <div class="left">
 	        <div class="leftVisual">
 	            <ul class="visual swiper-wrapper">
-	                <li class="visual01 swiper-slide"></li>
-	                <li class="visual02 swiper-slide"></li>
-	                <li class="visual03 swiper-slide"></li>
-	                <li class="visual04 swiper-slide"></li>
-	                <li class="visual05 swiper-slide"></li>
+	            	<c:forTokens items="${productDto.img }" delims="," var="img">
+	            		<li class="swiper-slide"><img class="pname" src="${img}" /></li>
+	            	</c:forTokens>
 	            </ul>
 	        </div>
 	        <div class="emotion">
@@ -144,67 +143,7 @@
 	            </div>
 	        </div>
 	        <div class="spring">
-	            <p>
-	                <img src="../images/product/mattress/view/Description-BR-Zalmon.jpeg" alt="" title />
-	            </p>
-	            <div>
-	                <p>
-	                    <img src="../images/product/mattress/view/sp.jpeg" alt="" />
-	                </p>
-	                <span>
-	                    <strong>s - 포켓스프링</strong>
-	                    <p class="txt01">부드럽고 편안한 지지력의 차세대 포켓스프링</p>
-	                    <p class="txt02">- 총 10회전으로 스프링 회전수가 늘어나 부드러운 안정감을 실현하는 듀얼 액션 디자인을 적용하였습니다</p>
-	                    <p class="txt02">- 치밀하게 신체곡선을 받쳐주는 상부 스프링과 항아리 모양의 하부 스프링은 체형에 따라 단계적으로 신체를 지지해주어 <br /></p>
-	                    <p class="txt02">- 유연하고 안정적인 스마트 서포트 시스템을 제공합니다</p>
-	                </span>
-	                <span>
-	                    <strong>노와이어 이너 시스템</strong>
-	                    <p class="txt01">매트리스 가장자리를 고탄력 전용폼으로 감싸 가장자리 배김이나 무너짐, 쏠림 현상을 방지하여 더욱 강화된 지지력을 제공</p>
-	                </span>
-	                <span>
-	                    <strong>Non Flip 시스템</strong>
-	                    <p class="txt01">매트리스 더 이상 뒤집지 마세요</p>
-	                </span>
-	            </div>
-	        </div>
-	        <div class="layering">
-	            <a href="3D 매트리스 팝업">
-	                <img src="../images/product/mattress/view/btn_3d.gif" alt="" />
-	            </a>
-	            <div class="imgBox">
-	                <p>
-	                    <img src="../images/product/mattress/view/Detail-BR-Zalmon.jpeg" alt="" title />
-	                    <img src="../images/product/mattress/view/maxium-logo.png" class="logo" alt="" />
-	                </p>
-	                <p>
-	                    &nbsp한국 시몬스는 국내 최초, 국내 유일하게 일반 가정용 매트리스 전 제품을 국제표준(ISO 12949)및 국내 표준시험방법(KS F ISO 12949) 기준을 만족시키는 난연 매트리스로 개발,
-	                    출시했습니다.
-	                </p>
-	            </div>
-	            <div class="contentBox">
-	                <img src="../images/product/mattress/view/la.jpeg" alt="" />
-	                <dl>
-	                    <dt>맥시멈 세이프티 패딩</dt>
-	                    <dd>난연사를 사용해 화재에 대한 탁월한 안전성을 가진 신소재</dd>
-	                    <dt>자가드 원단</dt>
-	                    <dd>통기성이 탁월하여 상쾌한 수면 환경을 제공</dd>
-	                    <dt>울트라프레쉬 위생원단</dt>
-	                    <dd>우수한 방충·항균 기능의 위생처리 원단</dd>
-	                    <dt>캐시미어-실크 패딩</dt>
-	                    <dd>섬세하고 부드러운 감촉의 최고급 자연 소재로 가벼운 사용감을 선사 (커버 상면)</dd>
-	                    <dt>에코젠폼 플러스</dt>
-	                    <dd>콩에서 추출한 천연 식물성 원료로 만들어져 환경호르몬이 없으며 탄력을 강화하는 프리미엄 폼 (커버 상면)</dd>
-	                    <dt>에코바이오폼 플러스</dt>
-	                    <dd>천연 식물성 소재로 환경호르몬을 최소화한 최고급 친환경 폼 (필로우 상면)</dd>
-	                    <dt>Block폼</dt>
-	                    <dd>Non Flip을 완성시켜 주는 내구성과 반발력이 탁월한 신소재 (하면)</dd>
-	                    <dt>플러시 필로우탑</dt>
-	                    <dd>신체 하중을 흡수 및 분산시켜 안락한 느낌을 선사하는 신개념의 필로우탑 (상면)</dd>
-	                    <dt>에어홀 / 핸들</dt>
-	                    <dd>매트리스를 숨쉬게 하여 쾌적하고 위생적인 수면 환경 제공</dd>
-	                </dl>
-	            </div>
+	            ${productDto.contents}
 	        </div>
 	        <div class="details">
 	            <p>
@@ -214,34 +153,31 @@
 	                <tbody>
 	                    <tr>
 	                        <td>품명</td>
-	                        <td><p>Beautyrest Zalmon</p></td>
+	                        <td><p id="pname">${productDto.pname }</p></td>
 	                    </tr>
 	                    <tr>
 	                        <td>경도</td>
 	                        <td>
-	                            <p>W CLASS</p>
-	                            <p>수면 중 움직임에 단계적으로 반응하는 부드러운 쿠션감의 소프트 타입 매트리스</p>
+	                            <p>${productDto.hardness } CLASS</p>
+	                            <p>${hardnessContents }</p>
 	                        </td>
 	                    </tr>
 	                    <tr>
 	                        <td>구성품</td>
-	                        <td><p>매트리스</p></td>
+	                        <td><p>${productDto.component}</p></td>
 	                    </tr>
 	                    <tr>
 	                        <td>주요소재</td>
 	                        <td>
-	                            <p>원단 : 자가드원단 외</p>
-	                            <p>스프링 : s - 포켓스프링</p>
+	                            ${productDto.material }
 	                        </td>
 	                    </tr>
 	                    <tr>
 	                        <td>크기</td>
 	                        <td>
-	                            <p>GK 1,900(폭) x 2,075(길이) x 370(두께)mm</p>
-	                            <p>KK 1,800(폭) x 2,075(길이) x 370(두께)mm</p>
-	                            <p>LK 1,700(폭) x 2,075(길이) x 370(두께)mm</p>
-	                            <p>QE 1,500(폭) x 2,000(길이) x 370(두께)mm</p>
-	                            <p>SS 1,100(폭) x 2,000(길이) x 370(두께)mm</p>
+	                        	<c:forEach items="${sizeList}" var="sizeItem">
+		                            <p>${sizeItem.sizes} ${sizeItem.spec}</p>
+	                        	</c:forEach>
 	                            <br />
 	                            <p>더욱 커진 LK(라지킹)사이즈로 여유롭고 쾌적한 수면 환경을 만들어보세요</p>
 	                            <span>※침대와 프레임은 브랜드별 사이즈가 상이하오니 세트 구매를 권장합니다</span>
@@ -249,7 +185,7 @@
 	                    </tr>
 	                    <tr>
 	                        <td>제조사/원산지</td>
-	                        <td><p>㈜시몬스/한국</p></td>
+	                        <td><p>${productDto.productor }</p></td>
 	                    </tr>
 	                </tbody>
 	            </table>
@@ -261,21 +197,20 @@
 	                <li>직영</li>
 	                <li><a href="사이즈 팝업" class="size">해당 제품 규격</a></li>
 	            </ul>
-	            <h2>
-	                Beautyrest<br />
-	                Zalmon
-	            </h2>
+	            	<h2>
+	            	<c:forTokens items="${productDto.pname }" delims=" " var="pname">
+	            		${pname}<br>
+	            	</c:forTokens>
+	            	</h2>
 	            <div id="optwrap">
 	                <dl>
 	                    <dt>사이즈</dt>
 	                    <dd>
 	                        <select name="sizeOption" id="sizeOption">
-	                            <option value>선택하세요</option>
-	                            <option value="GK / 그레이트킹">GK / 그레이트킹</option>
-	                            <option value="KK / 킹오브킹">KK / 킹오브킹</option>
-	                            <option value="LK / 라지킹">LK / 라지킹</option>
-	                            <option value="QE / 퀸">QE / 퀸</option>
-	                            <option value="SS / 슈퍼싱글">SS / 슈퍼싱글</option>
+	                            <option value="">선택하세요</option>
+	                            <c:forEach items="${sizeList}" var="sizeItem">
+		                            <option value="${sizeItem.sizes} / ${sizeItem.sizeName}">${sizeItem.sizes} / ${sizeItem.sizeName}</option>
+	                        	</c:forEach>
 	                        </select>
 	                    </dd>
 	                </dl>
@@ -285,12 +220,18 @@
 	            <dl class="sum">
 	                <dt>판매가</dt>
 	                <dd>
-	                    <em id="orderprice">￦ 0</em>
+	                    <p id="orderprice">￦ 0</p>
 	                </dd>
 	            </dl>
 	            <p>* 구매는 오프라인 매장에 문의해주세요</p>
 	            <button>BUY</button>
 	            <ul class="menu">
+	                <li>
+	                    <div class="addCart">
+	                        <img src="../images/product/mattress/view/menu01.png" alt="" />
+	                        <span>카트</span>
+	                    </div>
+	                </li>
 	                <li>
 	                    <a href="위시리스트 페이지">
 	                        <img src="../images/product/mattress/view/menu02.png" alt="" />

@@ -4,21 +4,49 @@
 
 #main .container .qna form .apply { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; width: 110px; height: 30px; margin: 0; margin-left: 5px; font-size: 12px; border: none; background-color: #000; color: #fff; }
 
-#main .container form { margin-top: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; }
+#main .container form { margin-top: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; text-align: center; }
+
+#main .container form#order, #main .container form#as { margin-top: 0; }
+
+#main .container form#order .formTxt, #main .container form#as .formTxt { margin-top: 100px; }
+
+#main .container form#order #conentsTxt, #main .container form#as #conentsTxt { height: 300px; }
+
+#main .container form#qnaWrite .formTxt { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; margin-top: 10px; }
+
+#main .container form#qnaWrite .btns .cancel { background-color: #fff; border: 1px solid #000; color: #000; }
+
+#main .container form#qnaWrite .btns .confirm { width: 200px; font-size: 12px; }
+
+#main .container form#qnaWrite table .regDate { border: none; outline: none; padding: 0; }
+
+#main .container form#qnaWrite table th { vertical-align: top; }
+
+#main .container form#qnaWrite table input { width: 50%; }
+
+#main .container form#qnaWrite table textarea { width: 100%; height: 300px; resize: none; padding: 20px 10px; }
+
+#main .container form#qnaWrite table textarea.contents { margin: 0; }
 
 #main .container form#login { margin-top: 150px; }
 
-#main .container form input, #main .container form button { -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ccc; width: 450px; height: 45px; margin-bottom: 10px; padding-left: 10px; }
+#main .container form#login input { margin: auto; }
 
-#main .container form button { margin-top: 20px; background-color: #000; border-color: #000; color: #fff; }
+#main .container form button { background-color: #efefef; }
 
-#main .container form button.btn { width: 200px; }
+#main .container form input { -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ccc; width: 450px; height: 45px; margin-bottom: 10px; padding-left: 10px; }
 
-#main .container form button#file, #main .container form button#address { width: 100px; height: 30px; margin: 0; margin-left: 5px; font-size: 12px; border: none; }
+#main .container form #file, #main .container form #address { width: 100px; height: 30px; margin: 0; margin-left: 5px; font-size: 12px; border: none; }
 
-#main .container form .btns { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#main .container form .btns { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
-#main .container form .btns .cancel { display: block; -webkit-box-sizing: border-box; box-sizing: border-box; margin-left: 10px; background-color: #000; color: #fff; width: 200px; height: 43px; font-size: 14px; margin-top: 10px; padding: 15px 0; }
+#main .container form .btns .cancel { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-sizing: border-box; box-sizing: border-box; margin-left: 10px; background-color: #000; color: #fff; width: 200px; height: 43px; font-size: 14px; margin-top: 10px; }
+
+#main .container form .btns .cancel:hover { text-decoration: none; }
+
+#main .container form .btns button { -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ccc; width: 450px; height: 45px; margin-bottom: 10px; padding-left: 10px; margin-top: 20px; background-color: #000; border-color: #000; color: #fff; }
+
+#main .container form .btns button.comfirm { width: 200px; }
 
 #main .container form .etcLogin { margin-top: 30px; font-size: 13px; }
 
@@ -50,11 +78,19 @@
 
 #main .container form table tbody tr td { padding-left: 30px; }
 
-#main .container form table tbody tr td span { display: inline-block; font-size: 12px; margin-bottom: 10px; }
+#main .container form table tbody tr td.fileBox { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+#main .container form table tbody tr td.fileBox label { background-color: #000; height: 30px; -webkit-box-sizing: border-box; box-sizing: border-box; color: #fff; font-size: 12px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 0 20px; margin: 0; margin-left: 20px; }
+
+#main .container form table tbody tr td.fileBox label input[type="file"] { display: none; }
+
+#main .container form table tbody tr td span { display: inline-block; font-size: 12px; }
+
+#main .container form table tbody tr td span.txtCount { font-size: 16px; }
 
 #main .container form table .question { width: 100%; }
 
-#main .container form table .title, #main .container form table .file { width: 550px; }
+#main .container form table .title, #main .container form table .fileName { width: 550px; }
 
 #main .container form table .address { width: 330px; }
 
@@ -68,7 +104,7 @@
 
 #main .container form table select { border: 1px solid #ccc; padding-left: 10px; color: #999; margin-bottom: 10px; }
 
-#main .container form table .textarea { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
+#main .container form table .textarea { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; padding-left: 10px; }
 
 #main .container form table .textarea textarea { padding: 10px; width: calc(100% - 20px); resize: none; border: 1px solid #ccc; }
 

@@ -25,8 +25,9 @@ public class ServletAppContext implements WebMvcConfigurer {
 		WebMvcConfigurer.super.addResourceHandlers(registry);
 		registry.addResourceHandler("/**").addResourceLocations("/resources/");
 		// img - 파일 경로 변경해야됨
-		registry.addResourceHandler("/productImage/**").addResourceLocations("/resources/images/productImage/");
-		//registry.addResourceHandler("/memberImage/**").addResourceLocations("file:///D:/IT/spring/memberImage/");
+		registry.addResourceHandler("/productImage/**").addResourceLocations("file:///C:/simmons/productImage/");
+		registry.addResourceHandler("/contents/**").addResourceLocations("file:///C:/simmons/contents/");
+		registry.addResourceHandler("/as/**").addResourceLocations("file:///C:/simmons/as/");
 	}
 	
 	// 파일 업로드 실행
