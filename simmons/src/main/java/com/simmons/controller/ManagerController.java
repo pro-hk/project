@@ -2,6 +2,7 @@ package com.simmons.controller;
 
 import java.io.File;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,17 +17,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.simmons.model.AsDao;
+import com.simmons.model.AsDto;
+import com.simmons.model.CounselDao;
+import com.simmons.model.CounselDto;
 import com.simmons.model.FaqDao;
 import com.simmons.model.FaqDto;
 import com.simmons.model.NoticeDao;
 import com.simmons.model.NoticeDto;
 import com.simmons.model.ProductDao;
 import com.simmons.model.ProductDto;
+import com.simmons.model.QnaDao;
+import com.simmons.model.QnaDto;
 import com.simmons.util.ScriptWriter;
 
 @Controller
@@ -34,6 +39,15 @@ import com.simmons.util.ScriptWriter;
 public class ManagerController {
 	@Autowired
 	FaqDao faqDao;
+	
+	@Autowired
+	QnaDao qnaDao;
+
+	@Autowired
+	CounselDao counselDao;
+
+	@Autowired
+	AsDao asDao;
 	
 	@Autowired
 	NoticeDao noticeDao;
@@ -45,10 +59,505 @@ public class ManagerController {
 	public String index() {
 		return "manager/index";
 	}
-	@RequestMapping("/MemberList")
-	public String memberList() {
-		return "manager/memberList";
+	
+	// ----------------------------------------- cs ----------------------------------------------------
+	// FAQ
+	@RequestMapping("/FaqList")
+	public String faqList(Model model, HttpServletRequest request) {
+		String category = request.getParameter("category");
+		String txt = request.getParameter("txt");
+		int clickPage;
+		if(request.getParameter("page")=="" || request.getParameter("page")==null) {
+			clickPage = 1;
+		} else {
+			clickPage = Integer.parseInt(request.getParameter("page"));
+		}
+		int total = faqDao.FaqTotal();
+		int listPerPage = 10;
+		
+		int startNum = (clickPage - 1) * listPerPage + 1;
+		int endNum = clickPage * listPerPage;
+		
+		List<FaqDto> faqList = null;
+		if(txt == "" || txt == null) {
+			faqList = faqDao.FaqListAll(startNum,endNum);
+		} else if(category==""){
+			faqList = faqDao.FaqListTxtSearch(txt, startNum, endNum);
+			total = faqDao.FaqTotal(txt);
+		} else {
+			faqList = faqDao.FaqListSearch(txt, category, startNum, endNum);
+			total = faqDao.FaqTotal(txt, category);
+		}
+		
+		int lastPage;
+		if(total % listPerPage == 0) {
+			lastPage = total / listPerPage;
+		} else {
+			lastPage = total / listPerPage + 1;
+		}
+		
+		List<Integer> pageList = new ArrayList<>();
+		for(int i = 1; i <= lastPage; i++) {
+			pageList.add(i);
+		}
+		
+		model.addAttribute("faqList", faqList);
+		model.addAttribute("pageList", pageList);
+		model.addAttribute("clickPage",clickPage);
+		
+		return "manager/faqList";
 	}
+	
+	@RequestMapping("/FaqWrite")
+	public String faqWrite() {
+		return "/manager/faqWrite";
+	}
+	
+	@RequestMapping("/FaqWriteProcess")
+	public void faqWriteProcess(FaqDto faqDto, HttpServletResponse response) {
+		int result = faqDao.FaqWrite(faqDto);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "글이 등록되었습니다.", "FaqList");
+		} else {
+			ScriptWriter.alertAndBack(response, "글이 등록되지 않았습니다.");
+		}
+	}
+	
+	@RequestMapping("/FaqView")
+	public String faqView(HttpServletRequest request, Model model) {
+		int no = Integer.parseInt(request.getParameter("no"));
+		FaqDto faqDto = faqDao.FaqSelectOne(no);
+		if(faqDto!=null) {
+			model.addAttribute("faqDto", faqDto);
+		}
+		
+		return "manager/faqView";
+	}
+	
+		
+	@RequestMapping("/FaqEdit")
+	public String faqUpdate(HttpServletRequest request, Model model) {
+		int no = Integer.parseInt(request.getParameter("no"));
+		FaqDto faqDto = faqDao.FaqSelectOne(no);
+		if(faqDto!=null) {
+			model.addAttribute("faqDto", faqDto);
+		}
+		
+		return "manager/faqEdit";
+	}
+	
+	@RequestMapping("/FaqEditProcess")
+	public void faqUpdateProcess(FaqDto faqDto, HttpServletResponse response) {
+		int result = faqDao.FaqUpdate(faqDto);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "글이 수정되었습니다", "FaqView?no="+faqDto.getNo());
+		} else {
+			ScriptWriter.alertAndBack(response, "글이 수정되지 않았습니다");
+		}
+	}
+	
+	@RequestMapping("/FaqDelete")
+	public void faqDelete(HttpServletResponse response, HttpServletRequest request) {
+		int no = Integer.parseInt(request.getParameter("no"));
+		int result = faqDao.FaqDelete(no);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "글이 삭제되었습니다", "FaqList");
+		} else {
+			ScriptWriter.alertAndBack(response, "글이 삭제되지 않았습니다");
+		}
+	}
+	
+	// QNA
+	@RequestMapping("/QnaList")
+	public String qnaList(Model model, HttpServletRequest request) {
+		String category = request.getParameter("category");
+		String txt = request.getParameter("txt");
+		int clickPage;
+		if(request.getParameter("page")=="" || request.getParameter("page")==null) {
+			clickPage = 1;
+		} else {
+			clickPage = Integer.parseInt(request.getParameter("page"));
+		}
+		int total = qnaDao.QnaTotal();
+		int listPerPage = 10;
+		
+		int startNum = (clickPage - 1) * listPerPage + 1;
+		int endNum = clickPage * listPerPage;
+		
+		List<QnaDto> qnaList = null;
+		if(category!=null && category!="" && txt!=null && txt.trim()!="") {
+			total = qnaDao.QnaSearchTotal(category, txt);
+			qnaList = qnaDao.QnaSearchList(category, txt, startNum, endNum);
+		} else {
+			qnaList = qnaDao.QnaList(startNum, endNum);
+		}
+		
+		int lastPage;
+		if(total % listPerPage == 0) {
+			lastPage = total / listPerPage;
+		} else {
+			lastPage = total / listPerPage + 1;
+		}
+		List<Integer> pageList = new ArrayList<>();
+		for(int i = 1; i <= lastPage; i++) {
+			pageList.add(i);
+		}
+		
+		int noReply = qnaDao.QnaNoReply();
+		
+		model.addAttribute("qnaList",qnaList);
+		model.addAttribute("pageList",pageList);
+		model.addAttribute("clickPage",clickPage);
+		model.addAttribute("noReply",noReply);
+		
+		return "manager/qnaList";
+	}
+	
+	@RequestMapping("/QnaView")
+	public String qnaView(HttpServletRequest request, Model model) {
+		int no =  Integer.parseInt(request.getParameter("no"));
+		QnaDto qnaDto = qnaDao.QnaView(no);
+		if(qnaDto!=null) {
+			model.addAttribute("qnaDto", qnaDto);
+		}
+		
+		return "/manager/qnaView";
+	}
+	
+	@RequestMapping("/QnaReply")
+	public void qnaReply(HttpServletRequest request, HttpServletResponse response) {
+		String answer = request.getParameter("answer");
+		int no = Integer.parseInt(request.getParameter("no"));
+		
+		int result = qnaDao.QnaReply(answer, no);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "답변이 등록되었습니다", "QnaView?no="+no);
+		} else {
+			ScriptWriter.alertAndBack(response, "답변이 등록되지 않았습니다.");
+		}
+	}
+	
+	@RequestMapping("/QnaDelete")
+	public void qnaDelete(HttpServletRequest request, HttpServletResponse response) {
+		int no = Integer.parseInt(request.getParameter("no"));
+		int result = qnaDao.QnaDelete(no);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "답변이 삭제되었습니다", "QnaList");
+		} else {
+			ScriptWriter.alertAndBack(response, "답변이 삭제되지 않았습니다");
+		}
+	}
+	
+//	@RequestMapping("/QnaNoReply")
+//	public List<QnaDto> QnaNoReply(HttpServletRequest request){
+//		String category = request.getParameter("category");
+//		String txt = request.getParameter("txt");
+//		int clickPage;
+//		if(request.getParameter("page")=="" || request.getParameter("page")==null) {
+//			clickPage = 1;
+//		} else {
+//			clickPage = Integer.parseInt(request.getParameter("page"));
+//		}
+//		int total = faqDao.FaqTotal();
+//		int listPerPage = 10;
+//		
+//		int startNum = (clickPage - 1) * listPerPage + 1;
+//		int endNum = clickPage * listPerPage;
+//		
+//		List<FaqDto> faqList = null;
+//		if(txt == "" || txt == null) {
+//			faqList = faqDao.FaqListAll(startNum,endNum);
+//		} else if(category==""){
+//			faqList = faqDao.FaqListTxtSearch(txt, startNum, endNum);
+//			total = faqDao.FaqTotal(txt);
+//		} else {
+//			faqList = faqDao.FaqListSearch(txt, category, startNum, endNum);
+//			total = faqDao.FaqTotal(txt, category);
+//		}
+//		
+//		int lastPage;
+//		if(total % listPerPage == 0) {
+//			lastPage = total / listPerPage;
+//		} else {
+//			lastPage = total / listPerPage + 1;
+//		}
+//		
+//		List<Integer> pageList = new ArrayList<>();
+//		for(int i = 1; i <= lastPage; i++) {
+//			pageList.add(i);
+//		}
+//		
+//		model.addAttribute("faqList", faqList);
+//		model.addAttribute("pageList", pageList);
+//		model.addAttribute("clickPage",clickPage);
+// 	}
+	
+	//Counsel
+	@RequestMapping("/CounselList")
+	public String counselList(Model model, HttpServletRequest request) {
+		String category = request.getParameter("category");
+		String txt = request.getParameter("txt");
+		int clickPage;
+		if(request.getParameter("page")=="" || request.getParameter("page")==null) {
+			clickPage = 1;
+		} else {
+			clickPage = Integer.parseInt(request.getParameter("page"));
+		}
+		int total = counselDao.CounselTotal();
+		int listPerPage = 10;
+		
+		int startNum = (clickPage - 1) * listPerPage + 1;
+		int endNum = clickPage * listPerPage;
+		
+		List<CounselDto> counselList = null;
+		if(category!=null && category!="" && txt!=null && txt.trim()!="") {
+			total = counselDao.CounselSearchTotal(category, txt);
+			counselList = counselDao.CounselSearchList(category, txt, startNum, endNum);
+		} else {
+			counselList = counselDao.CounselList(startNum, endNum);
+		}
+		
+		int lastPage;
+		if(total % listPerPage == 0) {
+			lastPage = total / listPerPage;
+		} else {
+			lastPage = total / listPerPage + 1;
+		}
+		List<Integer> pageList = new ArrayList<>();
+		for(int i = 1; i <= lastPage; i++) {
+			pageList.add(i);
+		}
+		
+		int noReply = counselDao.CounselNoReply();
+		
+		model.addAttribute("counselList",counselList);
+		model.addAttribute("pageList",pageList);
+		model.addAttribute("clickPage",clickPage);
+		model.addAttribute("noReply",noReply);
+		
+		return "manager/counselList";
+	}
+	
+	@RequestMapping("/CounselView")
+	public String counselView(HttpServletRequest request, Model model) {
+		int no =  Integer.parseInt(request.getParameter("no"));
+		CounselDto counselDto = counselDao.CounselView(no);
+		if(counselDto!=null) {
+			model.addAttribute("counselDto", counselDto);
+		}
+		
+		return "/manager/counselView";
+	}
+	
+	@RequestMapping("/CounselReply")
+	public void counselReply(HttpServletRequest request, HttpServletResponse response) {
+		String answer = request.getParameter("answer");
+		int no = Integer.parseInt(request.getParameter("no"));
+		
+		int result = counselDao.CounselReply(answer, no);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "답변이 등록되었습니다", "CounselView?no="+no);
+		} else {
+			ScriptWriter.alertAndBack(response, "답변이 등록되지 않았습니다.");
+		}
+	}
+	
+	@RequestMapping("CounselDelete")
+	public void counselDelete(HttpServletRequest request, HttpServletResponse response) {
+		int no = Integer.parseInt(request.getParameter("no"));
+		int result = counselDao.CounselDelete(no);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "통화내용이 삭제되었습니다", "CounselList");
+		} else {
+			ScriptWriter.alertAndBack(response, "통화내용이 삭제되지 않았습니다");
+		}
+	}
+	
+	//AS
+	@RequestMapping("/AsList")
+	public String asList(Model model, HttpServletRequest request) {
+		String category = request.getParameter("category");
+		String txt = request.getParameter("txt");
+		int clickPage;
+		if(request.getParameter("page")=="" || request.getParameter("page")==null) {
+			clickPage = 1;
+		} else {
+			clickPage = Integer.parseInt(request.getParameter("page"));
+		}
+		int total = asDao.AsTotal();
+		int listPerPage = 10;
+		
+		int startNum = (clickPage - 1) * listPerPage + 1;
+		int endNum = clickPage * listPerPage;
+		
+		List<AsDto> asList = null;
+		if(category!=null && category!="" && txt!=null && txt.trim()!="") {
+			total = asDao.AsSearchTotal(category, txt);
+			asList = asDao.AsSearchList(category, txt, startNum, endNum);
+		} else {
+			asList = asDao.AsList(startNum, endNum);
+		}
+		
+		int lastPage;
+		if(total % listPerPage == 0) {
+			lastPage = total / listPerPage;
+		} else {
+			lastPage = total / listPerPage + 1;
+		}
+		List<Integer> pageList = new ArrayList<>();
+		for(int i = 1; i <= lastPage; i++) {
+			pageList.add(i);
+		}
+		
+		int noReply = asDao.AsNoReply();
+		
+		model.addAttribute("asList",asList);
+		model.addAttribute("pageList",pageList);
+		model.addAttribute("clickPage",clickPage);
+		model.addAttribute("noReply",noReply);
+		
+		return "manager/asList";
+	}
+	
+	@RequestMapping("/AsView")
+	public String asView(HttpServletRequest request, Model model) {
+		int no =  Integer.parseInt(request.getParameter("no"));
+		AsDto asDto = asDao.AsView(no);
+		if(asDto!=null) {
+			model.addAttribute("asDto", asDto);
+		}
+		
+		return "/manager/asView";
+	}
+	
+	@RequestMapping("/AsReply")
+	public void asReply(HttpServletRequest request, HttpServletResponse response) {
+		String answer = request.getParameter("answer");
+		int no = Integer.parseInt(request.getParameter("no"));
+		
+		int result = asDao.AsReply(answer, no);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "AS처리내용이 등록되었습니다", "AsView?no="+no);
+		} else {
+			ScriptWriter.alertAndBack(response, "AS처리내용이 등록되지 않았습니다.");
+		}
+	}
+	
+	@RequestMapping("AsDelete")
+	public void asDelete(HttpServletRequest request, HttpServletResponse response) {
+		int no = Integer.parseInt(request.getParameter("no"));
+		int result = asDao.AsDelete(no);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "AS처리내용이 삭제되었습니다", "AsList");
+		} else {
+			ScriptWriter.alertAndBack(response, "AS처리내용이 삭제되지 않았습니다");
+		}
+	}
+	
+	// NOTICE
+	@RequestMapping("/NoticeList")
+	public String noticeList(Model model, HttpServletRequest request) {
+		String category = request.getParameter("category");
+		String txt = request.getParameter("txt");
+		int clickPage;
+		if(request.getParameter("page")=="" || request.getParameter("page")==null) {
+			clickPage = 1;
+		} else {
+			clickPage = Integer.parseInt(request.getParameter("page"));
+		}
+		int total = noticeDao.NoticeTotal();
+		int listPerPage = 10;
+		
+		int startNum = (clickPage - 1) * listPerPage + 1;
+		int endNum = clickPage * listPerPage;
+		
+		List<NoticeDto> noticeList = null;
+		if(category!=null && category!="" && txt!=null && txt.trim()!="") {
+			total = noticeDao.NoticeSearchTotal(category, txt);
+			noticeList = noticeDao.NoticeSearchList(category, txt, startNum, endNum);
+		} else {
+			noticeList = noticeDao.NoticeList(startNum, endNum);
+		}
+		
+		int lastPage;
+		if(total % listPerPage == 0) {
+			lastPage = total / listPerPage;
+		} else {
+			lastPage = total / listPerPage + 1;
+		}
+		List<Integer> pageList = new ArrayList<>();
+		for(int i = 1; i <= lastPage; i++) {
+			pageList.add(i);
+		}
+		model.addAttribute("noticeList",noticeList);
+		model.addAttribute("pageList",pageList);
+		model.addAttribute("clickPage",clickPage);
+		
+		return "manager/noticeList";
+	}
+	
+	@RequestMapping("/NoticeWrite")
+	public String noticeWrite() {
+		return "/manager/noticeWrite";
+	}
+	
+	@RequestMapping("/NoticeView")
+	public String noticeView(HttpServletRequest request, Model model) {
+		int no =  Integer.parseInt(request.getParameter("no"));
+		NoticeDto noticeDto = noticeDao.NoticeSelectOne(no);
+		if(noticeDto!=null) {
+			model.addAttribute("noticeDto", noticeDto);
+		}
+		
+		return "/manager/noticeView";
+	}
+	
+	@RequestMapping("/NoticeWriteProcess")
+	public void noticeWriteProcess(NoticeDto noticeDto, HttpServletResponse response) {
+		int result = noticeDao.NoticeWrite(noticeDto);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "글이 등록되었습니다", "NoticeList");
+		} else {
+			ScriptWriter.alertAndBack(response, "글이 수정되지 않았습니다");
+		}
+	}
+	
+	@RequestMapping("/NoticeEdit")
+	public String noticeEdit(HttpServletRequest request, Model model) {
+		int no = Integer.parseInt(request.getParameter("no"));
+		
+		NoticeDto noticeDto = noticeDao.NoticeSelectOne(no);
+		if(noticeDto!=null) {
+			model.addAttribute("noticeDto", noticeDto);
+		}
+		
+		return "/manager/noticeEdit";
+	}
+	
+	@RequestMapping("/NoticeEditProcess")
+	public void noticeEditProcess(NoticeDto noticeDto, HttpServletResponse response) {
+		int result = noticeDao.NoticeUpdate(noticeDto);
+		if(result > 0) {
+			if(result > 0) {
+				ScriptWriter.alertAndNext(response, "글이 등록되었습니다", "NoticeList");
+			} else {
+				ScriptWriter.alertAndBack(response, "글이 수정되지 않았습니다");
+			}
+		}
+	}
+	
+	@RequestMapping("NoticeDelete")
+	public void noticeDelete(HttpServletRequest request, HttpServletResponse response) {
+		int no = Integer.parseInt(request.getParameter("no"));
+		int result = noticeDao.NoticeDelete(no);
+		if(result > 0) {
+			ScriptWriter.alertAndNext(response, "글이 삭제되었습니다", "NoticeList");
+		} else {
+			ScriptWriter.alertAndBack(response, "글이 삭제되지 않았습니다");
+		}
+	}
+	
+	// -------------------------------------------- product --------------------------------------------------
 	@RequestMapping("/ProductList")
 	public String productList() {
 		return "manager/productList";
@@ -94,6 +603,9 @@ public class ManagerController {
 					colorMap.put("sizes", sizes);
 					colorMap.put("color", color);
 					int colorResult = productDao.colorInsert(colorMap);
+					if(colorResult > 0) {
+						System.out.println("color 입력완료");
+					}
 				}
 			}
 			sizesMap.put("pname", productDto.getPname());
@@ -101,6 +613,9 @@ public class ManagerController {
 			sizesMap.put("spec", spec);
 			sizesMap.put("price", price);
 			int sizesResult = productDao.sizesInsert(sizesMap);
+			if(sizesResult > 0) {
+				System.out.println("size 입력완료");
+			}
 		}
 		
 		
@@ -162,121 +677,9 @@ public class ManagerController {
 		return summerNoteMap;
 	}
 	
-	@RequestMapping("/FaqList")
-	public String faqList(Model model, HttpServletRequest request) {
-		int page;
-		if(request.getParameter("page")=="" || request.getParameter("page")==null) {
-			page = 1;
-		} else {
-			page = Integer.parseInt(request.getParameter("page"));
-		}
-		System.out.println(page);
-		int total = faqDao.FaqTotal();
-		int listPerPage = 10;
-		int lastPage = total / listPerPage + 1;
-		
-		int startNum = (page - 1) * listPerPage + 1;
-		int endNum = page * listPerPage;
-		
-		List<FaqDto> faqList = faqDao.FaqAllList(startNum, endNum);
-		model.addAttribute("faqList", faqList);
-		model.addAttribute("lastPage", lastPage);
-		
-		return "manager/faqList";
+	// ------------------------------------------------- member ----------------------------------------------
+	@RequestMapping("/MemberList")
+	public String memberList() {
+		return "manager/memberList";
 	}
-	
-	@RequestMapping("/FaqWrite")
-	public String faqWrite() {
-		return "/manager/faqWrite";
-	}
-	
-	@RequestMapping("/FaqWriteProcess")
-	public void faqWriteProcess(FaqDto faqDto, HttpServletResponse response) {
-		int result = faqDao.FaqWrite(faqDto);
-		if(result > 0) {
-			ScriptWriter.alertAndNext(response, "글이 등록되었습니다.", "FaqList");
-		} else {
-			ScriptWriter.alertAndBack(response, "글이 등록되지 않았습니다.");
-		}
-	}
-	
-	@RequestMapping("/FaqView")
-	public String faqView(HttpServletRequest request, Model model) {
-		int no = Integer.parseInt(request.getParameter("no"));
-		FaqDto faqDto = faqDao.FaqSelectOne(no);
-		if(faqDto!=null) {
-			model.addAttribute("faqDto", faqDto);
-		}
-		
-		return "manager/faqView";
-	}
-	
-	@RequestMapping("/NoticeList")
-	public String noticeList(Model model) {
-		List<NoticeDto> noticeList = noticeDao.NoticeAllList();
-		if(noticeList!=null) {
-			model.addAttribute("noticeList", noticeList);
-		}
-		return "manager/noticeList";
-	}
-	
-	@RequestMapping("/NoticeWrite")
-	public String noticeWrite() {
-		return "/manager/noticeWrite";
-	}
-	
-	@RequestMapping("/NoticeView")
-	public String noticeView(HttpServletRequest request, Model model) {
-		int no =  Integer.parseInt(request.getParameter("no"));
-		NoticeDto noticeDto = noticeDao.NoticeSelectOne(no);
-		if(noticeDto!=null) {
-			model.addAttribute("noticeDto", noticeDto);
-		}
-		
-		return "/manager/noticeView";
-	}
-	
-	@RequestMapping("/NoticeWriteProcess")
-	public void noticeWriteProcess(NoticeDto noticeDto, HttpServletResponse response) {
-		int result = noticeDao.NoticeWrite(noticeDto);
-		if(result > 0) {
-			ScriptWriter.alertAndNext(response, "글이 등록되었습니다", "NoticeList");
-		} else {
-			ScriptWriter.alertAndBack(response, "글이 수정되지 않았습니다");
-		}
-	}
-	
-	@RequestMapping("/FaqUpdate")
-	public String faqUpdate(HttpServletRequest request, Model model) {
-		int no = Integer.parseInt(request.getParameter("no"));
-		FaqDto faqDto = faqDao.FaqSelectOne(no);
-		if(faqDto!=null) {
-			model.addAttribute("faqDto", faqDto);
-		}
-		
-		return "manager/faqUpdate";
-	}
-	
-	@RequestMapping("/FaqUpdateProcess")
-	public void faqUpdateProcess(FaqDto faqDto, HttpServletResponse response) {
-		int result = faqDao.FaqUpdate(faqDto);
-		if(result > 0) {
-			ScriptWriter.alertAndNext(response, "글이 수정되었습니다", "FaqView?no="+faqDto.getNo());
-		} else {
-			ScriptWriter.alertAndBack(response, "글이 수정되지 않았습니다");
-		}
-	}
-	
-	@RequestMapping("/FaqDelete")
-	public void faqDelete(HttpServletResponse response, HttpServletRequest request) {
-		int no = Integer.parseInt(request.getParameter("no"));
-		int result = faqDao.FaqDelete(no);
-		if(result > 0) {
-			ScriptWriter.alertAndNext(response, "글이 삭제되었습니다", "FaqList");
-		} else {
-			ScriptWriter.alertAndBack(response, "글이 삭제되지 않았습니다");
-		}
-	}
-	
-	
 }

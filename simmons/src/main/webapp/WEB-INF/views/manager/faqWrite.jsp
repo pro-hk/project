@@ -14,7 +14,7 @@
         </ul>
 
 		<div class="txtBox lineOff">
-		    <h1>FAQ 등록</h1>
+		    <h1>FAQ WRITE</h1>
 		</div>
 
         <!-- form -->
@@ -51,8 +51,8 @@
             </tbody>
           </table>
           <div class="btns">
-            <button type="submit" class="comfirm btn">글쓰기</button>
-            <a href="Faq" class="cancel btn">취소</a>
+            <button type="submit" class="confirm btn">글쓰기</button>
+            <a href="FaqList" class="cancel btn">취소</a>
           </div>
         </form>
         <!-- form end -->

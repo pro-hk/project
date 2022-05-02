@@ -1,28 +1,59 @@
 main {
+  overflow: hidden;
   #black {
     text-align: center;
+    position: relative;
     .mainImg {
       width: 100%;
       height: 340px;
       margin-top: 60px;
       overflow: hidden;
       background: url("../images/black/theblack_bg.jpg") no-repeat 50% 0;
-      .miniMenu {
+      .firstMenu {
         display: flex;
-        justify-content: flex-end;
-        font-size: 12px;
-        padding-top: 20px;
-        > li {
-          margin-right: 20px;
-          ul {
-            display: none;
-            &.on {
+        position: absolute;
+        right: 20px;
+        top: 26px;
+        .firstLi {
+          display: flex;
+          padding-left: 10px;
+          margin-right: 10px;
+          font-size: 12px;
+          color: #fff;
+          background: url(../images/aboutus/heritage/location_bar.gif) no-repeat 0 50%;
+          &.open {
+            display: block;
+            .secondMenu {
               display: block;
-              color: #fff;
+              background-color: #fff;
+              color: #777;
+              padding: 15px 10px;
+              width: 130px;
             }
           }
+          > a {
+            padding-right: 10px;
+            background: url(../images/aboutus/heritage/location_arrow2.gif) no-repeat 100% 50%;
+            &:hover {
+              color: #fff !important;
+            }
+          }
+          .secondMenu {
+            display: none;
+            position: absolute;
+            text-align: left;
+            a {
+              display: block;
+              line-height: 1.5;
+            }
+          }
+        }
+        .firstLi:first-child {
+          background: none;
           a {
-            color: #fff;
+            margin: 0;
+            padding: 0;
+            background: none;
           }
         }
       }
@@ -64,34 +95,40 @@ main {
       line-height: 1.5;
       color: #acacac;
     }
-    div {
-      overflow: hidden;
-      > ul.Slider {
-        display: flex;
-        flex-wrap: nowrap;
-        width: 500%;
-        li {
-          width: 100%;
+    .slider {
+      position: relative;
+      .sliderBox {
+        position: relative;
+        overflow: hidden;
+        ul {
+          li {
+            height: 340px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50%;
+          }
         }
       }
-      .layList {
+      .sliderBtn {
+        position: absolute;
+        text-align: center;
         display: flex;
-        width: 1000px;
-        margin: 0 auto;
-        padding-top: 60px;
-        li {
-          background: url("../images/black/theblack_bg03.png") no-repeat 0 0;
-          width: 480px;
-          margin-left: 40px;
-          &:first-child {
-            margin-left: 0;
-          }
-          h4 {
-            padding-top: 40px;
-            font-size: 18px;
-          }
-          p {
-            padding-top: 10px;
+        left: 50%;
+        z-index: 100;
+        margin-left: -80px;
+        .bullet {
+          width: 150px;
+          position: absolute;
+          bottom: 20px;
+          .swiper-pagination-bullet {
+            margin-right: 2px;
+            width: 10px;
+            height: 10px;
+            background: url(../images/collection/beautyrest/bullet_off.png) no-repeat 0 0;
+            opacity: 1;
+            &-active {
+              background: url(../images/collection/beautyrest/bullet_on.png) no-repeat 0 0;
+            }
           }
         }
       }
@@ -102,42 +139,138 @@ main {
     width: 100%;
     .proTop {
       position: relative;
+      z-index: 3;
       .miniMenu {
         display: flex;
-        justify-content: flex-end;
-        font-size: 12px;
         position: absolute;
-        top: 10px;
-        right: 30px;
+        right: 20px;
+        top: 26px;
         background-color: #111;
         border-radius: 12.5px;
-        li {
-          padding: 5px 20px;
-          &:last-child {
-            margin-right: 0;
+        padding: 5px;
+        .miniLi {
+          display: flex;
+          padding-left: 10px;
+          margin-right: 10px;
+          font-size: 12px;
+          color: #fff;
+          background: url(../images/aboutus/heritage/location_bar.gif) no-repeat 0 50%;
+          &:nth-child(1) {
+            background: none;
+            > a {
+              background: none;
+            }
           }
-          a {
-            color: #fff;
+          &.open {
+            display: block;
+            .miniSub {
+              display: block;
+              background-color: #fff;
+              padding: 15px 10px;
+              width: 130px;
+            }
           }
-          ul {
+          > a {
+            padding-right: 10px;
+            background: url(../images/aboutus/heritage/location_arrow2.gif) no-repeat 100% 50%;
+            &:hover,
+            &:focus {
+              color: #fff !important;
+            }
+          }
+          .miniSub {
             display: none;
+            position: absolute;
+            text-align: left;
+            a {
+              display: block;
+              line-height: 1.5;
+              color: #777;
+            }
           }
         }
       }
     }
-    .Slider {
-      overflow: hidden;
-      ul {
-        width: 400%;
-        display: flex;
-        flex-wrap: nowrap;
-        li {
-          width: 100%;
-          img {
-            width: 100%;
-            height: 100vh;
+    .mainSlider {
+      position: relative;
+
+      .mainSliderBox {
+        position: relative;
+        overflow: hidden;
+        .mask {
+          height: 100vh;
+        }
+        ul {
+          li {
+            height: 90vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50%;
+            &.visual01 {
+              background-image: url("../images/black/collection_banner1.jpg");
+            }
+            &.visual02 {
+              background-image: url("../images/black/collection_banner2.jpg");
+            }
+            &.visual03 {
+              background-image: url("../images/black/collection_banner3.jpg");
+            }
+            &.visual04 {
+              background-image: url("../images/black/collection_banner4.jpg");
+            }
           }
         }
+      }
+      .sliderBtn {
+        position: absolute;
+        text-align: center;
+        display: flex;
+        left: 50%;
+        z-index: 100;
+        margin-left: -80px;
+        .bullet {
+          width: 150px;
+          position: absolute;
+          bottom: 90px;
+          .swiper-pagination-bullet {
+            margin-right: 2px;
+            width: 10px;
+            height: 10px;
+            background: url(../images/collection/beautyrest/bullet_off.png) no-repeat 0 0;
+            opacity: 1;
+            &-active {
+              background: url(../images/collection/beautyrest/bullet_on.png) no-repeat 0 0;
+            }
+          }
+        }
+      }
+      .galleryRight {
+        display: flex;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35px;
+        height: 65px;
+        background: url(../images/collection/beautyrest/kv_right.png) no-repeat 0 0;
+        z-index: 60;
+        opacity: 1;
+        font-size: 0;
+        cursor: pointer;
+      }
+      .galleryLeft {
+        display: flex;
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35px;
+        height: 65px;
+        background: url(../images/collection/beautyrest/kv_left.png) no-repeat 0 0;
+        z-index: 60;
+        opacity: 1;
+        font-size: 0;
+        cursor: pointer;
       }
     }
     .sns {
@@ -183,15 +316,104 @@ main {
         }
       }
     }
-    .sliderBox {
-      ul {
+    .SliderScrollBox {
+      max-width: 100%;
+      position: relative;
+      height: 550px;
+      padding-bottom: 30px;
+      .swiper-wrapper {
         display: flex;
+        justify-content: space-between;
+        position: absolute;
+        padding: 45px 0 90px 40px;
         li {
-          padding: 45px;
-          width: 378px;
-          height: 522px;
+          width: 400px;
+          a {
+            position: relative;
+            display: block;
+            img {
+              width: 330px;
+              box-shadow: 0 0 5px #555;
+            }
+            &:hover {
+              position: relative;
+              text-align: center;
+              opacity: 1;
+              img {
+                display: block;
+                filter: brightness(30%);
+                transition: all 0.5s ease;
+                margin-top: -30px;
+              }
+            }
+            .hoverBox {
+              text-align: center;
+              position: absolute;
+              left: 0;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              background-color: rgba(0, 0, 0, 0.3);
+              width: 330px;
+              height: 480px;
+              opacity: 0;
+              transition: 0.3s;
+              .cover {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                width: 100%;
+                font-size: 0;
+                .box {
+                  display: inline-block;
+                  width: 48px;
+                  height: 18px;
+                  border: 1px solid #5b5b5b;
+                  color: #fff;
+                  font-size: 9px;
+                  line-height: 18px;
+                }
+                .name {
+                  display: block;
+                  color: #f0f0f0;
+                  font-size: 21px;
+                  font-weight: lighter;
+                  text-align: center;
+                  line-height: 1.25em;
+                  padding: 15px 0;
+                }
+                .bogi {
+                  display: inline-block;
+                  border-bottom: 1px solid #868686;
+                  i {
+                    display: inline-block;
+                    color: #fff;
+                    font-size: 11px;
+                  }
+                }
+              }
+            }
+          }
+          &:hover .hoverBox {
+            opacity: 1;
+          }
         }
       }
     }
+    .swiper-scrollbar {
+      position: absolute;
+      bottom: 0;
+      height: 3px;
+      background: #dedede;
+    }
   }
+}
+
+.swiper-wrapper {
+  min-height: 100%;
+}
+.swiper-slide {
+  height: auto !important;
 }

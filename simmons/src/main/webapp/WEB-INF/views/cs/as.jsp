@@ -98,43 +98,43 @@
           <tbody>
             <tr class="top">
               <th>이름 *</th>
-              <td><input type="text" class="name" name="name" value="${empty loggedMember?'':loggedMember.name }" /></td>
+              <td><input type="text" class="name" name="name" value="${empty loggedMemberDto?'':loggedMemberDto.name }" /></td>
             </tr>
             <tr>
               <th>연락처 *</th>
               <td>
-                <input type="text" class="phone01 phone" name="phone01" value="${empty loggedMember?'':loggedMember.phone01 }" />
+                <input type="text" class="phone01 phone" name="phone01" value="${empty loggedMemberDto?'':loggedMemberDto.phone01 }" />
                 <span>-</span>
-                <input type="text" class="phone02 phone" name="phone02" value="${empty loggedMember?'':loggedMember.phone02 }" />
+                <input type="text" class="phone02 phone" name="phone02" value="${empty loggedMemberDto?'':loggedMemberDto.phone02 }" />
                 <span>-</span>
-                <input type="text" class="phone03 phone" name="phone03" value="${empty loggedMember?'':loggedMember.phone03 }" />
+                <input type="text" class="phone03 phone" name="phone03" value="${empty loggedMemberDto?'':loggedMemberDto.phone03 }" />
               </td>
             </tr>
             <tr>
               <th rowspan="3">주소 *</th>
               <td>
-                <input type="text" name="zipCode" class="zipcode" name="zipcode" value="${empty loggedMember?'':loggedMember.zipCode }" />
+                <input type="text" name="zipCode" class="zipcode" name="zipcode" value="${empty loggedMemberDto?'':loggedMemberDto.zipCode }" />
                 <button id="address">우편번호 찾기</button>
               </td>
             </tr>
             <tr>
               <td>
-                <input type="text" class="address address01" name="address01" placeholder="도로명주소" value="${empty loggedMember?'':loggedMember.address01 }" />
-                <input type="text" class="address address03" name="address03" placeholder="상세주소" value="${empty loggedMember?'':loggedMember.address03 }" />
+                <input type="text" class="address address01" name="address01" placeholder="도로명주소" value="${empty loggedMemberDto?'':loggedMemberDto.address01 }" />
+                <input type="text" class="address address03" name="address03" placeholder="상세주소" value="${empty loggedMemberDto?'':loggedMemberDto.address03 }" />
               </td>
             </tr>
             <tr>
               <td>
-                <input type="text" class="address address02" name="address02" placeholder="지번주소"  value="${empty loggedMember?'':loggedMember.address02 }" />
-                <input type="text" class="address address04" readonly value="${empty loggedMember?'':loggedMember.address03 }" />
+                <input type="text" class="address address02" name="address02" placeholder="지번주소"  value="${empty loggedMemberDto?'':loggedMemberDto.address02 }" />
+                <input type="text" class="address address04" readonly value="${empty loggedMemberDto?'':loggedMemberDto.address03 }" />
               </td>
             </tr>
             <tr>
               <th>이메일 *</th>
               <td>
-                <input type="text" class="email01" name="email01" value="${empty loggedMember?'':loggedMember.email01 }" />
+                <input type="text" class="email01" name="email01" value="${empty loggedMemberDto?'':loggedMemberDto.email01 }" />
                 <span>@</span>
-                <input type="text" class="email02" name="email02" value="${empty loggedMember?'':loggedMember.email02 }" />
+                <input type="text" class="email02" name="email02" value="${empty loggedMemberDto?'':loggedMemberDto.email02 }" />
                 <span></span>
                 <select class="domain">
                   <option value="">직접 입력</option>
@@ -232,4 +232,5 @@
 </main>
 <!-- main end -->
 
-<%@ include file="../include/qna.jsp" %> <%@ include file="../include/footer.jsp"%>
+<%@ include file="../include/login.jsp" %>
+<%@ include file="../include/footer.jsp"%>

@@ -15,8 +15,18 @@
         </ul>
 
 		<div class="txtBox lineOff">
-		    <h1>FAQ VIEW</h1>
+		    <h1>NOTICE VIEW</h1>
 		</div>
+		
+		 <!-- 상단 5개 선택 -->
+    <ul class="customerList managerList">
+      <li><a href="FaqList">FAQ</a></li>
+      <li><a href="QnaList">Q&A</a></li>
+      <li><a href="CounselList">1:1 전화상담 신청</a></li>
+      <li><a href="AsList">A/S 신청</a></li>
+      <li class="on"><a href="NoticeList">공지사항</a></li>
+    </ul>
+		
 
 		<div class="view">
 			<table>
@@ -36,7 +46,7 @@
 			  </tbody>
 			</table>
 			<div class="btns">
-			  <a href="NoticeUpdate?no=${noticeDto.no }" class="">수정</a>
+			  <a href="NoticeEdit?no=${noticeDto.no }" class="confirm">수정</a>
 			  <a href="NoticeDelete?no=${noticeDto.no }" class="delete">삭제</a>
 			  <a href="NoticeList" class="cancel btn">목록</a>
 			</div>

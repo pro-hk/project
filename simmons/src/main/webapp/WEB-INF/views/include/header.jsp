@@ -25,13 +25,19 @@
     <link href="../css/collection.css" rel="stylesheet" />
     <link href="../css/find.css" rel="stylesheet" />
     <link href="../css/form.css" rel="stylesheet" />
+    <link href="../css/mypage.css" rel="stylesheet" />
     <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/gsap/gsap.min.js"></script>
+    <script src="../js/gsap/CSSRulePlugin.min.js"></script>
+    <script src="../js/gsap/ScrollTrigger.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d020193b78b81197938ee704a364270&libraries=services"></script>
     <script src="../js/swiper-bundle.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="../summernote/summernote.min.js"></script>
     <script src="../js/main.js" defer></script>
+    <script src="../js/btn.js" defer></script>
+    <%-- <script src="../js/heritage.js" defer></script> --%>
   </head>
   <body>
     <!-- a링크 주소 미입력 -->
@@ -123,7 +129,7 @@
 
         <!-- 기타 / DB작업 -->
         <c:choose>
-	        <c:when test="${empty loggedMember}">
+	        <c:when test="${empty loggedMemberDto}">
 	        <div class="etc">
 	          <a href="../member/Login">로그인</a>
 	          <a href="../product/Order">주문내역</a>
@@ -133,7 +139,7 @@
 	        <c:otherwise>
 	        <div class="etc">
 	          <a href="../member/Logout">로그아웃</a>
-	          <a href="../member/MyPage">MY PAGE</a>
+	          <a href="../member/MyPage?no=${loggedMemberDto.no }">MY PAGE</a>
 	          <a href="../cs/Faq">고객센터</a>
 	        </div>
 	        </c:otherwise>
@@ -180,7 +186,7 @@
       <!-- 우측 메뉴 -->
       <div id="RightMenu">
 	    <!-- 관리자 페이지 -->
-		<c:if test="${loggedMember.grade=='관리자'}">
+		<c:if test="${loggedMemberDto.grade=='관리자'}">
 		<!-- 관리자 페이지 -->
 		<div id="managerLink">
 			<a href="../manager/">
@@ -230,7 +236,7 @@
            	</li>
            	</c:forEach>
            </ul>
-           	<div class="cartLink on"><a href="#">CART 바로가기</a></div>
+           	<div class="cartLink on"><a href="Cart">CART 바로가기</a></div>
           <ul class="list recentProduct">
           <c:if test="${empty recentList }">
             <li>최근 본 상품이 없습니다.</li>
@@ -255,7 +261,7 @@
 
         <!-- CARTLIST DB -->
         <c:choose>
-	        <c:when test="${empty loggedMember}">
+	        <c:when test="${empty loggedMemberDto}">
 	        <div class="etc">
 	          <a href="../member/Login">로그인</a>
 	          <a href="../product/Order">주문내역</a>
@@ -265,7 +271,7 @@
 	        <c:otherwise>
 	        <div class="etc">
 	          <a href="../member/Logout">로그아웃</a>
-	          <a href="../member/MyPage">MY PAGE</a>
+	          <a href="../member/MyPage?no=${loggedMemberDto.no }">MY PAGE</a>
 	          <a href="../cs/Faq">고객센터</a>
 	        </div>
 	        </c:otherwise>

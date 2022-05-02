@@ -7,24 +7,24 @@
       <li class="firstLi">
         <a href="">SIMMONS Factorium</a>
         <ul class="secondMenu">
-          <li><a href="#">Beautyrest BLACK</a></li>
-          <li><a href="#">COLLECTION</a></li>
-          <li><a href="#">PRODUCT</a></li>
-          <li><a href="#">ONLINE STORE</a></li>
-          <li><a href="#">OUTLET</a></li>
-          <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">FACTORIUM</a></li>
-          <li><a href="#">SIMMONS GALLERY</a></li>
-          <li><a href="#">매장 찾기</a></li>
+          <li><a href="../black/Black">Beautyrest BLACK</a></li>
+		  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+		  <li><a href="../product/Mattress"">PRODUCT</a></li>
+		  <li><a href="">ONLINE STORE</a></li>
+		  <li><a href="">OUTLET</a></li>
+		  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+		  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+		  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+		  <li><a href="../Map/">매장 찾기</a></li>
         </ul>
       </li>
       <li class="firstLi">
         <a href="">R&D</a>
         <ul class="secondMenu">
-          <li><a href="#">INTRO</a></li>
-          <li><a href="#">R&D</a></li>
-          <li><a href="#">TERRACE</a></li>
-          <li><a href="#">오시는 길</a></li>
+          <li><a href="../factorium/Intro">INTRO</a></li>
+          <li><a href="../factorium/Rnd">R&D</a></li>
+          <li><a href="../factorium/Terrace">TERRACE</a></li>
+          <li><a href="../factorium/Come">오시는 길</a></li>
         </ul>
       </li>
     </ul>

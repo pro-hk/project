@@ -20,10 +20,10 @@
       <li class="firstLi">
         <a href="">오시는길</a>
         <ul class="secondMenu">
-          <li><a href="#">INTRO</a></li>
-          <li><a href="#">R&D</a></li>
-          <li><a href="#">TERRACE</a></li>
-          <li><a href="#">오시는 길</a></li>
+          <li><a href="../factorium/Intro">INTRO</a></li>
+          <li><a href="../factorium/Rnd">R&D</a></li>
+          <li><a href="../factorium/Terrace">TERRACE</a></li>
+          <li><a href="../factorium/Come">오시는 길</a></li>
         </ul>
       </li>
     </ul>
@@ -46,8 +46,8 @@
     <div class="factorium">
       <h3 class="title">SIMMONS Factorium</h3>
     </div>
-    <div id="map" style="width: 1000px; height: 563px"></div>
-    <p>
+    <div id="map" style="height: 563px"></div>
+    <p class="maptext">
       주소 : 경기도 이천시 모가면 사실로 988 <br />
       운영시간 : 11:00 ~ 21:00
     </p>

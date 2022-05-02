@@ -11,30 +11,26 @@ import lombok.ToString;
 @ToString
 @Component
 public class MemberDto {
+	private int num;
 	private int no;
 	private String name;
 	private String id;
 	private String password;
-	private String address;
 	private String address01;
 	private String address02;
 	private String address03;
-	private int zipCode;
-	private String email;
+	private String zipCode;
 	private String email01;
 	private String email02;
-	private String phone;
 	private String phone01;
 	private String phone02;
 	private String phone03;
-	private String homePhone;
 	private String homePhone01;
 	private String homePhone02;
 	private String homePhone03;
-	private String year;
-	private String month;
-	private String day;
-	private String birthday;
+	private String birthdayYear;
+	private String birthdayMonth;
+	private String birthdayDay;
 	private String job;
 	private String married;
 	private String sms;

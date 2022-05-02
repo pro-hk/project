@@ -15,20 +15,36 @@
 		select * from faq where category = #{category}
 	</select>
 	
-	<select id="FaqSearchList" parameterType="Map" resultType="faqDto">
-		select * from faq where question like '%'||#{txt}||'%' and category = #{category}
+	<select id="FaqSearch" parameterType="Map" resultType="faqDto">
+		select * from faq where question like '%'||#{txt}||'%' and category = #{category} order by category
 	</select>
 	
-	<select id="FaqAllList" parameterType="Map" resultType="faqDto">
-		select * from faq where no between #{startNum} and #{endNum}
+	<select id="FaqListSearch" parameterType="Map" resultType="faqDto">
+		select * from (select rownum as num, f.* from (select * from faq order by category) f where category = #{category} and question like '%'||#{txt}||'%') where num between #{startNum} and #{endNum} order by num
+	</select>
+	
+	<select id="FaqListTxtSearch" parameterType="Map" resultType="faqDto">
+		select * from (select rownum as num, f.* from (select * from faq order by category) f where question like '%'||#{txt}||'%') where num between #{startNum} and #{endNum} order by num
+	</select>
+	
+	<select id="FaqListAll" parameterType="Map" resultType="faqDto">
+		select * from (select rownum as num, f.* from (select * from faq order by category) f) where num between #{startNum} and #{endNum} order by num
 	</select>
 	
 	<select id="FaqSelectOne" parameterType="integer" resultType="faqDto">
-		select * from faq where no = #{no}
+		select * from faq where no = #{no} 
 	</select>
 	
 	<select id="FaqTotal" resultType="integer">
 		select count(*) as total from faq
+	</select>
+	
+	<select id="FaqTxtTotal" resultType="integer" parameterType="String">
+		select count(*) as total from faq where question like '%'||#{txt}||'%'
+	</select>
+
+	<select id="FaqSearchTotal" resultType="integer" parameterType="map">
+		select count(*) as total from faq where question like '%'||#{txt}||'%' and category = #{category}
 	</select>
 
 	<update id="FaqUpdate" parameterType="faqDto">
@@ -46,7 +62,8 @@
 							   #{title},
 							   #{contents},
 							   #{regDate},
-							   ''
+							   '',
+							   'X'
 		)
 	</insert>
 	
@@ -54,9 +71,38 @@
 		select * from qna where id = #{id}
 	</select>
 	
-	<select id="QnaView" resultType="qnaDto" parameterType="Map">
-		select * from qna where id = #{id} and no = #{no}
+	<select id="QnaView" resultType="qnaDto" parameterType="integer">
+		select * from qna where no = #{no}
 	</select>
+	
+	<select id="QnaTotal" resultType="integer">
+		select count(*) as total from qna
+	</select>
+	
+	<select id="QnaSearchTotal" resultType="integer" parameterType="map">
+		select count(*) as total from qna where ${category} like '%'||#{txt}||'%'
+	</select>
+	
+	<select id="QnaSearchList" resultType="qnaDto" parameterType="map">
+		select * from (select rownum as num, q.* from (select * from qna where ${category} like '%'||#{txt}||'%' order by reply desc, regdate) q) where num between ${startNum} and ${endNum}
+	</select>
+	
+	<select id="QnaList" resultType="qnaDto" parameterType="map">
+		select * from (select rownum as num, q.* from (select * from qna order by reply desc, regdate desc) q) where num between ${startNum} and ${endNum}
+	</select>
+	
+	<update id="QnaReply" parameterType="map">
+		update qna set answer = #{answer}, reply = 'O' where no = #{no}
+	</update>
+	
+	<update id="QnaDelete" parameterType="integer">
+		update qna set answer = '', reply = 'X' where no = #{no}
+	</update>
+	
+	<select id="QnaNoReply" resultType="integer">
+		select count(*) as result from qna where reply = 'X'
+	</select>
+	
 	
 	<!-- Counsel Mapper -->
 	<insert id="CounselWrite" parameterType="counselDto">
@@ -76,6 +122,38 @@
 								   sysdate	
 		)
 	</insert>
+	
+	<select id="CounselTotal" resultType="integer">
+		select count(*) as total from counsel
+	</select>
+	
+	<select id="CounselSearchTotal" resultType="integer" parameterType="map">
+		select count(*) as total from counsel where ${category} like '%'||#{txt}||'%'
+	</select>
+	
+	<select id="CounselSearchList" resultType="counselDto" parameterType="map">
+		select * from (select rownum as num, c.* from (select * from counsel where ${category} like '%'||#{txt}||'%' order by reply desc, regdate) c) where num between ${startNum} and ${endNum}
+	</select>
+	
+	<select id="CounselList" resultType="counselDto" parameterType="map">
+		select * from (select rownum as num, c.* from (select * from counsel order by reply desc, regdate) c) where num between ${startNum} and ${endNum}
+	</select>
+	
+	<select id="CounselView" resultType="counselDto" parameterType="integer">
+		select * from counsel where no = #{no}
+	</select>
+	
+	<update id="CounselReply" parameterType="map">
+		update counsel set answer = #{answer}, replyregdate = sysdate, reply = 'O' where no = #{no}
+	</update>
+	
+	<update id="CounselDelete" parameterType="integer">
+		update counsel set answer = '', replyregdate = '', reply = 'X' where no = #{no}
+	</update>
+	
+	<select id="CounselNoReply" resultType="integer">
+		select count(*) as result from counsel where reply = 'X'
+	</select>
 	
 	<!-- AS Mapper -->
 	<insert id="AsWrite" parameterType="asDto">
@@ -100,9 +178,45 @@
 								 #{fileName},
 								 #{realFileName},
 								 #{privacy},
-								 #{marketing}
+								 #{marketing},
+								 sysdate,
+								 'X',
+								 '',
+								 ''
 		)
 	</insert>
+	
+	<select id="AsTotal" resultType="integer">
+		select count(*) as total from cs_as
+	</select>
+	
+	<select id="AsSearchTotal" resultType="integer" parameterType="map">
+		select count(*) as total from cs_as where ${category} like '%'||#{txt}||'%'
+	</select>
+	
+	<select id="AsSearchList" resultType="asDto" parameterType="map">
+		select * from (select rownum as num, a.* from (select * from cs_as where ${category} like '%'||#{txt}||'%' order by reply desc, regdate) a) where num between ${startNum} and ${endNum}
+	</select>
+	
+	<select id="AsList" resultType="asDto" parameterType="map">
+		select * from (select rownum as num, a.* from (select * from cs_as order by reply desc, regdate) a) where num between ${startNum} and ${endNum}
+	</select>
+	
+	<select id="AsView" resultType="asDto" parameterType="integer">
+		select * from cs_as where no = #{no}
+	</select>
+	
+	<update id="AsReply" parameterType="map">
+		update cs_as set answer = #{answer}, replyregdate = sysdate, reply = 'O' where no = #{no}
+	</update>
+	
+	<update id="AsDelete" parameterType="integer">
+		update cs_as set answer = '', replyregdate = '', reply = 'X' where no = #{no}
+	</update>
+	
+	<select id="AsNoReply" resultType="integer">
+		select count(*) as result from cs_as where reply = 'X'
+	</select>
 	
 	<!-- NOTICE Mapper -->
 	<select id="NoticeList" parameterType="Map" resultType="noticeDto">
@@ -117,7 +231,7 @@
 		select * from notice order by no
 	</select>
 	
-	<select id="NoticeNum" parameterType="Integer" resultType="Integer">
+	<select id="NoticeNum" parameterType="integer" resultType="integer">
 		select num from (select rownum as num, n.* from (select * from notice order by no desc) n) where no = #{no}
 	</select>
 	
@@ -141,12 +255,20 @@
 		select * from notice where no = #{no}
 	</select>
 	
-	<select id="NoticeTotal" resultType="Integer">
+	<select id="NoticeTotal" resultType="integer">
 		select count(*) as total from notice
 	</select>
 	
-	<select id="NoticeSearchTotal" parameterType="Map" resultType="Integer">
+	<select id="NoticeSearchTotal" parameterType="map" resultType="integer">
 		select count(*) as total from notice where ${option} like '%'||#{txt}||'%'
 	</select>
+	
+	<update id="NoticeUpdate" parameterType="noticeDto">
+		update notice set title = #{title}, contents = #{contents} where no = #{no}
+	</update>
+	
+	<delete id="NoticeDelete" parameterType="integer">
+		delete from notice where no = #{no}
+	</delete>
 	
 </mapper>

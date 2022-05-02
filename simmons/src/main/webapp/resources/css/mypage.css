@@ -1,0 +1,69 @@
+main #myPage .home { display: -webkit-box; display: -ms-flexbox; display: flex; list-style: none; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+
+main #myPage .home h2 { font-size: 36px; font-weight: 700; text-align: center; }
+
+main #myPage .home p { font-size: 10px; color: #ccc; text-align: center; padding-bottom: 50px; }
+
+main #myPage li { padding: 10px; margin-left: 10px; }
+
+main #myPage li a { -webkit-text-decoration-line: none; text-decoration-line: none; }
+
+main #myPage h2 { font-size: 36px; text-align: center; }
+
+main #myPage p { font-size: 10px; color: #ccc; text-align: center; padding-bottom: 50px; }
+
+main #myPage .aaa .myInfo p { font-size: 32px; font-weight: 700; color: #000; }
+
+main #myPage .myInfo { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; border-top: 2px solid #000; padding: 39px 0 0 90px; border-bottom: 1px solid #ccc; }
+
+main #myPage .myInfo dl { width: 250px; height: 107px; background-image: url(../images/mypage/my_info_bg.gif); text-align: center; background-repeat: no-repeat; }
+
+main #myPage .listGroup { display: -webkit-box; display: -ms-flexbox; display: flex; list-style: none; padding-bottom: 30px; }
+
+main #myPage .listGroup li { border: 1px solid #ccc; width: 100%; text-align: center; }
+
+main #myPage .listGroup li.on { background-color: #000; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+main #myPage .listGroup li.on a { color: #fff; text-decoration: none; }
+
+main #myPage .listGroup li a { width: 250px; height: 43px; }
+
+main #myPage .tableBox { border-top: 2px solid #000; }
+
+main #myPage .tableBox p { font-size: 24px; color: #000; margin: 24px 0; padding-bottom: 0px; }
+
+main #myPage .tableBox .readonly { border: none; }
+
+main #myPage .tableBox table { width: 100%; border-bottom: 2px solid #000; padding: 15px 0px; }
+
+main #myPage .tableBox table thead th { text-align: center; border-bottom: 1px solid #ccc; }
+
+main #myPage .tableBox table td { text-align: center; padding-left: 30px; }
+
+main #myPage .tableBox table td.ccc { text-align: left; }
+
+main #myPage .tableBox table td .sss { display: -webkit-box; display: -ms-flexbox; display: flex; width: 220px; height: 30px; }
+
+main #myPage .tableBox table td p { font-size: 12px; padding-left: 30px; }
+
+main #myPage .tableBox .ddd { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+main #myPage .wishBox { border-bottom: 2px solid #000; }
+
+main #myPage .wishBox ul { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+main #myPage .wishBox ul li { list-style: none; text-align: center; }
+
+main #myPage .wishBox ul li .imgBox { background-color: #000; display: block; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #000; height: 124px; width: 220px; }
+
+main #myPage .wishBox ul li .checkbox { display: block; }
+
+main #myPage .wishBox ul li .name { display: block; }
+
+main #myPage .btns { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+main #myPage .btns .confirm { -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ccc; width: 200px; height: 45px; margin-bottom: 10px; padding-left: 10px; margin-top: 20px; background-color: #000; border-color: #000; color: #fff; }
+
+main #myPage .btns.del { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+
+main #myPage .btns.del button { font-size: 14px; width: 150px; padding: 5px 10px; }

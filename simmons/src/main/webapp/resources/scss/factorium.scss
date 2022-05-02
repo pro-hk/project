@@ -1,6 +1,17 @@
 @import "vars";
 
 main {
+  .container {
+    min-width: 1000px;
+    margin: 0 auto;
+    .maptext {
+      text-align: center;
+      font-size: 15px;
+      margin-top: 30px;
+      color: $gray-color;
+      line-height: 1.5;
+    }
+  }
   .root {
     margin-bottom: 50px;
     border-bottom: 1px solid #d3d3d3;
@@ -14,17 +25,20 @@ main {
         line-height: 70px;
         li {
           display: flex;
-
           a {
+            padding: 0 40px;
             font-size: 20px;
             color: #777;
           }
         }
-        li.on {
+        > .on {
           a {
             border-bottom: 3px solid $gray-color2;
-            padding: 0 40px;
           }
+        }
+        > li:hover a {
+          border-bottom: 3px solid $gray-color2;
+          color: #777;
         }
       }
     }
@@ -32,8 +46,7 @@ main {
 
   .factorium {
     width: 1000px;
-    margin: 0 auto;
-    padding-bottom: 150px;
+    margin: 0 auto 20px;
     .title {
       width: 1000px;
       padding: 50px 0 25px 0;
@@ -43,9 +56,66 @@ main {
       letter-spacing: 5px;
       background: url(../images/factorium/lab_tt_bg.gif) no-repeat 50% 100%;
     }
+
     .gal {
       letter-spacing: -1px;
       position: relative;
+      .gallerySwipe {
+        position: relative;
+        overflow: hidden;
+        margin: 5px auto 0 auto;
+        width: 1000px;
+        .galleryRight {
+          display: flex;
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 35px;
+          height: 100px;
+          background: url(../images/factorium/btn_next.png) no-repeat 0 0;
+          z-index: 60;
+          opacity: 1;
+          font-size: 0;
+          cursor: pointer;
+        }
+        .galleryLeft {
+          display: flex;
+          position: absolute;
+          left: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 35px;
+          height: 100px;
+          background: url(../images/factorium/btn_prev.png) no-repeat 0 0;
+          z-index: 60;
+          opacity: 1;
+          font-size: 0;
+          cursor: pointer;
+        }
+        .bullet {
+          padding-top: 40px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          .swiper-pagination-bullet {
+            margin-right: 2px;
+            width: 10px;
+            height: 10px;
+            background: url(../images/factorium/gallery_multi_off.png) no-repeat 0 0;
+            margin-left: 20px;
+            width: 14px;
+            height: 14px;
+            opacity: 1;
+            &-active {
+              background: url(../images/factorium/gallery_multi_on.png) no-repeat 0 0;
+            }
+            &:first-child {
+              margin: 0;
+            }
+          }
+        }
+      }
       .gTitle {
         text-align: center;
         padding: 60px 0 35px 0;
@@ -54,7 +124,7 @@ main {
       }
       .script {
         text-align: center;
-        padding: 0 0 50px 0;
+        padding: 30px 0 50px 0;
         color: #999;
         font-size: 14px;
         line-height: 1.5;
@@ -69,23 +139,10 @@ main {
         display: flex;
         justify-content: center;
       }
-      ul {
-        position: relative;
-        height: 400px;
-        li {
-          position: absolute;
-          overflow: hidden;
-          top: 0;
-          left: 0;
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        li:first-child {
-          z-index: 50;
-        }
+      .zoingImg {
+        margin-bottom: 120px;
       }
+
       .layering {
         display: flex;
         justify-content: center;
@@ -105,55 +162,7 @@ main {
           padding-top: 42px;
         }
       }
-      ol {
-        padding-top: 40px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        .on {
-          a {
-            background-image: url(../images/factorium/gallery_multi_on.png);
-          }
-        }
-        li {
-          margin-left: 20px;
-          a {
-            display: block;
-            width: 14px;
-            height: 14px;
-            background: url(../images/factorium/gallery_multi_off.png) no-repeat 0 0;
-          }
-        }
-        li:first-child {
-          margin-left: 0;
-        }
-      }
-      .galleryRight {
-        display: flex;
-        position: absolute;
-        right: 30px;
-        top: 50%;
-        width: 35px;
-        height: 64px;
-        transform: translateY(32px);
-        background: url(../images/factorium/btn_next.png) no-repeat 0 0;
-        z-index: 60;
-        opacity: 1;
-        font-size: 0;
-      }
-      .galleryLeft {
-        display: flex;
-        position: absolute;
-        left: 30px;
-        top: 50%;
-        width: 35px;
-        height: 64px;
-        transform: translateY(32px);
-        background: url(../images/factorium/btn_prev.png) no-repeat 0 0;
-        z-index: 60;
-        opacity: 1;
-        font-size: 0;
-      }
+
       #secTitle {
         text-align: center;
         padding: 50px 0 25px 0;
@@ -273,34 +282,36 @@ main {
     }
     .box {
       width: 1000px;
-
+      margin-bottom: 100px;
       ul {
         width: 1000px;
 
         display: flex;
         justify-content: space-between;
         li {
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
           background-repeat: no-repeat;
           background-position: 0 0;
           width: 184px;
           height: 420px;
           margin-right: 15px;
-          dt {
-            height: 45px;
-            padding-top: 205px;
-            font-size: $normal-size;
-            text-align: center;
-            font-weight: 600;
-          }
-          dd {
-            font-size: $small-size;
-            text-align: center;
-            color: $light-gray-color;
-            letter-spacing: -1px;
-            line-height: 1.5;
+          dl {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            dt {
+              padding: 205px 0 20px 0;
+              font-size: $normal-size;
+              text-align: center;
+              font-weight: 600;
+            }
+            dd {
+              font-size: $small-size;
+              text-align: center;
+              color: $light-gray-color;
+              letter-spacing: -1px;
+              line-height: 1.5;
+            }
           }
         }
         li:nth-child(1) {
@@ -318,6 +329,143 @@ main {
         li:nth-child(5) {
           background-image: url(../images/factorium/rnd/zoning_spring5.png);
           margin: 0;
+        }
+      }
+    }
+    .box2 {
+      display: flex;
+      width: 1000px;
+      margin: 0 auto;
+      ul {
+        width: 1000px;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          width: 310px;
+          height: 320px;
+          margin-right: 15px;
+          dt {
+            padding-top: 205px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 5px;
+          }
+          dd {
+            font-size: $small-size;
+            text-align: center;
+            color: $light-gray-color;
+            letter-spacing: -1px;
+            line-height: 1.5;
+          }
+        }
+        li:nth-child(1) {
+          background-image: url(../images/factorium/rnd/zoning_bg1.jpg);
+        }
+        li:nth-child(2) {
+          background-image: url(../images/factorium/rnd/zoning_bg2.jpg);
+        }
+        li:nth-child(3) {
+          background-image: url(../images/factorium/rnd/zoning_bg3.jpg);
+        }
+        li:nth-child(4) {
+          background-image: url(../images/factorium/rnd/zoning_bg4.jpg);
+        }
+        li:nth-child(5) {
+          background-image: url(../images/factorium/rnd/zoning_bg5.jpg);
+        }
+        li:nth-child(6) {
+          background-image: url(../images/factorium/rnd/zoning_bg6.jpg);
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .box3 {
+    display: flex;
+    justify-content: center;
+    .imgBox {
+      border: 1px solid #dedede;
+      width: 450px;
+      height: 350px;
+      ul {
+        display: flex;
+        li {
+          display: none;
+        }
+        li.on {
+          display: flex;
+          flex-direction: column;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          p {
+            display: flex;
+            flex-direction: column;
+            font-size: $small-size;
+            text-align: center;
+            color: $light-gray-color;
+            letter-spacing: -1px;
+            line-height: 1.25;
+            em {
+              font-size: $medium-size;
+              color: #000;
+              padding: 10px 0;
+            }
+          }
+        }
+      }
+    }
+    .listBox {
+      display: flex;
+      width: 500px;
+      margin-left: 50px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        li {
+          display: flex;
+          height: 55px;
+          line-height: 55px;
+          font-size: 13px;
+          border-bottom: 1px solid $gray-color;
+          a {
+            padding-left: 70px;
+            display: flex;
+            background-repeat: no-repeat;
+            background-position: 0 50%;
+            letter-spacing: -1px;
+          }
+        }
+        li.on a {
+          width: 100%;
+          background: url(../images/factorium/rnd/zoning_list_icon_arrow.png) no-repeat 15px 50% $gray-color !important;
+
+          color: #fff;
+        }
+        li:nth-child(1) a {
+          background-image: url(../images/factorium/rnd/zoning_list_icon1.png);
+        }
+        li:nth-child(2) a {
+          background-image: url(../images/factorium/rnd/zoning_list_icon2.png);
+        }
+        li:nth-child(3) a {
+          background-image: url(../images/factorium/rnd/zoning_list_icon3.png);
+        }
+        li:nth-child(4) a {
+          background-image: url(../images/factorium/rnd/zoning_list_icon4.png);
+        }
+        li:nth-child(5) a {
+          background-image: url(../images/factorium/rnd/zoning_list_icon5.png);
+        }
+        li:nth-child(6) a {
+          background-image: url(../images/factorium/rnd/zoning_list_icon6.png);
         }
       }
     }

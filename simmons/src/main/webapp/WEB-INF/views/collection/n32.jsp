@@ -5,51 +5,53 @@
 
 <main>
 <div id="collection">
-	<div class="proTop">
-	  <ul class="firstMenu">
-	    <li class="firstLi"><a href="">HOME</a></li>
-	    <li class="firstLi">
-	      <a href="">COLLECTION</a>
-	      <ul class="secondMenu">
-	        <li><a href="#">Beautyrest BLACK</a></li>
-	        <li><a href="#">COLLECTION</a></li>
-	        <li><a href="#">PRODUCT</a></li>
-	        <li><a href="#">ONLINE STORE</a></li>
-	        <li><a href="#">OUTLET</a></li>
-	        <li><a href="#">ABOUT US</a></li>
-	        <li><a href="#">FACTORIUM</a></li>
-	        <li><a href="#">SIMMONS GALLERY</a></li>
-	        <li><a href="#">매장 찾기</a></li>
-	      </ul>
-	    </li>
-	    <li class="firstLi">
-	      <a href="">N32</a>
-	      <ul class="secondMenu">
-	        <li><a href="#">Beautyrest</a></li>
-	        <li><a href="#">N32</a></li>
-	        <li><a href="#">KENOSHA</a></li>
-	      </ul>
-	    </li>
-	  </ul>
-	</div>
+      <div class="proTop">
+        <ul class="firstMenu">
+          <li class="firstLi"><a href="../index.html">HOME</a></li>
+          <li class="firstLi">
+            <a href="" class="collection">COLLECTION</a>
+            <ul class="secondMenu collectionMenu">
+              <li><a href="../black/Black">Beautyrest BLACK</a></li>
+			  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+			  <li><a href="../product/Mattress"">PRODUCT</a></li>
+			  <li><a href="">ONLINE STORE</a></li>
+			  <li><a href="">OUTLET</a></li>
+			  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+			  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+			  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+			  <li><a href="../Map/">매장 찾기</a></li>
+            </ul>
+          </li>
+          <li class="firstLi">
+            <a href="" class="Beautyrest">Beautyrest</a>
+            <ul class="secondMenu BeautyrestMenu">
+              <li><a href="../collection/Beautyrest">Beautyrest</a></li>
+              <li><a href="../collection/N32">N32</a></li>
+              <li><a href="../collection/Kenosha">KENOSHA</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
 	<div class="slider">
 	  <!--풀페이지로 좌우스크립 만들기-->
 	  <div class="sliderBox">
-	    <a href="" class="galleryLeft">Prev</a>
-	    <ul class="swiper-wrapper">
-	      <li class="swiper-slide"><img src="../images/collection/n32/N32_1.jpg" /></li>
-	      <li class="swiper-slide"><img src="../images/collection/n32/N32_2.jpg" /></li>
-	      <li class="swiper-slide"><img src="../images/collection/n32/N32_3.jpg" /></li>
-	      <li class="swiper-slide"><img src="../images/collection/n32/N32_4.jpg" /></li>
-	    </ul>
+          <button class="galleryLeft">Prev</button>
+          <div class="mask">
+            <ul class="swiper-wrapper">
+              <li class="visual07 swiper-slide"></li>
+              <li class="visual08 swiper-slide"></li>
+              <li class="visual09 swiper-slide"></li>
+              <li class="visual10 swiper-slide"></li>
+            </ul>
+          </div>
 	    <div class="sliderBtn">
             <div class="bullet"></div>
-            <div class="btn">
+            <%-- <div class="btn">
               <button class="start on"></button>
               <button class="stop"></button>
-            </div>
+            </div> --%>
           </div>
-	    <a href="" class="galleryRight">Next</a>
+          <button class="galleryRight">Next</button>
 	  </div>
 	</div>
 	
@@ -111,65 +113,73 @@
 	    <ul class="swiper-wrapper">
 	      <li class="itemList swiper-slide">
 	        <a href="상품 상세페이지">
-	          <img src="../images/collection/n32/1.jpg" alt="" />
-	          <span class="black"></span>
-	          <span class="cover">
-	            <span class="box">온라인</span>
-	            <span class="name">
-	              <p>Topper Mattress</p>
-	            </span>
-	            <span class="bogi">
-	              <i>더보기</i>
-	            </span>
-	          </span>
+	        	<img src="../images/collection/n32/1.jpg" alt="" />
+				<div class="hoverBox">
+					<span class="black"></span>
+					<span class="cover">
+						<span class="box">온라인</span>
+						<span class="name">
+						<p>Topper Mattress</p>
+						</span>
+						<span class="bogi">
+						<i>더보기</i>
+						</span>
+					</span>
+				</div>
 	        </a>
 	      </li>
 	      <li class="itemList swiper-slide">
 	        <a href="상품 상세페이지">
-	          <img src="../images/collection/n32/2.jpg" alt="" />
-	          <span class="black"></span>
-	          <span class="cover">
-	            <span class="box">온라인</span>
-	            <span class="name">
-	              <p>Topper Mattress</p>
-	              <p>Check Sleeve</p>
-	            </span>
-	            <span class="bogi">
-	              <i>더보기</i>
-	            </span>
-	          </span>
+	        	<img src="../images/collection/n32/2.jpg" alt="" />
+				<div class="hoverBox">
+					<span class="black"></span>
+					<span class="cover">
+						<span class="box">온라인</span>
+						<span class="name">
+						<p>Topper Mattress</p>
+						<p>Check Sleeve</p>
+						</span>
+						<span class="bogi">
+						<i>더보기</i>
+						</span>
+					</span>
+				</div>
 	        </a>
 	      </li>
 	      <li class="itemList swiper-slide">
 	        <a href="상품 상세페이지">
-	          <img src="../images/collection/n32/3.jpg" alt="" />
-	          <span class="black"></span>
-	          <span class="cover">
-	            <span class="box">온라인</span>
-	            <span class="name">
-	              <p>Topper Mattress</p>
-	              <p>Stripe Sleeve</p>
-	            </span>
-	            <span class="bogi">
-	              <i>더보기</i>
-	            </span>
-	          </span>
+	          	<img src="../images/collection/n32/3.jpg" alt="" />
+				<div class="hoverBox">
+					<span class="black"></span>
+					<span class="cover">
+						<span class="box">온라인</span>
+						<span class="name">
+						<p>Topper Mattress</p>
+						<p>Stripe Sleeve</p>
+						</span>
+						<span class="bogi">
+						<i>더보기</i>
+						</span>
+					</span>
+				</div>
 	        </a>
 	      </li>
 	      <li class="itemList swiper-slide">
 	        <a href="상품 상세페이지">
-	          <img src="../images/collection/n32/4.jpg" alt="" />
-	          <span class="black"></span>
-	          <span class="cover">
-	            <span class="box">온라인</span>
-	            <span class="name">
-	              <p>Topper Mattress</p>
-	              <p>Waterproof Sleeve</p>
-	            </span>
-	            <span class="bogi">
-	              <i>더보기</i>
-	            </span>
-	          </span>
+	          	<img src="../images/collection/n32/4.jpg" alt="" />
+				<div class="hoverBox">
+					<span class="black"></span>
+					<span class="cover">
+						<span class="box">온라인</span>
+						<span class="name">
+						<p>Topper Mattress</p>
+						<p>Waterproof Sleeve</p>
+						</span>
+						<span class="bogi">
+						<i>더보기</i>
+						</span>
+					</span>
+				</div>
 	        </a>
 	      </li>
 	    </ul>

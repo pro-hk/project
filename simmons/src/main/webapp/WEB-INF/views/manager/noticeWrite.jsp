@@ -18,7 +18,7 @@
 		</div>
 
         <!-- form -->
-        <form action="NoticeWriteProcess" method="post" id="NoticeWriteProcess">
+        <form action="NoticeWriteProcess" method="post" id="NoticeWrite">
           
           <table>
             <colgroup>
@@ -39,7 +39,7 @@
             </tbody>
           </table>
           <div class="btns">
-            <button type="submit" class="comfirm btn">글쓰기</button>
+            <button type="submit" class="confirm btn">글쓰기</button>
             <a href="NoticeList" class="cancel btn">취소</a>
           </div>
         </form>

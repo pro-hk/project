@@ -66,14 +66,14 @@ public class CSController {
 		if(txt==""||txt==null) {
 			faqList = faqDao.FaqList(faqCategory[category]);
 		} else {
-			faqList = faqDao.FaqSearchList(txt, faqCategory[category]);
+			faqList = faqDao.FaqSearch(txt, faqCategory[category]);
 		}
 		return faqList;
 	}
 	
 	@RequestMapping("/Qna")
 	public String qna(Model model, HttpSession session) {
-		String id = (String)session.getAttribute("loggedID");
+		String id = (String)session.getAttribute("loggedId");
 		List<QnaDto> qnaList = qnaDao.QnaAllList(id);
 		model.addAttribute("qnaList", qnaList);
 		
@@ -87,7 +87,7 @@ public class CSController {
 	
 	@RequestMapping("/QnaWriteProcess")
 	public void qnaWriteProcess(QnaDto qnaDto, HttpServletResponse response, HttpSession session) {
-		qnaDto.setId((String)session.getAttribute("loggedID"));
+		qnaDto.setId((String)session.getAttribute("loggedId"));
 		int result = qnaDao.QnaWrite(qnaDto);
 		if(result > 0) {
 			ScriptWriter.alertAndNext(response, "글이 등록되었습니다.", "Qna");
@@ -97,10 +97,9 @@ public class CSController {
 	}
 	
 	@RequestMapping("/QnaView")
-	public String qnaView(QnaDto qnaDto, HttpSession session, Model model) {
+	public String qnaView(QnaDto qnaDto, Model model) {
 		int no = qnaDto.getNo();
-		String id = (String)session.getAttribute("loggedID");
-		qnaDto = qnaDao.QnaView(id, no);
+		qnaDto = qnaDao.QnaView(no);
 		model.addAttribute("qnaDto", qnaDto);
 		
 		return "cs/qnaView";
@@ -172,7 +171,7 @@ public class CSController {
 		} else {
 			clickPage = Integer.parseInt(request.getParameter("page"));
 		}
-		int listPerPage = 2;
+		int listPerPage = 10;
 		
 		int total = noticeDao.NoticeTotal();
 		int startNum = (clickPage - 1) * listPerPage + 1;
@@ -180,7 +179,7 @@ public class CSController {
 		
 		
 		List<NoticeDto> noticeList = null;
-		if(option!=null && option!="" && option!=null && txt.trim()!="") {
+		if(option!=null && option!="" && txt!=null && txt.trim()!="") {
 			total = noticeDao.NoticeSearchTotal(option, txt);
 			noticeList = noticeDao.NoticeSearchList(option, txt, startNum, endNum);
 		} else {

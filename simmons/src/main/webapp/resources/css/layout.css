@@ -2,7 +2,7 @@ a { text-decoration: none; color: #000; }
 
 .left { text-align: left; }
 
-#header { z-index: 10; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; position: fixed; height: 60px; top: 0; left: 0; right: 0; background-color: #fff; border-bottom: 1px solid #ccc; }
+#header { z-index: 100; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; position: fixed; height: 60px; top: 0; left: 0; right: 0; background-color: #fff; border-bottom: 1px solid #ccc; }
 
 #header.managerHeader { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
@@ -56,7 +56,7 @@ a { text-decoration: none; color: #000; }
 
 #header #gnb .searchBox .search { border: none; height: 23px; padding: 5px 0 5px 10px; }
 
-#header #gnb .searchBox .btnSearch { margin-top: 10px; padding-right: 5px; }
+#header #gnb .searchBox .btnSearch { margin-top: 2px; padding-right: 5px; }
 
 #header #gnb .sns { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin-bottom: 20px; }
 
@@ -154,7 +154,7 @@ a { text-decoration: none; color: #000; }
 
 .footer #footer.on { z-index: 5; }
 
-#footer { width: 100%; background-color: #111; color: #666; text-align: center; margin: 0 auto; padding: 10px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; font-size: 12px; }
+#footer { width: 100%; background-color: #111; color: #666; text-align: center; margin: 200px auto 0; padding: 10px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; font-size: 12px; }
 
 #footer a { color: #888; }
 
@@ -187,3 +187,7 @@ a { text-decoration: none; color: #000; }
 #footer .security img { width: 50px; margin-right: 10px; }
 
 #footer .security .service { color: #fff; font-size: 13px; font-weight: bold; }
+
+.btnTop { position: fixed; right: 30px; bottom: 100px; z-index: 50; -webkit-transition: 0.5s ease; transition: 0.5s ease; cursor: pointer; opacity: 0; }
+
+.btnTop.on { opacity: 1; }

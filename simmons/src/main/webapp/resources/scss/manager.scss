@@ -9,32 +9,44 @@
       margin-top: 50px;
     }
     #list {
-      .searchBox {
-        margin: 20px 0;
-        select {
-          border: 1px solid $border-color;
-          width: 110px;
-          margin-right: 10px;
-          height: 30px;
-          padding: 5px;
-          color: $gray-color;
-          box-sizing: border-box;
+      width: 1000px;
+      .list {
+        display: flex;
+        align-items: center;
+        .noReply {
+          width: 100px;
+          p {
+            font-size: 16px;
+          }
         }
-        input {
-          width: 200px;
-        }
-        button {
-          height: 30px;
-          margin-left: 10px;
-          background-color: #000;
-          color: #fff;
-          border: none;
-          padding: 5px 25px;
-          font-size: 12px;
+        .searchBox {
+          padding-bottom: 0;
+          padding: 20px;
+          select {
+            border: 1px solid $border-color;
+            width: 110px;
+            margin-right: 10px;
+            height: 30px;
+            padding: 5px;
+            color: $gray-color;
+            box-sizing: border-box;
+          }
+          input {
+            width: 200px;
+          }
+          button {
+            height: 30px;
+            margin-left: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 5px 25px;
+            font-size: 12px;
+          }
         }
       }
       table {
-        width: 100%;
+        width: 1000px;
         border-top: 2px solid #000;
         border-bottom: 2px solid #000;
         th,
@@ -89,11 +101,31 @@
     justify-content: space-between;
     padding-top: 100px;
     a {
-      display: block;
+      background-image: url("../images/layout/settings.png");
+      // background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 300px;
       height: 500px;
-      background-color: #f00;
-      color: #fff;
+      font-size: 50px;
+      font-weight: 900;
+      color: rgb(255, 176, 8);
+      text-decoration: none;
+    }
+  }
+  #NoticeWrite {
+    table {
+      td {
+        padding: 0;
+        .note-editor {
+          width: 100%;
+          .note-statusbar {
+            display: none;
+          }
+        }
+      }
     }
   }
 }

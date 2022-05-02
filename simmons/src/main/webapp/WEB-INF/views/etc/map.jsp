@@ -1,7 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ include file="../include/header.jsp" %>
 
 <main id="find">
-  <div class="visualSub">
+  <nav class="banner galleryBanner">
+    <ul class="firstMenu">
+      <li class="firstLi"><a href="">HOME</a></li>
+      <li class="firstLi">
+        <a href="">매장 찾기</a>
+        <ul class="secondMenu">
+          <li><a href="../black/Black">Beautyrest BLACK</a></li>
+		  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+		  <li><a href="../product/Mattress"">PRODUCT</a></li>
+		  <li><a href="">ONLINE STORE</a></li>
+		  <li><a href="">OUTLET</a></li>
+		  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+		  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+		  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+		  <li><a href="../Map/">매장 찾기</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="d">
+      <h1>매장 찾기</h1>
+    </div>
+  </nav>
+  <!-- <div class="visualSub">
     <div class="locationBox">
       <ul class="location">
         <li>
@@ -10,12 +32,12 @@
         <li>
           <a href="">매장 찾기</a>
           <ul class="locationSub"></ul>
-          <!--javascript사용-->
+          javascript사용
         </li>
       </ul>
       <h2>매장 찾기</h2>
     </div>
-  </div>
+  </div> -->
   <div class="mainContent">
     <h3>지역별 매장 찾기</h3>
     <div class="findStore">
@@ -159,7 +181,7 @@
           <div id="pageNavi">
             <a class="prev" href="#" alt="1"></a>
             <ol>
-              <li class="on">
+              <li>
                 <a class="on">1</a>
               </li>
               <li>
@@ -169,7 +191,7 @@
             <a class="next" href="#" alt="2"></a>
           </div>
         </div>
-        <p id="p_agencynm">[시몬스 갤러리 분당점]</p>
+        <p id="p_agencynm">[시몬스 테라스점]</p>
         <div class="stroeMap">
           <div id="map" style="width: 100%; height: 570px"></div>
         </div>

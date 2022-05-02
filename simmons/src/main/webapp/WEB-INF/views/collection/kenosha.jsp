@@ -11,23 +11,23 @@
 		    <li class="firstLi">
 		      <a href="">COLLECTION</a>
 		      <ul class="secondMenu">
-		        <li><a href="#">Beautyrest BLACK</a></li>
-		        <li><a href="#">COLLECTION</a></li>
-		        <li><a href="#">PRODUCT</a></li>
-		        <li><a href="#">ONLINE STORE</a></li>
-		        <li><a href="#">OUTLET</a></li>
-		        <li><a href="#">ABOUT US</a></li>
-		        <li><a href="#">FACTORIUM</a></li>
-		        <li><a href="#">SIMMONS GALLERY</a></li>
-		        <li><a href="#">매장 찾기</a></li>
+		     	  <li><a href="../black/Black">Beautyrest BLACK</a></li>
+				  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+				  <li><a href="../product/Mattress"">PRODUCT</a></li>
+				  <li><a href="">ONLINE STORE</a></li>
+				  <li><a href="">OUTLET</a></li>
+				  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+				  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+				  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+				  <li><a href="../Map/">매장 찾기</a></li>
 		      </ul>
 		    </li>
 		    <li class="firstLi">
 		      <a href="">KENOSHA</a>
 		      <ul class="secondMenu">
-		        <li><a href="#">Beautyrest</a></li>
-		        <li><a href="#">N32</a></li>
-		        <li><a href="#">KENOSHA</a></li>
+		        <li><a href="../collection/Beautyrest">Beautyrest</a></li>
+                <li><a href="../collection/N32">N32</a></li>
+                <li><a href="../collection/Kenosha">KENOSHA</a></li>
 		      </ul>
 		    </li>
 		  </ul>

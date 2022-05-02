@@ -120,4 +120,38 @@
 	<select id="GetPname" parameterType="Integer" resultType="String">
 		select pname from product where no = #{no}
 	</select>
+	
+	<insert id="WishInsert" parameterType="cartDto">
+		insert into cart values(#{no}, #{pname}, #{img}, '', '', '', #{id}, sysdate, 'wish')
+	</insert>
+	
+	<select id="WishSelectList" parameterType="String" resultType="cartDto" >
+		select * from cart where id = #{id} and etc = 'wish' order by regdate
+	</select>
+	
+	<delete id="WishDelete" parameterType="String">
+		delete from cart where pname = #{pname} and etc = 'wish'
+	</delete>
+	
+	<insert id="buyProduct" parameterType="buyListDto">
+		INSERT INTO BUYLIST VALUES (SEQ_BUYLIST.NEXTVAL,	
+								   #{name},
+								   #{pname},
+								   #{sizes},
+								   #{price},
+								   '1',
+								   #{phone},
+								   #{email},
+								   #{address},
+								   #{id},
+								   <choose>
+								   	<when test="id!=null">
+								   		'회원'
+								   	</when>
+								   	<otherwise>
+								   		'비회원'
+								   	</otherwise>
+								   </choose>
+								   )
+	</insert>
 </mapper>

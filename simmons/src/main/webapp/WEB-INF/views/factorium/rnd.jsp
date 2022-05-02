@@ -7,24 +7,24 @@
       <li class="firstLi">
         <a href="">SIMMONS Factorium</a>
         <ul class="secondMenu">
-          <li><a href="#">Beautyrest BLACK</a></li>
-          <li><a href="#">COLLECTION</a></li>
-          <li><a href="#">PRODUCT</a></li>
-          <li><a href="#">ONLINE STORE</a></li>
-          <li><a href="#">OUTLET</a></li>
-          <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">FACTORIUM</a></li>
-          <li><a href="#">SIMMONS GALLERY</a></li>
-          <li><a href="#">매장 찾기</a></li>
+          <li><a href="../black/Black">Beautyrest BLACK</a></li>
+		  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+		  <li><a href="../product/Mattress"">PRODUCT</a></li>
+		  <li><a href="">ONLINE STORE</a></li>
+		  <li><a href="">OUTLET</a></li>
+		  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+		  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+		  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+		  <li><a href="../Map/">매장 찾기</a></li>
         </ul>
       </li>
       <li class="firstLi">
         <a href="">R&D</a>
         <ul class="secondMenu">
-          <li><a href="#">INTRO</a></li>
-          <li><a href="#">R&D</a></li>
-          <li><a href="#">TERRACE</a></li>
-          <li><a href="#">오시는 길</a></li>
+          <li><a href="../factorium/Intro">INTRO</a></li>
+          <li><a href="../factorium/Rnd">R&D</a></li>
+          <li><a href="../factorium/Terrace">TERRACE</a></li>
+          <li><a href="../factorium/Come">오시는 길</a></li>
         </ul>
       </li>
     </ul>
@@ -56,27 +56,59 @@
           국가 공인 기준보다 엄격한 극한의 시험 환경과<br />
           몸무게, 뒤척임 횟수, 사용 기간까지 예상한 혹독한 과정이 적용됩니다<br />
         </p>
-        <a href="" class="galleryLeft">Prev</a>
-        <div class="video">
-          <iframe
-            width="120%"
-            height="120%"
-            src="https://www.youtube.com/embed/uN7ojntlsHs?autoplay=1&mute=1"
-            title="YouTube video player"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-          ></iframe>
+        <div class="gallerySwipe">
+          <button class="galleryLeft"></button>
+          
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <iframe
+                width="100%"
+                height="675px"
+                src="https://www.youtube.com/embed/uN7ojntlsHs?autoplay=0&amp;playlist=uN7ojntlsHs&amp&loop=1&mute=1&controls=0&modestbranding=0&rel=0&showinfo=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </li>  
+            <li class="swiper-slide">
+              <iframe
+                width="1200px"
+                height="675px"
+                src="https://www.youtube.com/embed/4-XTJAP_YRA?autoplay=1&amp;playlist=4-XTJAP_YRA&amp&loop=1&mute=1&controls=0&modestbranding=0&rel=0&showinfo=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </li>
+            <li class="swiper-slide">
+              <iframe
+                width="1200px"
+                height="675px"
+                src="https://www.youtube.com/embed/QaQ3iIrf1I4?autoplay=1&amp;playlist=QaQ3iIrf1I4&amp&loop=1&mute=1&controls=0&modestbranding=0&rel=0&showinfo=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </li>
+            <li class="swiper-slide">
+              <iframe
+                width="1200px"
+                height="675px"
+                src="https://www.youtube.com/embed/GG_IfnEBG8I?autoplay=1&amp;playlist=GG_IfnEBG8I&amp&loop=1&mute=1&controls=0&modestbranding=0&rel=0&showinfo=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </li>
+            </ul>
+          
+          <div class="bullet"></div>
+          <button class="galleryRight"></button>
         </div>
-        <ol>
-          <li class="on"><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <li><a></a></li>
-        </ol>
-        <a href="" class="galleryRight">Next</a>
       </div>
       <div class="gal">
         <h4 class="gTitle" id="secTitle">편안함의 새로운 기준, 감성과학</h4>

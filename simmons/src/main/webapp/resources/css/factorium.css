@@ -1,52 +1,52 @@
+main .container { min-width: 1000px; margin: 0 auto; }
+
+main .container .maptext { text-align: center; font-size: 15px; margin-top: 30px; color: #999; line-height: 1.5; }
+
 main .root { margin-bottom: 50px; border-bottom: 1px solid #d3d3d3; }
 
 main .root .line ul { width: 1000px; margin: 0 auto; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; height: 70px; line-height: 70px; }
 
 main .root .line ul li { display: -webkit-box; display: -ms-flexbox; display: flex; }
 
-main .root .line ul li a { font-size: 20px; color: #777; }
+main .root .line ul li a { padding: 0 40px; font-size: 20px; color: #777; }
 
-main .root .line ul li.on a { border-bottom: 3px solid #777; padding: 0 40px; }
+main .root .line ul > .on a { border-bottom: 3px solid #777; }
 
-main .factorium { width: 1000px; margin: 0 auto; padding-bottom: 150px; }
+main .root .line ul > li:hover a { border-bottom: 3px solid #777; color: #777; }
+
+main .factorium { width: 1000px; margin: 0 auto 20px; }
 
 main .factorium .title { width: 1000px; padding: 50px 0 25px 0; text-align: center; line-height: 100%; font-size: 36px; letter-spacing: 5px; background: url(../images/factorium/lab_tt_bg.gif) no-repeat 50% 100%; }
 
 main .factorium .gal { letter-spacing: -1px; position: relative; }
 
+main .factorium .gal .gallerySwipe { position: relative; overflow: hidden; margin: 5px auto 0 auto; width: 1000px; }
+
+main .factorium .gal .gallerySwipe .galleryRight { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; right: 30px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 35px; height: 100px; background: url(../images/factorium/btn_next.png) no-repeat 0 0; z-index: 60; opacity: 1; font-size: 0; cursor: pointer; }
+
+main .factorium .gal .gallerySwipe .galleryLeft { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; left: 30px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 35px; height: 100px; background: url(../images/factorium/btn_prev.png) no-repeat 0 0; z-index: 60; opacity: 1; font-size: 0; cursor: pointer; }
+
+main .factorium .gal .gallerySwipe .bullet { padding-top: 40px; text-align: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+main .factorium .gal .gallerySwipe .bullet .swiper-pagination-bullet { margin-right: 2px; width: 10px; height: 10px; background: url(../images/factorium/gallery_multi_off.png) no-repeat 0 0; margin-left: 20px; width: 14px; height: 14px; opacity: 1; }
+
+main .factorium .gal .gallerySwipe .bullet .swiper-pagination-bullet-active { background: url(../images/factorium/gallery_multi_on.png) no-repeat 0 0; }
+
+main .factorium .gal .gallerySwipe .bullet .swiper-pagination-bullet:first-child { margin: 0; }
+
 main .factorium .gal .gTitle { text-align: center; padding: 60px 0 35px 0; font-size: 18px; color: #777; }
 
-main .factorium .gal .script { text-align: center; padding: 0 0 50px 0; color: #999; font-size: 14px; line-height: 1.5; }
+main .factorium .gal .script { text-align: center; padding: 30px 0 50px 0; color: #999; font-size: 14px; line-height: 1.5; }
 
 main .factorium .gal .video { position: relative; width: 100%; height: 563px; overflow: hidden; }
 
 main .factorium .gal .img { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
-main .factorium .gal ul { position: relative; height: 400px; }
-
-main .factorium .gal ul li { position: absolute; overflow: hidden; top: 0; left: 0; }
-
-main .factorium .gal ul li img { width: 100%; height: 100%; }
-
-main .factorium .gal ul li:first-child { z-index: 50; }
+main .factorium .gal .zoingImg { margin-bottom: 120px; }
 
 main .factorium .gal .layering { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin-bottom: 100px; height: 150px; }
 
 main .factorium .gal .layering p { display: block; width: 310px; height: 100px; background: url(../images/factorium/rnd/layering_bg1.jpg) no-repeat 0 0; margin: 42px 0 0 20px; border-bottom: 1px solid #a1a1a1; font-size: 13px; line-height: 18px; text-align: center; color: #acacac; padding-top: 42px; }
-
-main .factorium .gal ol { padding-top: 40px; text-align: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-
-main .factorium .gal ol .on a { background-image: url(../images/factorium/gallery_multi_on.png); }
-
-main .factorium .gal ol li { margin-left: 20px; }
-
-main .factorium .gal ol li a { display: block; width: 14px; height: 14px; background: url(../images/factorium/gallery_multi_off.png) no-repeat 0 0; }
-
-main .factorium .gal ol li:first-child { margin-left: 0; }
-
-main .factorium .gal .galleryRight { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; right: 30px; top: 50%; width: 35px; height: 64px; -webkit-transform: translateY(32px); transform: translateY(32px); background: url(../images/factorium/btn_next.png) no-repeat 0 0; z-index: 60; opacity: 1; font-size: 0; }
-
-main .factorium .gal .galleryLeft { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; left: 30px; top: 50%; width: 35px; height: 64px; -webkit-transform: translateY(32px); transform: translateY(32px); background: url(../images/factorium/btn_prev.png) no-repeat 0 0; z-index: 60; opacity: 1; font-size: 0; }
 
 main .factorium .gal #secTitle { text-align: center; padding: 50px 0 25px 0; font-size: 14px; color: #a1a1a1; font-weight: bolder; }
 
@@ -94,15 +94,17 @@ main .factorium .more { text-align: center; background-color: black; width: 310p
 
 main .factorium .more a { text-decoration: none; color: #fff; }
 
-main .factorium .box { width: 1000px; }
+main .factorium .box { width: 1000px; margin-bottom: 100px; }
 
 main .factorium .box ul { width: 1000px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
 
-main .factorium .box ul li { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; background-repeat: no-repeat; background-position: 0 0; width: 184px; height: 420px; margin-right: 15px; }
+main .factorium .box ul li { background-repeat: no-repeat; background-position: 0 0; width: 184px; height: 420px; margin-right: 15px; }
 
-main .factorium .box ul li dt { height: 45px; padding-top: 205px; font-size: 14px; text-align: center; font-weight: 600; }
+main .factorium .box ul li dl { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-main .factorium .box ul li dd { font-size: 12px; text-align: center; color: #a1a1a1; letter-spacing: -1px; line-height: 1.5; }
+main .factorium .box ul li dl dt { padding: 205px 0 20px 0; font-size: 14px; text-align: center; font-weight: 600; }
+
+main .factorium .box ul li dl dd { font-size: 12px; text-align: center; color: #a1a1a1; letter-spacing: -1px; line-height: 1.5; }
 
 main .factorium .box ul li:nth-child(1) { background-image: url(../images/factorium/rnd/zoning_spring1.png); }
 
@@ -113,3 +115,63 @@ main .factorium .box ul li:nth-child(3) { background-image: url(../images/factor
 main .factorium .box ul li:nth-child(4) { background-image: url(../images/factorium/rnd/zoning_spring4.png); }
 
 main .factorium .box ul li:nth-child(5) { background-image: url(../images/factorium/rnd/zoning_spring5.png); margin: 0; }
+
+main .factorium .box2 { display: -webkit-box; display: -ms-flexbox; display: flex; width: 1000px; margin: 0 auto; }
+
+main .factorium .box2 ul { width: 1000px; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+main .factorium .box2 ul li { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; background-repeat: no-repeat; background-position: 0 0; width: 310px; height: 320px; margin-right: 15px; }
+
+main .factorium .box2 ul li dt { padding-top: 205px; font-size: 18px; text-align: center; font-weight: 600; margin-bottom: 5px; }
+
+main .factorium .box2 ul li dd { font-size: 12px; text-align: center; color: #a1a1a1; letter-spacing: -1px; line-height: 1.5; }
+
+main .factorium .box2 ul li:nth-child(1) { background-image: url(../images/factorium/rnd/zoning_bg1.jpg); }
+
+main .factorium .box2 ul li:nth-child(2) { background-image: url(../images/factorium/rnd/zoning_bg2.jpg); }
+
+main .factorium .box2 ul li:nth-child(3) { background-image: url(../images/factorium/rnd/zoning_bg3.jpg); }
+
+main .factorium .box2 ul li:nth-child(4) { background-image: url(../images/factorium/rnd/zoning_bg4.jpg); }
+
+main .factorium .box2 ul li:nth-child(5) { background-image: url(../images/factorium/rnd/zoning_bg5.jpg); }
+
+main .factorium .box2 ul li:nth-child(6) { background-image: url(../images/factorium/rnd/zoning_bg6.jpg); margin-right: 0; }
+
+main .box3 { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+main .box3 .imgBox { border: 1px solid #dedede; width: 450px; height: 350px; }
+
+main .box3 .imgBox ul { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+main .box3 .imgBox ul li { display: none; }
+
+main .box3 .imgBox ul li.on { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+
+main .box3 .imgBox ul li.on img { width: 100%; height: 100%; }
+
+main .box3 .imgBox ul li.on p { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; font-size: 12px; text-align: center; color: #a1a1a1; letter-spacing: -1px; line-height: 1.25; }
+
+main .box3 .imgBox ul li.on p em { font-size: 18px; color: #000; padding: 10px 0; }
+
+main .box3 .listBox { display: -webkit-box; display: -ms-flexbox; display: flex; width: 500px; margin-left: 50px; }
+
+main .box3 .listBox ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+
+main .box3 .listBox ul li { display: -webkit-box; display: -ms-flexbox; display: flex; height: 55px; line-height: 55px; font-size: 13px; border-bottom: 1px solid #999; }
+
+main .box3 .listBox ul li a { padding-left: 70px; display: -webkit-box; display: -ms-flexbox; display: flex; background-repeat: no-repeat; background-position: 0 50%; letter-spacing: -1px; }
+
+main .box3 .listBox ul li.on a { width: 100%; background: url(../images/factorium/rnd/zoning_list_icon_arrow.png) no-repeat 15px 50% #999 !important; color: #fff; }
+
+main .box3 .listBox ul li:nth-child(1) a { background-image: url(../images/factorium/rnd/zoning_list_icon1.png); }
+
+main .box3 .listBox ul li:nth-child(2) a { background-image: url(../images/factorium/rnd/zoning_list_icon2.png); }
+
+main .box3 .listBox ul li:nth-child(3) a { background-image: url(../images/factorium/rnd/zoning_list_icon3.png); }
+
+main .box3 .listBox ul li:nth-child(4) a { background-image: url(../images/factorium/rnd/zoning_list_icon4.png); }
+
+main .box3 .listBox ul li:nth-child(5) a { background-image: url(../images/factorium/rnd/zoning_list_icon5.png); }
+
+main .box3 .listBox ul li:nth-child(6) a { background-image: url(../images/factorium/rnd/zoning_list_icon6.png); }

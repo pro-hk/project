@@ -7,31 +7,31 @@
 	<div id="black">
 		<div class="mainImg">
 	      <!-- subGnb on event 클릭시 메뉴 보이게 -->
-	      <ul class="miniMenu">
-	        <li><a href="../index.html">HOME</a></li>
-	        <li>
-	          <a href="">Beautyrest BLACK</a>
-	          <ul class="miniSub">
-	            <li><a href="">Beautyrest BLACK</a></li>
-	            <li><a href="">COLLECTION</a></li>
-	            <li><a href="">PRODUCT</a></li>
-	            <li><a href="">ONLINE STORE</a></li>
-	            <li><a href="">OUTLET</a></li>
-	            <li><a href="">ABOUT US</a></li>
-	            <li><a href="">FACTORIUM</a></li>
-	            <li><a href="">SIMMONS GALLERY</a></li>
-	            <li><a href="">매장 찾기</a></li>
-	          </ul>
-	        </li>
-	        <li>
-	          <a href="">MATTRESS</a>
-	          <ul class="miniSub2">
-	            <li><a href="">the BLACK</a></li>
-	            <li><a href="">MATTRESS</a></li>
-	            <li><a href="">FOUNDATION</a></li>
-	          </ul>
-	        </li>
-	      </ul>
+	      	<ul class="firstMenu">
+				<li class="firstLi"><a href="../index.html">HOME</a></li>
+				<li  class="firstLi">
+					<a href="">Beautyrest BLACK</a>
+					<ul class="secondMenu">
+					  <li><a href="../black/Black">Beautyrest BLACK</a></li>
+					  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+					  <li><a href="../product/Mattress"">PRODUCT</a></li>
+					  <li><a href="">ONLINE STORE</a></li>
+					  <li><a href="">OUTLET</a></li>
+					  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+					  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+					  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+					  <li><a href="../Map/">매장 찾기</a></li>
+					</ul>
+				</li>
+				<li  class="firstLi">
+					<a href="">MATTRESS</a>
+					<ul class="secondMenu">
+						<li><a href="../black/Black">the BLACK</a></li>
+						<li><a href="../black/MATTRESS">MATTRESS</a></li>
+						<li><a href="../black/FOUNDATION">FOUNDATION</a></li>
+					</ul>
+				</li>
+			</ul>
 	      <div class="mainTxt">
 	        <h2>the BLACK</h2>
 	        <p>시몬스의 고집스러운 장인정신과 독보적인 매트리스 설계 노하우의 집약체</p>
@@ -72,23 +72,20 @@
 	        "미세한 진동까지 찾아내 ‘흔들리지 않는 편안함’을 실현합니다"
 	      </p>
 	      <img src="../images/black/theblack_img03.jpg" />
-	      <div>
+	      <div class="slider">
 	        <!--슬리이더 스크립트자리-->
-	        <ul class="Slider">
-	          <li><img src="../images/black/theblack_jonning01.jpg" /></li>
-	          <li><img src="../images/black/theblack_jonning02.jpg" /></li>
-	          <li><img src="../images/black/theblack_jonning03.jpg" /></li>
-	          <li><img src="../images/black/theblack_jonning04.jpg" /></li>
-	          <li><img src="../images/black/theblack_jonning05.jpg" /></li>
-	        </ul>
-	        <!-- 슬라이더 버튼자리 -->
-	        <ul class="sliderBtn">
-	          <li></li>
-	          <li></li>
-	          <li></li>
-	          <li></li>
-	          <li></li>
-	        </ul>
+			<div class="sliderBox">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><img src="../images/black/theblack_jonning01.jpg" /></li>
+					<li class="swiper-slide"><img src="../images/black/theblack_jonning02.jpg" /></li>
+					<li class="swiper-slide"><img src="../images/black/theblack_jonning03.jpg" /></li>
+					<li class="swiper-slide"><img src="../images/black/theblack_jonning04.jpg" /></li>
+					<li class="swiper-slide"><img src="../images/black/theblack_jonning05.jpg" /></li>
+				</ul>
+				<div class="sliderBtn">
+					<div class="bullet"></div>
+				</div>
+			</div>
 	      </div>
 	      <div>
 	        <h3>Layering</h3>

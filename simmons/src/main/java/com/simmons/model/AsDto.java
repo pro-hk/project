@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 @Component
 public class AsDto {
+	private int num;
 	private int no;
 	private String name;
 	private String phone01;
@@ -33,4 +34,8 @@ public class AsDto {
 	private String realFileName;
 	private String privacy;
 	private String marketing;
+	private String regDate;
+	private String reply;
+	private String answer;
+	private String replyRegDate;
 }

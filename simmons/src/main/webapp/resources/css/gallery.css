@@ -1,22 +1,8 @@
 #gallery { min-width: 1000px; min-height: 650px; background: #fff; }
 
-#gallery .gallery { background: url(../images/gallery/gallery_visual.jpg) no-repeat 50% 0; }
-
 #gallery .visualSub { height: 340px; overflow: hidden; position: absolute; left: 0; top: 62px; width: 100%; padding: 0; }
 
-#gallery .visualSub .locationBox .location { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: right; -ms-flex-pack: right; justify-content: right; margin: 26px 30px 0 0; }
-
-#gallery .visualSub .locationBox .location li { padding-left: 11px; margin-left: 10px; background: url(../images/gallery/location_bar.gif) no-repeat 0 50%; }
-
-#gallery .visualSub .locationBox .location li a { padding-right: 11px; color: #fff; font-size: 11px; display: -webkit-box; display: -ms-flexbox; display: flex; background: url(../images/gallery/location_arrow2.gif) no-repeat 100% 50%; }
-
-#gallery .visualSub .locationBox .location li:first-child { background: none; }
-
-#gallery .visualSub .locationBox .location li:first-child a { margin: 0; padding: 0; background: none; }
-
-#gallery .visualSub .locationBox h2 { font-size: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; text-align: center; color: #fff; margin-top: 100px; }
-
-#gallery .mainContent { padding-top: 340px; position: relative; margin: 0 auto; padding-bottom: 150px; text-align: center; }
+#gallery .mainContent { position: relative; margin: 0 auto; padding-bottom: 150px; text-align: center; }
 
 #gallery .mainContent p { color: #a7a7a7; text-align: center; padding: 140px 0 60px 0; font-size: 21px; line-height: 26px; background: url(../images/gallery/gallery_line.gif) no-repeat 50% 100%; }
 

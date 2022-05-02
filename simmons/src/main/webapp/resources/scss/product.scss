@@ -1,25 +1,65 @@
+@import "vars";
+
 main {
   #contents {
     background-color: #fff;
     margin-top: 60px;
     .proTop {
-      .miniMenu {
+      position: relative;
+      z-index: 3;
+      .firstMenu {
         display: flex;
-        justify-content: flex-end;
-        font-size: 12px;
-        padding-top: 20px;
-        li {
-          margin-right: 20px;
-          ul {
+        position: absolute;
+        right: 20px;
+        top: 26px;
+        .firstLi {
+          display: flex;
+          padding-left: 10px;
+          margin-right: 10px;
+          font-size: 12px;
+          background: url(../images/aboutus/heritage/location_bar.gif) no-repeat 0 50%;
+          &.open {
+            display: block;
+            .secondMenu {
+              display: block;
+              background-color: #fff;
+              color: #111;
+              padding: 15px 10px;
+              width: 130px;
+            }
+          }
+          > a {
+            color: #111;
+            padding-right: 10px;
+            background: url(../images/product/mattress/location_arrow.gif) no-repeat 100% 50%;
+            &:hover {
+              color: #111 !important;
+            }
+          }
+          .secondMenu {
             display: none;
+            position: absolute;
+            text-align: left;
+            a {
+              display: block;
+              line-height: 1.5;
+            }
+          }
+        }
+        .firstLi:first-child {
+          background: none;
+          a {
+            margin: 0;
+            padding: 0;
+            background: none;
           }
         }
       }
       h2 {
-        font-size: 50px;
-        font-weight: 400;
         text-align: center;
-        line-height: 260px;
+        padding: 110px 0 80px 0;
+        font-size: 58px;
+        font-weight: 500;
       }
     }
     .proList {
@@ -59,7 +99,7 @@ main {
           a {
             display: block;
             img {
-              height: 260px;
+              height: 376px;
               display: block;
               width: 100%;
             }
@@ -82,7 +122,7 @@ main {
               bottom: 0;
               background-color: rgba(0, 0, 0, 0.6);
               width: 100%;
-              height: 260px;
+              height: 376px;
               opacity: 0;
               transition: 0.3s;
               .cover {
@@ -151,8 +191,9 @@ main {
       width: 60%;
       .leftVisual {
         overflow: hidden;
+        position: relative;
         .visual {
-          width: 500%;
+          width: 100%;
           display: flex;
           flex-wrap: nowrap;
           li {
@@ -160,23 +201,41 @@ main {
             background-repeat: no-repeat;
             background-position: 50%;
             background-size: cover;
-            height: 430px;
-            &.visual01 {
-              background-image: url(../images/product/mattress/view/Loogbook-BR-Zalmon-01.jpeg);
-            }
-            &.visual02 {
-              background-image: url(../images/product/mattress/view/Loogbook-BR-Zalmon-02.jpeg);
-            }
-            &.visual03 {
-              background-image: url(../images/product/mattress/view/Loogbook-BR-Zalmon-03.jpeg);
-            }
-            &.visual04 {
-              background-image: url(../images/product/mattress/view/Loogbook-BR-Zalmon-04.jpeg);
-            }
-            &.visual05 {
-              background-image: url(../images/product/mattress/view/Loogbook-BR-Zalmon-05.jpeg);
+
+            height: 470px;
+            img {
+              width: 100%;
+              height: 470px;
             }
           }
+        }
+        .visualRight {
+          display: flex;
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 35px;
+          height: 65px;
+          background: url(../images/collection/beautyrest/kv_right.png) no-repeat 0 0;
+          z-index: 60;
+          opacity: 1;
+          font-size: 0;
+          cursor: pointer;
+        }
+        .visualLeft {
+          display: flex;
+          position: absolute;
+          left: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 35px;
+          height: 65px;
+          background: url(../images/collection/beautyrest/kv_left.png) no-repeat 0 0;
+          z-index: 60;
+          opacity: 1;
+          font-size: 0;
+          cursor: pointer;
         }
       }
       .emotion {
@@ -277,12 +336,23 @@ main {
           }
         }
       }
-      .spring {
+      .productContents {
+        text-align: left;
+        padding: 30px;
+        .spring,
+        .layering {
+          float: none !important;
+          span {
+            margin: 5px 0;
+          }
+          p {
+            line-height: 1 !important;
+          }
+        }
         img {
           width: 100%;
         }
         div {
-          padding: 30px;
           span {
             display: block;
             margin: 50px 0;
@@ -302,44 +372,44 @@ main {
           }
         }
       }
-      .layering {
-        position: relative;
-        a {
-          position: absolute;
-          right: 25px;
-          top: 25px;
-        }
-        img {
-          width: 100%;
-        }
-        .logo {
-          width: 250px;
-        }
-        p {
-          font-size: 13px;
-          font-weight: 600;
-        }
-        div {
-          padding: 0 30px;
-          &.imgBox {
-            margin: 50px 0;
-          }
-          &.contentBox {
-            dl {
-              margin-top: 50px;
-              dt {
-                font-size: 15px;
-                font-weight: 700;
-                margin: 5px 0;
-              }
-              dd {
-                margin-bottom: 50px;
-                font-size: 13px;
-              }
-            }
-          }
-        }
-      }
+      // .layering {
+      //   position: relative;
+      //   a {
+      //     position: absolute;
+      //     right: 25px;
+      //     top: 25px;
+      //   }
+      //   img {
+      //     width: 100%;
+      //   }
+      //   .logo {
+      //     width: 250px;
+      //   }
+      //   p {
+      //     font-size: 13px;
+      //     font-weight: 600;
+      //   }
+      //   div {
+      //     padding: 0 30px;
+      //     &.imgBox {
+      //       margin: 50px 0;
+      //     }
+      //     &.contentBox {
+      //       dl {
+      //         margin-top: 50px;
+      //         dt {
+      //           font-size: 15px;
+      //           font-weight: 700;
+      //           margin: 5px 0;
+      //         }
+      //         dd {
+      //           margin-bottom: 50px;
+      //           font-size: 13px;
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
       .details {
         padding: 30px;
         p {
@@ -449,11 +519,12 @@ main {
           width: 165px;
           height: 30px;
         }
-      }
-      #orderprice {
-        margin-top: auto;
-        border-top: none;
-        padding: 0;
+        p {
+          margin: 0;
+          border-top: none;
+          padding: 0;
+          padding-bottom: 10px;
+        }
       }
       p {
         margin-top: 30px;
@@ -478,18 +549,8 @@ main {
         margin-bottom: 15px;
         li {
           padding: 0 10px;
-          div {
-            display: flex;
-            flex-direction: column;
+          .addCart {
             cursor: pointer;
-            img {
-              width: 20px;
-              height: 18px;
-              margin-bottom: 10px;
-            }
-            span {
-              font-size: 9px;
-            }
           }
           a {
             img {
@@ -570,6 +631,126 @@ main {
       height: 30px;
       width: 200px;
       display: center;
+    }
+  }
+  .container {
+    .Cart {
+      margin-top: 50px;
+    }
+    #cart {
+      input {
+        margin-right: 30px;
+      }
+      p {
+        margin: 0;
+      }
+      #cartList {
+        .cartEmpty {
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 20px;
+          color: $gray-color;
+        }
+        .top {
+          display: flex;
+          align-items: center;
+          border-top: 2px solid #000;
+          border-bottom: 1px solid $border-color;
+          padding: 20px 0;
+          p {
+            width: 20%;
+          }
+        }
+        .cartContents {
+          display: flex;
+          align-items: center;
+          padding: 20px 0;
+          li {
+            width: 20%;
+            font-size: 14px;
+            &.cartCount {
+              display: flex;
+              .countBtn {
+                display: flex;
+                span {
+                  width: 25px;
+                  text-align: center;
+                }
+                button,
+                span {
+                  display: block;
+                  border: 1px solid $border-color;
+                }
+              }
+            }
+            .edit {
+              border: none;
+              background-color: #000;
+              color: #fff;
+              font-size: 10px;
+              padding: 5px 10px;
+            }
+            .price {
+              color: $gray-color;
+            }
+            p {
+              font-weight: 500;
+            }
+          }
+          .cartImg {
+            width: 100px;
+            height: 50px;
+          }
+        }
+      }
+      .total {
+        padding: 10px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $gray-color;
+        border-top: 2px solid $border-color;
+        border-bottom: 2px solid #000;
+        .cartDelete {
+          font-size: 10px;
+          border: 1px solid $gray-color;
+          background-color: #fff;
+        }
+        .totalPrice {
+          display: flex;
+          align-items: center;
+          .bottom {
+            padding-bottom: 8px;
+          }
+          span {
+            color: $select-color;
+            strong {
+              font-size: 24px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .btns {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        button {
+          width: 150px;
+          font-size: 12px;
+          padding: 10px 0;
+          background-color: #000;
+          color: #fff;
+          margin-right: 10px;
+          &:first-child {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+          }
+        }
+      }
     }
   }
 }

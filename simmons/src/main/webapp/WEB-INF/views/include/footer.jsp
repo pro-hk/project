@@ -1,5 +1,8 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   		<button class="btnTop">
+        <img src="../images/main/btn_top.png" alt="top" />
+       </button>
 
       <!-- footer -->
       <footer id="footer">

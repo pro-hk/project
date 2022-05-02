@@ -127,3 +127,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.firstLi > a,
+.firstLi > a:hover,
+.firstLi > a:link,
+.firstLi > a:visited {
+  text-decoration: none !important;
+  color: #fff;
+}
+a,
+a:hover {
+  text-decoration: none !important;
+}

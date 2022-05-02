@@ -6,24 +6,24 @@
       <li class="firstLi">
         <a href="">SIMMONS Factorium</a>
         <ul class="secondMenu">
-          <li><a href="#">Beautyrest BLACK</a></li>
-          <li><a href="#">COLLECTION</a></li>
-          <li><a href="#">PRODUCT</a></li>
-          <li><a href="#">ONLINE STORE</a></li>
-          <li><a href="#">OUTLET</a></li>
-          <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">FACTORIUM</a></li>
-          <li><a href="#">SIMMONS GALLERY</a></li>
-          <li><a href="#">매장 찾기</a></li>
+          <li><a href="../black/Black">Beautyrest BLACK</a></li>
+		  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+		  <li><a href="../product/Mattress"">PRODUCT</a></li>
+		  <li><a href="">ONLINE STORE</a></li>
+		  <li><a href="">OUTLET</a></li>
+		  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+		  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+		  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+		  <li><a href="../Map/">매장 찾기</a></li>
         </ul>
       </li>
       <li class="firstLi">
         <a href="">Terrace</a>
         <ul class="secondMenu">
-          <li><a href="#">INTRO</a></li>
-          <li><a href="#">R&D</a></li>
-          <li><a href="#">TERRACE</a></li>
-          <li><a href="#">오시는 길</a></li>
+          <li><a href="../factorium/Intro">INTRO</a></li>
+          <li><a href="../factorium/Rnd">R&D</a></li>
+          <li><a href="../factorium/Terrace">TERRACE</a></li>
+          <li><a href="../factorium/Come">오시는 길</a></li>
         </ul>
       </li>
     </ul>
@@ -56,17 +56,12 @@
           시몬스 테라스는 당신의 라이프스타일을 변화 시킬<br />
           다양한 경험과 브랜드 취향이 반영된 ‘소셜 스페이스(Social Space)'입니다<br />
         </p>
-
         <div class="video">
-          <iframe
-            width="120%"
-            height="120%"
-            src="https://www.youtube.com/embed/uN7ojntlsHs?autoplay=1&mute=1"
-            title="YouTube video player"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-          ></iframe>
+          <iframe 
+          width="100%"
+           height="675px" src="https://www.youtube.com/embed/dKA-4De_nKA?autoplay=0&amp;playlist=dKA-4De_nKA&amp&loop=1&mute=1&controls=0&modestbranding=0&rel=0&showinfo=0" title="YouTube video player" frameborder="0"
+           allow="autoplay; encrypted-media;"
+            allowfullscreen></iframe>
         </div>
       </div>
       <h3 class="title">TERRACE</h3>
@@ -76,22 +71,18 @@
           라이프스타일 컬렉션 케노샤의 베딩, 퍼니처 그리고 시몬스의 감각으로 셀렉한 라이프스타일 아이템까지<br />
           침실 공간에 대한 모든 것을 만나 볼 수 있습니다
         </p>
-        <a href="" class="galleryLeft">Prev</a>
-        <ul>
-          <li><img src="../images/factorium/terrace/terrace_02_01.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_02_02.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_02_03.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_02_04.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_02_05.jpg" /></li>
-        </ul>
-        <ol>
-          <li class="on"><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-        </ol>
-        <a href="" class="galleryRight">Next</a>
+        <div class="gallerySwipe">
+          <button class="galleryLeft"></button>
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_02_01.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_02_02.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_02_03.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_02_04.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_02_05.jpg" /></li>
+          </ul>
+          <div class="bullet"></div>
+          <button class="galleryRight"></button>
+        </div>
       </div>
       <h3 class="title">MATTRESS LAB</h3>
       <div class="gal">
@@ -100,22 +91,18 @@
           수면연구 R&D센터의 장인 정신, 숙면에 대한 고민 등을<br />
           보다 친근하게 즐길 수 있습니다
         </p>
-        <a href="" class="galleryLeft">Prev</a>
-        <ul>
-          <li><img src="../images/factorium/terrace/terrace_03_01.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_03_02.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_03_03.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_03_04.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_03_05.jpg" /></li>
-        </ul>
-        <ol>
-          <li class="on"><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-        </ol>
-        <a href="" class="galleryRight">Next</a>
+        <div class="gallerySwipe">
+          <button class="galleryLeft"></button>
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_03_01.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_03_02.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_03_03.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_03_04.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_03_05.jpg" /></li>
+          </ul>
+          <div class="bullet"></div>
+            <button class="galleryRight"></button>
+        </div>
       </div>
       <h3 class="title">HERITAGE ALLEY</h3>
       <div class="gal">
@@ -125,22 +112,18 @@
           작은 것 하나에도 기본을 지켜내는 고집으로 흔들리지 않는 편안함을 약속해 온<br />
           시몬스의 역사적인 순간들을 소개합니다
         </p>
-        <a href="" class="galleryLeft">Prev</a>
-        <ul>
-          <li><img src="../images/factorium/terrace/terrace_04_01.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_04_02.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_04_03.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_04_04.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_04_05.jpg" /></li>
-        </ul>
-        <ol>
-          <li class="on"><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-        </ol>
-        <a href="" class="galleryRight">Next</a>
+        <div class="gallerySwipe">
+          <button class="galleryLeft"></button>
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_04_01.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_04_02.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_04_03.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_04_04.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_04_05.jpg" /></li>
+          </ul>
+          <div class="bullet"></div>
+            <button class="galleryRight"></button>
+        </div>
       </div>
       <h3 class="title">H O T E L</h3>
       <div class="gal">
@@ -150,23 +133,18 @@
           한국 시몬스 최상위 매트리스 컬렉션인 ‘뷰티레스트 블랙(Beautyrest BLACK)’의<br />
           전 제품을 만나보실 수 있는 호텔 컨셉의 쇼룸입니다
         </p>
-        <a href="" class="galleryLeft">Prev</a>
-        <ul>
-          <li><img src="../images/factorium/terrace/terrace_05_01.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_05_02.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_05_03.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_05_04.jpg" /></li>
-          <li><img src="../images/factorium/terrace/terrace_05_05.jpg" /></li>
-        </ul>
-
-        <ol>
-          <li class="on"><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-        </ol>
-        <a href="" class="galleryRight">Next</a>
+       <div class="gallerySwipe">
+         <button class="galleryLeft"></button>
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_05_01.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_05_02.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_05_03.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_05_04.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/terrace/terrace_05_05.jpg" /></li>
+          </ul>
+          <div class="bullet"></div>
+            <button class="galleryRight"></button>
+       </div>
       </div>
     </div>
   </div>

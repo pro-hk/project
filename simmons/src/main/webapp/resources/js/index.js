@@ -1,3 +1,18 @@
+$(".btnSearch").on("click", mainSearch);
+$(".search").on("keydown", function (e) {
+  if (e.key == "Enter") {
+    mainSearch();
+  }
+});
+
+function mainSearch() {
+  const txt = $(".search").val();
+  if (txt == "mattress" || txt == "매트리스") {
+    location.href = "product/Mattress";
+  }
+  return false;
+}
+
 // 메뉴 클릭 - 숨겨진 메뉴 열기 & 좌측 메뉴 닫기 & 전체화면 블러
 $("#menu").on("click", () => {
   $("#gnb").addClass("on");
@@ -195,7 +210,7 @@ const swiper = new Swiper("#mainSlider", {
 // 팝업창 닫기
 $(".popupClose").on("click", () => {
   if ("#popup input[type='checkbox']:checked") {
-    document.cookie = "cookieOff=cookieOff; max-age=60*60*24; path=/";
+    document.cookie = "popupOff=popupOff; max-age=60*60*24; path=/";
   }
   $("#popup").addClass("off");
 });

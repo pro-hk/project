@@ -113,7 +113,7 @@
 
         <!-- 기타 / DB작업 -->
         <c:choose>
-	        <c:when test="${empty loggedMember}">
+	        <c:when test="${empty loggedMemberDto}">
 	        <div class="etc">
 	          <a href="member/Login">로그인</a>
 	          <a href="product/Order">주문내역</a>
@@ -123,7 +123,7 @@
 	        <c:otherwise>
 	        <div class="etc">
 	          <a href="member/Logout">로그아웃</a>
-	          <a href="member/MyPage">MY PAGE</a>
+	          <a href="member/MyPage?no=${loggedMemberDto.no }">MY PAGE</a>
 	          <a href="cs/Faq">고객센터</a>
 	        </div>
 	        </c:otherwise>
@@ -170,7 +170,7 @@
       <!-- 우측 메뉴 -->
       <div id="RightMenu">
       <!-- 관리자 페이지 -->
-		<c:if test="${loggedMember.grade=='관리자'}">
+		<c:if test="${loggedMemberDto.grade=='관리자'}">
 		<!-- 관리자 페이지 -->
 		<div id="managerLink">
 			<a href="manager/">
@@ -220,7 +220,7 @@
            	</li>
            	</c:forEach>
            </ul>
-			<div class="cartLink on"><a href="#">CART 바로가기</a></div>
+			<div class="cartLink on"><a href="product/Cart">CART 바로가기</a></div>
           <ul class="list recentProduct">
             <c:if test="${empty recentList }">
             <li>최근 본 상품이 없습니다.</li>
@@ -245,7 +245,7 @@
 
         <!-- CARTLIST DB -->
         <c:choose>
-	        <c:when test="${empty loggedMember}">
+	        <c:when test="${empty loggedMemberDto}">
 	        <div class="etc">
 	          <a href="member/Login">로그인</a>
 	          <a href="product/Order">주문내역</a>
@@ -255,7 +255,7 @@
 	        <c:otherwise>
 	        <div class="etc">
 	          <a href="member/Logout">로그아웃</a>
-	          <a href="member/MyPage">MY PAGE</a>
+	          <a href="member/MyPage?no=${loggedMemberDto.no }">MY PAGE</a>
 	          <a href="cs/Faq">고객센터</a>
 	        </div>
 	        </c:otherwise>
@@ -317,7 +317,7 @@
           <img src="images/layout/pop_W2.jpg" alt="" />
         </a>
         <div class="popupClose"></div>
-        <label><input type="checkbox" />24시간 이 창을 열지 않음</label>
+        <label><input type="checkbox" class="addCookie" />24시간 이 창을 열지 않음</label>
       </div>
       </c:if>
     </main>

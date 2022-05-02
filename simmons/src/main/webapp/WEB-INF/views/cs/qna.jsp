@@ -55,7 +55,7 @@
 			                <tr>
 			                  <td>${qnaDto.regDate }</td>
 			                  <td><a href="QnaView?no=${qnaDto.no }">${qnaDto.title }</a></td>
-			                  <td>${qnaDto.answer=='' or qnaDto.answer==null ? "X" : "O" }</td>
+			                  <td>${qnaDto.reply}</td>
 			                </tr>
                  		</c:forEach>
                  	</c:otherwise>

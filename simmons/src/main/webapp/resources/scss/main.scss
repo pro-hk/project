@@ -117,6 +117,15 @@
   .container {
     width: 1000px;
     margin: 60px auto 150px;
+    .Delete {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      a {
+        color: $gray-color;
+        text-decoration: underline;
+      }
+    }
     .lnb {
       display: flex;
       justify-content: flex-end;
@@ -596,7 +605,6 @@
     .view {
       margin-top: 100px;
       border-top: 1px solid #000;
-      padding-top: 20px;
       .titleBox {
         padding: 0 20px 10px 20px;
         border-bottom: 1px solid $border-color;
@@ -637,14 +645,15 @@
         width: 100%;
         font-size: 14px;
         th {
+          padding: 20px;
           font-size: 14px;
-          vertical-align: top;
-          transform: translateY(5px);
+          vertical-align: middle;
         }
         td {
+          vertical-align: middle;
+          padding: 20px;
           .full {
             width: 100%;
-            padding: 0 10px;
             margin-bottom: 20px;
           }
           textarea {
@@ -657,25 +666,33 @@
         }
       }
       .btns {
-        margin-top: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        .cancel {
+        border-top: 1px solid #000;
+        padding-top: 50px;
+        a {
           display: flex;
           align-items: center;
           justify-content: center;
           background-color: #fff;
           border: 1px solid #000;
           color: #000;
-          width: 200px;
+          width: 100px;
+          margin-right: 20px;
           height: 40px;
           font-size: 14px;
-        }
-        .confirm {
-          width: 200px;
-          height: 40px;
-          font-size: 12px;
+          border-radius: 4px;
+          cursor: pointer;
+          &.delete {
+            background-color: #f00;
+            border-color: #f00;
+            color: #fff;
+          }
+          &.confirm {
+            background-color: #000;
+            color: #fff;
+          }
         }
       }
     }

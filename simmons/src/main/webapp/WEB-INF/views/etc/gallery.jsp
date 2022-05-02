@@ -1,21 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ include file="../include/header.jsp" %>
 
 <main id="gallery">
-  <div class="visualSub gallery">
-    <div class="locationBox">
-      <ul class="location">
-        <li>
-          <a href="/">HOME</a>
-        </li>
-        <li>
-          <a href="">SIMMONS GALLERY</a>
-          <ul class="locationSub"></ul>
-          <!--javascript사용-->
-        </li>
-      </ul>
-      <h2>SIMMONS GALLERY</h2>
+  <nav class="banner galleryBanner">
+    <ul class="firstMenu">
+      <li class="firstLi"><a href="">HOME</a></li>
+      <li class="firstLi">
+        <a href="">SIMMONS GALLERY</a>
+        <ul class="secondMenu">
+          <li><a href="../black/Black">Beautyrest BLACK</a></li>
+		  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+		  <li><a href="../product/Mattress"">PRODUCT</a></li>
+		  <li><a href="">ONLINE STORE</a></li>
+		  <li><a href="">OUTLET</a></li>
+		  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+		  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+		  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+		  <li><a href="../Map/">매장 찾기</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="d">
+      <h1>SIMMONS GALLERY</h1>
     </div>
-  </div>
+  </nav>
   <div class="mainContent">
     <p>
       시몬스가 제안하는 라이프스타일을 만날 수 있는 플래그십 스토어입니다
@@ -285,7 +292,7 @@
             <a class="next" href="#" alt="2"></a>
           </div>
         </div>
-        <p id="p_agencynm">[시몬스 갤러리 분당점]</p>
+        <p id="p_agencynm">[시몬스 테라스점]</p>
         <!--지도뷰-->
         <div class="stroeMap">
           <div id="map" style="width: 100%; height: 570px"></div>
@@ -296,66 +303,65 @@
 </main>
 
 <script>
-//갤러리 Map
-var mapContainer = document.getElementById("map"), // 지도를 표시할 div
-  mapOption = {
-    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-    level: 1, // 지도의 확대 레벨
-  };
+  //갤러리 Map
+  var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+    mapOption = {
+      center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+      level: 1, // 지도의 확대 레벨
+    };
 
-// 지도를 생성합니다
-var map = new kakao.maps.Map(mapContainer, mapOption);
+  // 지도를 생성합니다
+  var map = new kakao.maps.Map(mapContainer, mapOption);
 
-// 주소-좌표 변환 객체를 생성합니다
-var geocoder = new kakao.maps.services.Geocoder();
+  // 주소-좌표 변환 객체를 생성합니다
+  var geocoder = new kakao.maps.services.Geocoder();
 
-// 주소로 좌표를 검색합니다
-geocoder.addressSearch("경기 이천시 모가면 사실로 988", function (result, status) {
-  // 정상적으로 검색이 완료됐으면
-  if (status === kakao.maps.services.Status.OK) {
-    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+  // 주소로 좌표를 검색합니다
+  geocoder.addressSearch("경기 이천시 모가면 사실로 988", function (result, status) {
+    // 정상적으로 검색이 완료됐으면
+    if (status === kakao.maps.services.Status.OK) {
+      var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-    //alert(coords);
+      //alert(coords);
 
-    var imageSrc = "../../images/simmons/logo_simmons_large_icon.ico", // 마커이미지의 주소입니다
-      imageSize = new kakao.maps.Size(64, 64), // 마커이미지의 크기입니다
-      imageOption = { offset: new kakao.maps.Point(32, 64) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+      var imageSrc = "../../images/simmons/logo_simmons_large_icon.ico", // 마커이미지의 주소입니다
+        imageSize = new kakao.maps.Size(64, 64), // 마커이미지의 크기입니다
+        imageOption = { offset: new kakao.maps.Point(32, 64) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
-    // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-      markerPosition = coords; // 마커가 표시될 위치입니다
+      // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+        markerPosition = coords; // 마커가 표시될 위치입니다
 
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-      position: markerPosition,
-      image: markerImage, // 마커이미지 설정
-    });
+      // 마커를 생성합니다
+      var marker = new kakao.maps.Marker({
+        position: markerPosition,
+        image: markerImage, // 마커이미지 설정
+      });
 
-    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-    // 마커가 지도 위에 표시되도록 설정합니다
-    marker.setMap(map);
+      // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+      // 마커가 지도 위에 표시되도록 설정합니다
+      marker.setMap(map);
 
-    // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-    var content = `<div class="customOverlay">
+      // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+      var content = `<div class="customOverlay">
                     <a href="https://map.kakao.com/link/map/11394059" target="_blank">                        
                     </a>
                    </div>`;
 
-    // 커스텀 오버레이가 표시될 위치입니다
-    var position = coords;
+      // 커스텀 오버레이가 표시될 위치입니다
+      var position = coords;
 
-    // 커스텀 오버레이를 생성합니다
-    var customOverlay = new kakao.maps.CustomOverlay({
-      map: map,
-      position: position,
-      content: content,
-      yAnchor: 1,
-    });
+      // 커스텀 오버레이를 생성합니다
+      var customOverlay = new kakao.maps.CustomOverlay({
+        map: map,
+        position: position,
+        content: content,
+        yAnchor: 1,
+      });
 
-    map.setCenter(coords);
-  }
-});
-
+      map.setCenter(coords);
+    }
+  });
 </script>
 
 <%@ include file="../include/footer.jsp" %>

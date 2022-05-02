@@ -35,7 +35,7 @@ public class FaqDao {
 		return faqList;
 	}
 	
-	public List<FaqDto> FaqAllList(int startNum, int endNum) {
+	public List<FaqDto> FaqListAll(int startNum, int endNum) {
 		List<FaqDto> faqList = null;
 		
 		Map<String, Object> faqMap = new HashMap<>();
@@ -43,7 +43,7 @@ public class FaqDao {
 		faqMap.put("endNum", endNum);
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		faqList = sqlSession.selectList("FaqAllList", faqMap);
+		faqList = sqlSession.selectList("FaqListAll", faqMap);
 		sqlSession.close();
 		
 		return faqList;
@@ -64,6 +64,30 @@ public class FaqDao {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		total = sqlSession.selectOne("FaqTotal");
+		sqlSession.close();
+		
+		return total;
+	}
+	
+	public int FaqTotal(String txt) {
+		int total = 0;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		total = sqlSession.selectOne("FaqTxtTotal", txt);
+		sqlSession.close();
+		
+		return total;
+	}
+	
+	public int FaqTotal(String txt, String category) {
+		int total = 0;
+		
+		Map<String, String> map = new HashMap<>();
+		map.put("txt", txt);
+		map.put("category", category);
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		total = sqlSession.selectOne("FaqSearchTotal", map);
 		sqlSession.close();
 		
 		return total;
@@ -91,15 +115,46 @@ public class FaqDao {
 		return result;
 	}
 
-	public List<FaqDto> FaqSearchList(String txt, String category) {
+	public List<FaqDto> FaqSearch(String txt, String category) {
 		List<FaqDto> searchList = null;
 		
-		Map<String, String> map = new HashMap<>();
+		Map<String, Object> map = new HashMap<>();
 		map.put("txt", txt);
 		map.put("category", category);
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		searchList = sqlSession.selectList("FaqSearchList", map);
+		searchList = sqlSession.selectList("FaqSearch", map);
+		sqlSession.close();
+		
+		return searchList;
+	}
+	
+	public List<FaqDto> FaqListSearch(String txt, String category, int startNum, int endNum) {
+		List<FaqDto> searchList = null;
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("txt", txt);
+		map.put("category", category);
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		searchList = sqlSession.selectList("FaqListSearch", map);
+		sqlSession.close();
+		
+		return searchList;
+	}
+	
+	public List<FaqDto> FaqListTxtSearch(String txt, int startNum, int endNum) {
+		List<FaqDto> searchList = null;
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("txt", txt);
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		searchList = sqlSession.selectList("FaqListTxtSearch", map);
 		sqlSession.close();
 		
 		return searchList;

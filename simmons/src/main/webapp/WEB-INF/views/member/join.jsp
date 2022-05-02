@@ -13,7 +13,7 @@
 		</ul>
 		
 	<!-- form -->
-	<form action="JoinProcess" method="post" id="order">
+	<form action="JoinProcess" method="post" id="join">
 	  <div class="formTxt">
 	    <h2>회원가입 양식</h2>
 	    <p>* 항목은 필수 입력해주세요</p>
@@ -21,7 +21,7 @@
 	  <table>
 	    <colgroup>
 	      <col style="width: 20%" />
-	  <col style="width: 80%" />
+	  	  <col style="width: 80%" />
 	</colgroup>
 	<tbody>
 	  <tr class="top">
@@ -55,14 +55,14 @@
 	  </tr>
 	  <tr>
 	    <td>
-	      <input type="text" class="address addr01" name="addr01" placeholder="도로명주소" />
-	      <input type="text" class="address addr03" name="addr03" placeholder="상세주소" />
+	      <input type="text" class="address address01" name="address01" placeholder="도로명주소" />
+	      <input type="text" class="address address03" name="address03" placeholder="상세주소" />
 	    </td>
 	  </tr>
 	  <tr>
 	    <td>
-	      <input type="text" class="address addr02"  name="addr02" placeholder="지번주소" />
-	      <input type="text" class="address addr04" readonly />
+	      <input type="text" class="address address02"  name="address02" placeholder="지번주소" />
+	      <input type="text" class="address address04" readonly />
 	    </td>
 	  </tr>
 	  <tr>
@@ -71,9 +71,9 @@
 	      <input type="text" name="email01" />
 	      <span>@</span>
 	      <!-- 직접 입력시 readonly 풀기 -->
-	          <input type="text" class="domain" readonly />
+	          <input type="text" class="email02"  name="email02" />
 	          <span></span>
-	          <select class="email" name="email02" >
+	          <select class="domain">
 	            <option value="">직접 입력</option>
 	            <option value="naver.com">naver.com</option>
 	            <option value="hanmail.net">hanmail.net</option>
@@ -95,44 +95,44 @@
 	        </td>
 	      </tr>
 	      <tr>
-	        <th>일반전화 *</th>
+	        <th>일반전화</th>
 	        <td>
-	          <select class="phone" name="homePhone01">
-	            <option value="">직접 입력</option>
-	            <option value="02">서울 (02)</option>
-	            <option value="031">경기 (031)</option>
-	            <option value="032">인천 (032)</option>
-	            <option value="033">강원 (033)</option>
-	            <option value="041">충남 (041)</option>
-	            <option value="042">대전 (042)</option>
-	            <option value="043">충북 (043)</option>
-	            <option value="044">세종 (044)</option>
-	            <option value="051">부산 (051)</option>
-	            <option value="052">울산 (052)</option>
-	            <option value="053">대구 (053)</option>
-	            <option value="054">경북 (054)</option>
-	            <option value="055">경남 (055)</option>
-	            <option value="061">전남 (061)</option>
-	            <option value="062">광주 (062)</option>
-	            <option value="063">전북 (063)</option>
-	            <option value="064">제주 (064)</option>
-	            <option value="05">평생번호 (05)</option>
-	            <option value="0505">평생번호 (0505)</option>
+	          <select class="phone homePhone01" name="homePhone01">
+	            <option value="">직접입력</option>
+	            <option value="02">서울(02)</option>
+	            <option value="031">경기(031)</option>
+	            <option value="032">인천(032)</option>
+	            <option value="033">강원(033)</option>
+	            <option value="041">충남(041)</option>
+	            <option value="042">대전(042)</option>
+	            <option value="043">충북(043)</option>
+	            <option value="044">세종(044)</option>
+	            <option value="051">부산(051)</option>
+	            <option value="052">울산(052)</option>
+	            <option value="053">대구(053)</option>
+	            <option value="054">경북(054)</option>
+	            <option value="055">경남(055)</option>
+	            <option value="061">전남(061)</option>
+	            <option value="062">광주(062)</option>
+	            <option value="063">전북(063)</option>
+	            <option value="064">제주(064)</option>
+	            <option value="05">평생번호(05)</option>
+	            <option value="0505">평생번호(0505)</option>
 	          </select>
 	          <span>-</span>
-	          <input type="text" class="phone02 phone"  name="homePhone02" />
+	          <input type="text" class="homePhone02 phone"  name="homePhone02" />
 	          <span>-</span>
-	          <input type="text" class="phone03 phone"  name="homePhone03" />
+	          <input type="text" class="homePhone03 phone"  name="homePhone03" />
 	        </td>
 	      </tr>
 	      <tr>
 	        <th>생일</th>
 	        <td>
-	          <input type="text" class="date year" name="year" />
+	          <input type="text" class="date year" name="birthdayYear" />
 	          <span>년</span>
-	          <input type="text" class="date month" name="month" />
+	          <input type="text" class="date month" name="birthdayMonth" />
 	          <span>월</span>
-	          <input type="text" class="date day" name="day" />
+	          <input type="text" class="date day" name="birthdayDay" />
 	          <span>일</span>
 	        </td>
 	      </tr>
@@ -170,7 +170,7 @@
 	        <th>결혼여부</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="married" value="미혼" checked />
+	            <input type="radio" name="married" value="미혼" />
 	            <span>미혼</span>
 	          </label>
 	          <label>
@@ -183,7 +183,7 @@
 	        <th>SMS 수신</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="sms" value="수신" checked />
+	            <input type="radio" name="sms" value="수신" />
 	            <span>수신</span>
 	          </label>
 	          <label>
@@ -196,7 +196,7 @@
 	        <th>이벤트 정보 수신</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="event" value="수신" checked/>
+	            <input type="radio" name="event" value="수신" />
 	            <span>수신</span>
 	          </label>
 	          <label>
@@ -209,7 +209,7 @@
 	        <th>주문정보 수신</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="delivery" value="수신" checked/>
+	            <input type="radio" name="delivery" value="수신" />
 	            <span>수신</span>
 	          </label>
 	          <label>
@@ -222,7 +222,7 @@
 	        <th>전문가와의 전화상담 *</th>
 	        <td>
 	          <label>
-	            <input type="radio" name="serviceCall" value="신청" checked />
+	            <input type="radio" name="serviceCall" value="신청" />
 	            <span>신청</span>
 	          </label>
 	          <label>
@@ -234,7 +234,7 @@
 	    </tbody>
 	  </table>
 	  <div class="btns">
-	    <button type="submit" class="comfirm btn">회원가입</button>
+	    <button type="submit" class="confirm btn">회원가입</button>
 	    <a href="Login" class="cancel btn">취소</a>
 	  </div>
 	</form>

@@ -17,7 +17,7 @@ import com.simmons.model.CartDto;
 public class HomeController {
 	@RequestMapping("/")
 	public String Home(HttpSession session, HttpServletRequest request) throws Exception {
-		if(session.getAttribute("loggedID")==null) {
+		if(session.getAttribute("loggedId")==null) {
 			List<CartDto> cartList = new ArrayList<>();
 			List<CartDto> recentList = new ArrayList<>();
 			Cookie[] cookieList = request.getCookies();
@@ -25,8 +25,10 @@ public class HomeController {
 				for(int i = 0; i < cookieList.length; i++) {
 					CartDto cartDto = new CartDto();
 					String cookieName = cookieList[i].getName();
-					if(cookieName.equals("cookieOff")) {
-						session.setAttribute("cookieOff", cookieName);
+					if(cookieName.contains("popupOff")) {
+						session.setAttribute("popupOff", cookieName);
+					} else {
+						session.removeAttribute("popupOff");
 					}
 					if(cookieName.contains("recentNo")) {
 						String cookieValue = URLDecoder.decode(cookieList[i].getValue(), "UTF-8");
@@ -60,7 +62,7 @@ public class HomeController {
 			session.setAttribute("cartCount", cartList.size());
 			session.setAttribute("recentList", recentList);
 			session.setAttribute("recentCount", recentList.size());
-		} 
+		}
 		return "index";
 	}
 }

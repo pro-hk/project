@@ -129,4 +129,36 @@ public class NoticeDao {
 		
 		return total;
 	}
+
+	public int NoticeSearchTotal(String txt) {
+		int total = 0;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		total = sqlSession.selectOne("NoticeTxtTotal", txt);
+		sqlSession.close();
+		
+		return total;
+	}
+
+	public int NoticeUpdate(NoticeDto noticeDto) {
+		int total = 0;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		total = sqlSession.update("NoticeUpdate", noticeDto);
+		sqlSession.commit();
+		sqlSession.close();
+		
+		return total;
+	}
+
+	public int NoticeDelete(int no) {
+		int total = 0;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		total = sqlSession.delete("NoticeDelete", no);
+		sqlSession.commit();
+		sqlSession.close();
+		
+		return total;
+	}
 }

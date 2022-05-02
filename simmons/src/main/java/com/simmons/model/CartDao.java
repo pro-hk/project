@@ -88,4 +88,36 @@ public class CartDao {
 		return result;
 		
 	}
+
+	public int WishInsert(CartDto cartDto) {
+		int result = 0;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.insert("WishInsert",cartDto);
+		sqlSession.commit();
+		sqlSession.close();
+		
+		return result;
+	}
+
+	public List<CartDto> WishSelectList(String id) {
+		List<CartDto> recentList = null;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		recentList = sqlSession.selectList("WishSelectList", id);
+		sqlSession.close();
+		
+		return recentList;
+	}
+
+	public int WishDelete(String pname) {
+		int result = 0;
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.delete("WishDelete",pname);
+		sqlSession.commit();
+		sqlSession.close();
+		
+		return result;
+	}
 }

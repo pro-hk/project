@@ -5,43 +5,52 @@
 
 <main>
  <div id="blackContents">
-      <div class="proTop">
-        <ul class="miniMenu">
-          <li><a href="">HOME</a></li>
-          <li>
-            <a href="">Beautyrest BLACK</a>
-            <ul class="miniSub">
-              <li><a href="">Beautyrest BLACK</a></li>
-              <li><a href="">COLLECTION</a></li>
-              <li><a href="">PRODUCT</a></li>
-              <li><a href="">ONLINE STORE</a></li>
-              <li><a href="">OUTLET</a></li>
-              <li><a href="">ABOUT US</a></li>
-              <li><a href="">FACTORIUM</a></li>
-              <li><a href="">SIMMONS GALLERY</a></li>
-              <li><a href="">매장 찾기</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="">MATTRESS</a>
-            <ul class="miniSub2">
-              <li><a href="">the BLACK</a></li>
-              <li><a href="">MATTRESS</a></li>
-              <li><a href="">FOUNDATION</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="Slider">
-        <!--풀페이지로 좌우스크립 만들기-->
-        <ul class="visual">
-          <li><img src="../images/black/collection_banner1.jpg" /></li>
-          <li><img src="../images/black/collection_banner2.jpg" /></li>
-          <li><img src="../images/black/collection_banner3.jpg" /></li>
-          <li><img src="../images/black/collection_banner4.jpg" /></li>
-        </ul>
-      </div>
-      <div>
+		<div class="proTop">
+		    <ul class="miniMenu">
+			    <li class="miniLi"><a href="">HOME</a></li>
+			    <li class="miniLi">
+			        <a href="">Beautyrest BLACK</a>
+			        <ul class="miniSub">
+			          <li><a href="../black/Black">Beautyrest BLACK</a></li>
+					  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+					  <li><a href="../product/Mattress"">PRODUCT</a></li>
+					  <li><a href="">ONLINE STORE</a></li>
+					  <li><a href="">OUTLET</a></li>
+					  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+					  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+					  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+					  <li><a href="../Map/">매장 찾기</a></li>
+			        </ul>
+			    </li>
+			    <li class="miniLi">
+			        <a href="">MATTRESS</a>
+			        <ul class="miniSub">
+			            <li><a href="../black/Black">the BLACK</a></li>
+			            <li><a href="">MATTRESS</a></li>
+			            <li><a href="">FOUNDATION</a></li>
+			        </ul>
+			    </li>
+			</ul>
+		</div>
+		<div class="mainSlider">
+			<!--풀페이지로 좌우스크립 만들기-->
+			<div class="mainSliderBox">
+				<button class="galleryLeft">Prev</button>
+				<div class="mask">
+					<ul class="swiper-wrapper">
+						<li class="visual01 swiper-slide"></li>
+						<li class="visual02 swiper-slide"></li>
+						<li class="visual03 swiper-slide"></li>
+						<li class="visual04 swiper-slide"></li>
+					</ul>
+				</div>
+				<div class="sliderBtn">
+					<div class="bullet"></div>
+				</div>
+				<button class="galleryRight">Next</button>
+			</div>
+		</div>
+	<div>
         <!--좌우스크립 버튼-->
         <ul class="sliderBtn">
           <li></li>
@@ -84,18 +93,22 @@
         </div>
       </div>
       <!-- 침대사진 자바스트립으로  -->
-      <div class="sliderBox">
-        <ul>
-          <li class="itemList">
+      <div class="SliderScrollBox">
+        <ul class="swiper-wrapper">
+          <li class="itemList swiper-slide">
             <a href="상품 상세페이지">
               <img src="../images/black/FD_Thumbnail.jpg" />
-              <span class="cover">
-                <span class="btn online">직영</span>
-                <span class="btn sub">Beautyrest BLACK Foundation</span>
-              </span>
-              <span class="bogi">
-                <i>더보기</i>
-              </span>
+              <div class="hoverBox">
+                <span class="cover">
+                  <span class="box">직영</span>
+                  <span class="name">
+                    <p>Beautyrest BLACK Foundation</p>
+                  </span>
+                  <span class="bogi">
+                    <i>더보기</i>
+                  </span>
+                </span>
+              </div>
             </a>
           </li>
         </ul>

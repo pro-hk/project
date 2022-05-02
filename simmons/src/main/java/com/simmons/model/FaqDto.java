@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 @Component
 public class FaqDto {
+	private int num;
 	private int no;
 	private String category;
 	private String question;

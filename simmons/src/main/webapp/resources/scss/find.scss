@@ -2,54 +2,8 @@
   min-width: 1000px;
   min-height: 650px;
   background: #fff;
-  .visualSub {
-    background: url(../images/find/find_visual.jpg) no-repeat 50% 0;
-    height: 340px;
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    top: 62px;
-    width: 100%;
-    padding: 0;
-    .locationBox {
-      .location {
-        display: flex;
-        justify-content: right;
-        margin: 26px 30px 0 0;
-
-        li {
-          padding-left: 11px;
-          margin-left: 10px;
-          background: url(../images/find/location_bar.gif) no-repeat 0 50%;
-          a {
-            padding-right: 11px;
-            color: #fff;
-            font-size: 11px;
-            display: flex;
-            background: url(../images/find/location_arrow2.gif) no-repeat 100% 50%;
-          }
-        }
-        li:first-child {
-          background: none;
-          a {
-            margin: 0;
-            padding: 0;
-            background: none;
-          }
-        }
-      }
-      h2 {
-        font-size: 50px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        color: #fff;
-        margin-top: 100px;
-      }
-    }
-  }
   .mainContent {
-    padding-top: 453px;
+    padding-top: 50px;
     width: 1000px;
     position: relative;
     margin: 0 auto;
@@ -57,11 +11,12 @@
     .gallery03 {
       width: 1000px;
       margin: 0 auto;
-      margin-top: 75px;
+      .mySub {
+        background-color: #fff;
+        padding: 0;
+      }
       .myTable01 {
         font-size: 13px;
-        margin-top: 25px;
-        border-top: 1px solid #dedede;
         border-bottom: 2px solid #000;
         .col1 {
           width: 185px;
@@ -105,7 +60,6 @@
         justify-content: center;
         padding-top: 17px;
         font-size: 12px;
-
         .prev {
           width: 15px;
           height: 19px;
@@ -123,6 +77,7 @@
           justify-content: center;
           li {
             margin-left: 5px;
+            cursor: pointer;
             > .on {
               background-color: #000;
               color: #fff;
@@ -152,11 +107,10 @@
       color: #000;
       font-size: 16px;
       font-weight: 400;
-      text-align: center;
     }
     .findStore {
       padding: 15px 30px;
-      border: 1px solid #dedede;
+      border-top: 1px solid #dedede;
       border-width: 1px 0;
       background: #f5f5f5;
       .search {
@@ -183,8 +137,6 @@
       a {
         width: 70px;
         height: 30px;
-        background: #000;
-        color: #fff;
         text-align: center;
         line-height: 30px;
         font-size: 12px;

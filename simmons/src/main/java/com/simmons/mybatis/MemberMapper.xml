@@ -2,24 +2,33 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.simmons.mybatis.member">
-	<insert id="insert" parameterType="memberDto">
-		insert into member values(seq_member.nextval,
-								  #{name},
-								  #{id},
-								  #{password},
-								  #{address},
-								  #{zipCode},
-								  #{email},
-								  #{phone},
-								  #{homePhone},
-								  #{birthday},
-								  #{job},
-								  #{married},
-								  #{sms},
-								  #{event},
-								  #{delivery},
-								  #{serviceCall},
-								  <choose>
+	<insert id="insertMember" parameterType="MemberDto">
+		INSERT INTO MEMBER VALUES (SEQ_MEMBER.NEXTVAL,
+								   #{name},
+								   #{id},
+								   #{password},
+								   #{address01},
+								   #{address02},
+								   #{address03},
+								   #{zipCode},
+								   #{email01},
+								   #{email02},
+								   #{phone01},
+								   #{phone02},
+								   #{phone03},
+								   #{homePhone01},
+								   #{homePhone02},
+								   #{homePhone03},
+								   #{birthdayYear},
+								   #{birthdayMonth},
+								   #{birthdayDay},
+								   #{job},
+								   #{married},
+								   #{sms},
+								   #{event},
+								   #{delivery},
+								   #{serviceCall},
+								   <choose>
 								  	<when test="id=='simmons'">
 									  	'관리자'
 								  	</when>
@@ -27,10 +36,66 @@
 										'일반회원'
 								  	</otherwise>
 								  </choose> 
-		)
+								   )
 	</insert>
 	
-	<select id="getLoggedMember" parameterType="memberDto" resultType="memberDto">
-		select * from member where id = #{id} and password = #{password}
+	<select id="loginMember" parameterType="MemberDto" resultType="MemberDto">
+		SELECT * FROM MEMBER WHERE ID = #{id} AND PASSWORD = #{password}
+	</select>
+	
+	<select id="DeliveryCheck" parameterType="MemberDto" resultType="MemberDto">
+		SELECT * FROM ORDERCHECK WHERE NAME = #{name} AND PHONE = #{phone} AND EMAIL = #{email};
+	</select>
+	
+	<select id="showInfo" parameterType="MemberDto" resultType="MemberDto">
+		SELECT * FROM MEMBER WHERE ID = {id} AND PASSWORD = {pw}
+	</select>
+	
+	<delete id="deleteMember" parameterType="MemberDto">
+		DELETE FROM MEMBER WHERE ID = #{id} AND PASSWORD = #{password}
+	</delete>
+	
+	<select id="pwConfirm" parameterType="MemberDto" resultType="MemberDto">
+		SELECT * FROM MEMBER WHERE ID = #{id} AND PASSWORD = #{password}
+	</select>
+	
+	<update id="updatePw" parameterType="MemberDto">
+		UPDATE MEMBER SET PASSWORD = #{password}
+		WHERE ID = #{id}
+	</update>
+	
+	<update id="updateMember" parameterType="MemberDto">
+		UPDATE MEMBER SET NAME		   =   #{name},
+						  ID		   =   #{id},
+						  PASSWORD     =   #{password},
+						  ZIPCODE      =   #{zipCode},
+						  ADDRESS01      =   #{address01},
+						  ADDRESS02      =   #{address02},
+						  ADDRESS03      =   #{address03},
+						  EMAIL01        =   #{email01},
+						  EMAIL02        =   #{email02},
+						  PHONE01	       =   #{phone01},
+						  PHONE02	       =   #{phone02},
+						  PHONE03	       =   #{phone03},
+						  HOMEPHONE01    =   #{homePhone01},
+						  HOMEPHONE02    =   #{homePhone02},
+						  HOMEPHONE03    =   #{homePhone03},
+						  JOB		   =   #{job},	
+						  MARRIED      =   #{married},
+						  SMS          =   #{sms},
+						  EVENT	       =   #{event},
+						  DELIVERY     =   #{delivery},
+						  SERVICECALL  =   #{serviceCall},
+						  GRADE        =     '일반회원'
+						  WHERE ID =  #{id} AND PASSWORD = #{password}
+	</update>
+	
+	<update id="changeGrade" parameterType="MemberDto">
+		UPDATE MEMBER SET GRADE = #{grade}
+						  WHERE ID = #{id}
+	</update>
+	
+	<select id="IdCheck" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) AS RESULT FROM MEMBER WHERE ID = #{id}
 	</select>
 </mapper>

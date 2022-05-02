@@ -7,24 +7,24 @@
       <li class="firstLi">
         <a href="">SIMMONS Factorium</a>
         <ul class="secondMenu">
-          <li><a href="#">Beautyrest BLACK</a></li>
-          <li><a href="#">COLLECTION</a></li>
-          <li><a href="#">PRODUCT</a></li>
-          <li><a href="#">ONLINE STORE</a></li>
-          <li><a href="#">OUTLET</a></li>
-          <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">FACTORIUM</a></li>
-          <li><a href="#">SIMMONS GALLERY</a></li>
-          <li><a href="#">매장 찾기</a></li>
+          <li><a href="../black/Black">Beautyrest BLACK</a></li>
+		  <li><a href="../collection/Beautyrest">COLLECTION</a></li>
+		  <li><a href="../product/Mattress"">PRODUCT</a></li>
+		  <li><a href="">ONLINE STORE</a></li>
+		  <li><a href="">OUTLET</a></li>
+		  <li><a href="../aboutus/Heritage">ABOUT US</a></li>
+		  <li><a href="../factorium/Intro">FACTORIUM</a></li>
+		  <li><a href="../Gallery/">SIMMONS GALLERY</a></li>
+		  <li><a href="../Map/">매장 찾기</a></li>
         </ul>
       </li>
       <li class="firstLi">
         <a href="">Intro</a>
         <ul class="secondMenu">
-          <li><a href="#">INTRO</a></li>
-          <li><a href="#">R&D</a></li>
-          <li><a href="#">TERRACE</a></li>
-          <li><a href="#">오시는 길</a></li>
+          <li><a href="../factorium/Intro">INTRO</a></li>
+          <li><a href="../factorium/Rnd">R&D</a></li>
+          <li><a href="../factorium/Terrace">TERRACE</a></li>
+          <li><a href="../factorium/Come">오시는 길</a></li>
         </ul>
       </li>
     </ul>
@@ -53,18 +53,15 @@
           세계 최고 설비를 자랑하는 수면연구 R&D센터 등이 자리한 한국 시몬스의 심장입니다
         </p>
         <!--자바스크립 이용-->
-        <a href="" class="galleryLeft">Prev</a>
-        <ul>
-          <li><img src="../images/factorium/intro/gallery_01_01.jpg" /></li>
-          <li><img src="../images/factorium/intro/gallery_01_02.jpg" /></li>
-        </ul>
-        <ol>
-          <li class="on"><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-        </ol>
-        <a href="" class="galleryRight">Next</a>
+        <div class="gallerySwipe">
+          <button class="galleryLeft"></button>
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_01_01.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_01_02.jpg" /></li>
+          </ul>
+          <div class="bullet"></div>
+          <button class="galleryRight"></button>
+        </div>
       </div>
       <div class="gal">
         <h4 class="gTitle">세계 침대 시장에서 최고로 인정받는 자체 생산 시스템</h4>
@@ -72,25 +69,17 @@
           청결함을 기본으로, 기본에 충실한 원칙을 고수하는 매트리스 제작 전 과정은 원자재 선정, 스프링 제작,<br />
           최종 검수에 이르기까지 국가 기준보다 더 엄격한 ‘한국 시몬스만의 1936가지 품질관리 항목＇을 거쳐 제품을 완성합니다
         </p>
-        <a href="" class="galleryLeft">Prev</a>
-        <ul>
-          <li><img src="../images/factorium/intro/gallery_02_01.jpg" /></li>
-          <li><img src="../images/factorium/intro/gallery_02_02.jpg" /></li>
-          <li><img src="../images/factorium/intro/gallery_02_03.jpg" /></li>
-          <li><img src="../images/factorium/intro/gallery_02_04.jpg" /></li>
-        </ul>
-
-        <ol>
-          <li class="on"><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-        </ol>
-        <a href="" class="galleryRight">Next</a>
+        <div class="gallerySwipe">
+          <button class="galleryLeft"></button>
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_02_01.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_02_02.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_02_03.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_02_04.jpg" /></li>
+          </ul>
+          <div class="bullet"></div>
+          <button class="galleryRight"></button>
+        </div>
       </div>
       <div class="gal">
         <h4 class="gTitle">스마트 물류센터</h4>
@@ -98,28 +87,18 @@
           제품의 특성까지 세심하게 고려한 적재 및 출고 배치를 통해<br />
           신속하고 안전하게 위생적인 매트리스가 배송됩니다
         </p>
-        <a href="" class="galleryLeft">Prev</a>
-        <ul>
-          <li><img src="../images/factorium/intro/gallery_03_01.jpg" /></li>
-          <li><img src="../images/factorium/intro/gallery_03_02.jpg" /></li>
-          <li><img src="../images/factorium/intro/gallery_03_03.jpg" /></li>
-          <li><img src="../images/factorium/intro/gallery_03_04.jpg" /></li>
-          <li><img src="../images/factorium/intro/gallery_03_05.jpg" /></li>
-        </ul>
-
-        <ol>
-          <li class="on"><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-          <li><a></a></li>
-          <!-- 자바스크립트로 작업 -->
-        </ol>
-        <a href="" class="galleryRight">Next</a>
+        <div class="gallerySwipe">
+          <button class="galleryLeft"></button>
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_03_01.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_03_02.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_03_03.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_03_04.jpg" /></li>
+            <li class="swiper-slide"><img src="../images/factorium/intro/gallery_03_05.jpg" /></li>
+          </ul>
+          <div class="bullet"></div>
+          <button class="galleryRight"></button>
+        </div>
       </div>
     </div>
   </div>

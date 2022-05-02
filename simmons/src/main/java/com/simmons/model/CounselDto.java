@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 @Component
 public class CounselDto {
+	private int num;
 	private int no;
 	private String name;
 	private String title;
@@ -25,4 +26,7 @@ public class CounselDto {
 	private String privacy;
 	private String marketing;
 	private String regDate;
+	private String replyRegDate;
+	private String reply;
+	private String answer;
 }

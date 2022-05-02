@@ -17,30 +17,39 @@
 		<div class="txtBox lineOff">
 		    <h1>FAQ VIEW</h1>
 		</div>
+		
+		<!-- 상단 5개 선택 -->
+    <ul class="customerList managerList">
+      <li class="on"><a href="FaqList">FAQ</a></li>
+      <li><a href="QnaList">Q&A</a></li>
+      <li><a href="CounselList">1:1 전화상담 신청</a></li>
+      <li><a href="AsList">A/S 신청</a></li>
+      <li><a href="NoticeList">공지사항</a></li>
+    </ul>
 
 		<div class="view">
 			<table>
 			  <colgroup>
-			    <col style="width: 20%" />
-				<col style="width: 80%" />
+			    <col style="width: 15%" />
+				<col />
 			  </colgroup>
 			  <tbody>
-			      <tr class="top">
-			  	<th>카테고리</th>
-			  	<td class="left">${faqDto.category }</td>
-			</tr>
+			    <tr>
+			  	  <th>카테고리</th>
+			  	  <td class="left">${faqDto.category }</td>
+				</tr>
 			  	<tr>
 			      <th>질문</th>
 			      <td class="left">${faqDto.question }</td>
 			    </tr>
-			    <tr class="bottom">
+			    <tr>
 			      <th>답변</th>
 			      <td class="left">${faqDto.answer }</td>
 			    </tr>              
 			  </tbody>
 			</table>
 			<div class="btns">
-			  <a href="FaqUpdate?no=${faqDto.no }" class="">수정</a>
+			  <a href="FaqEdit?no=${faqDto.no }" class="confirm">수정</a>
 			  <a href="FaqDelete?no=${faqDto.no }" class="delete">삭제</a>
 			  <a href="FaqList" class="cancel btn">목록</a>
 			</div>

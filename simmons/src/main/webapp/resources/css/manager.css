@@ -2,15 +2,23 @@
 
 #main .container .managerList { margin-top: 50px; }
 
-#main .container #list .searchBox { margin: 20px 0; }
+#main .container #list { width: 1000px; }
 
-#main .container #list .searchBox select { border: 1px solid #ccc; width: 110px; margin-right: 10px; height: 30px; padding: 5px; color: #999; -webkit-box-sizing: border-box; box-sizing: border-box; }
+#main .container #list .list { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-#main .container #list .searchBox input { width: 200px; }
+#main .container #list .list .noReply { width: 100px; }
 
-#main .container #list .searchBox button { height: 30px; margin-left: 10px; background-color: #000; color: #fff; border: none; padding: 5px 25px; font-size: 12px; }
+#main .container #list .list .noReply p { font-size: 16px; }
 
-#main .container #list table { width: 100%; border-top: 2px solid #000; border-bottom: 2px solid #000; }
+#main .container #list .list .searchBox { padding-bottom: 0; padding: 20px; }
+
+#main .container #list .list .searchBox select { border: 1px solid #ccc; width: 110px; margin-right: 10px; height: 30px; padding: 5px; color: #999; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+#main .container #list .list .searchBox input { width: 200px; }
+
+#main .container #list .list .searchBox button { height: 30px; margin-left: 10px; background-color: #000; color: #fff; border: none; padding: 5px 25px; font-size: 12px; }
+
+#main .container #list table { width: 1000px; border-top: 2px solid #000; border-bottom: 2px solid #000; }
 
 #main .container #list table th, #main .container #list table td { text-align: center; border-bottom: 1px solid #ccc; padding: 20px; font-size: 12px; color: #999; }
 
@@ -32,4 +40,10 @@
 
 #main .listBox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding-top: 100px; }
 
-#main .listBox a { display: block; width: 300px; height: 500px; background-color: #f00; color: #fff; }
+#main .listBox a { background-image: url("../images/layout/settings.png"); background-position: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 300px; height: 500px; font-size: 50px; font-weight: 900; color: #ffb008; text-decoration: none; }
+
+#main #NoticeWrite table td { padding: 0; }
+
+#main #NoticeWrite table td .note-editor { width: 100%; }
+
+#main #NoticeWrite table td .note-editor .note-statusbar { display: none; }
