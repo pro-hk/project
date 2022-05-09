@@ -22,38 +22,54 @@
     <div id="cart">
       <div id="cartList">
         <div class="top">
-          <p><input type="checkbox" />전체</p>
+          <p><input type="checkbox" class="cartAllCheck" />전체</p>
           <p>상품정보</p>
           <p>상품금액</p>
           <p>수량</p>
           <p>주문금액</p>
         </div>
-        <c:if test="${empty cartList }">
-        	<p class="cartEmpty">장바구니에 담긴 상품이 없습니다.</p>
-        </c:if>
-		   <c:forEach items="${cartList}" var="cart">
+        <c:set var="cartSum" value="0" />
 		<ul class="cartContents">
-		<li><input type="checkbox" /><a href="Detail?no=${cart.no }"><img src="${cart.img }" class="cartImg" /></a></li>
-		<li><a href="Detail?no=${cart.no }">${cart.pname }</a></li>
-		<li><span class="price">${cart.price }원</span></li>
-		<li class="cartCount">
-		  <div class="countBtn">
-		   <button class="minusCart button">-</button>
-		   <span>${cart.count }</span>
-		   <button class="addCart button">+</button>
-		  </div>
-		  <button class="edit">수정</button>
+        <c:if test="${empty cartList }">
+        	<li class="cartEmpty">장바구니에 담긴 상품이 없습니다.</li>
+        </c:if>
+	    <c:forEach items="${cartList}" var="cart">
+        <fmt:formatNumber value="${cart.price }" pattern="###,###,###" var="cartPrice" />	
+        <fmt:formatNumber value="${cart.price * cart.count }" pattern="###,###,###" var="cartTotalPrice" />	
+		<li>
+			<div>
+				<input type="checkbox" name="cart" />
+				<a href="Detail?no=${cart.no }">
+					<img src="${cart.img }" class="cartImg" />
+				</a>
+			</div>
+			<div class="cartLink">
+				<a href="Detail?no=${cart.no }">
+					<span class="cartPname">${cart.pname }</span><br>
+					<span class="cartSizes">${cart.sizes }</span>
+				</a>
+			</div>
+			<div class="cartPrice">${cartPrice }원</div>
+			<div class="cartCounts">
+			   <button class="minusCart button">-</button>
+			   <span class="cartNum">${cart.count }</span>
+			   <button class="plusCart button">+</button>
+			   <button class="cartEdit">수정</button>
+			</div>
+			<div class="cartTotalPrice">${cartTotalPrice }원</div>
+		<input type="hidden" class="cartNo" value="${cart.no }" />
+		<c:set var="cartSum" value="${cartSum + cart.price * cart.count }" />
 		</li>
-		<li><p>${price }원</p></li>
-		</ul>
 		</c:forEach>
+		</ul>
         <div class="total">
 	        <div>
 	          <button class="cartDelete">선택 상품 삭제</button>
 	        </div>
 	        <div class="totalPrice">
-	          <p>총 상품 금액 원 + 배송비 0원 =</p>
-	          <p class="bottom">총 주문금액 <span><strong>3,340,000</strong>원</span></p>
+	          <fmt:formatNumber value="${cartSum }" pattern="###,###,###" var="Sum" />
+	          <p>총 상품 금액 <Strong>${Sum }</Strong>원 + 배송비 0원 =</p>
+	          <p class="bottom">총 주문금액 <span><strong>${Sum }</strong>원</span></p>
 	        </div>
       </div>
       <div class="btns">

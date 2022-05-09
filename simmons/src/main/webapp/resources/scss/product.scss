@@ -645,55 +645,59 @@ main {
         margin: 0;
       }
       #cartList {
-        .cartEmpty {
-          height: 100px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 20px;
-          color: $gray-color;
-        }
         .top {
           display: flex;
+          justify-content: space-between;
           align-items: center;
           border-top: 2px solid #000;
           border-bottom: 1px solid $border-color;
-          padding: 20px 0;
-          p {
-            width: 20%;
-          }
+          padding: 20px 50px 20px 0;
         }
         .cartContents {
-          display: flex;
-          align-items: center;
-          padding: 20px 0;
+          padding: 20px 30px 20px 0;
           li {
-            width: 20%;
-            font-size: 14px;
-            &.cartCount {
+            &.cartEmpty {
+              height: 100px;
               display: flex;
-              .countBtn {
-                display: flex;
-                span {
-                  width: 25px;
-                  text-align: center;
-                }
-                button,
-                span {
-                  display: block;
-                  border: 1px solid $border-color;
-                }
+              justify-content: center;
+              align-items: center;
+              font-size: 20px;
+              color: $gray-color;
+            }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            margin-top: 20px;
+            > div {
+              width: 17%;
+            }
+            .cartTotalPrice {
+              text-align: right;
+            }
+            .cartCounts {
+              display: flex;
+              justify-content: flex-end;
+              span {
+                width: 25px;
+                text-align: center;
+              }
+              button,
+              span {
+                display: block;
+                border: 1px solid $border-color;
+              }
+              .cartEdit {
+                border: none;
+                background-color: #000;
+                color: #fff;
+                font-size: 10px;
+                padding: 5px 10px;
               }
             }
-            .edit {
-              border: none;
-              background-color: #000;
-              color: #fff;
-              font-size: 10px;
-              padding: 5px 10px;
-            }
-            .price {
+            .cartPrice {
               color: $gray-color;
+              text-align: center;
             }
             p {
               font-weight: 500;
@@ -714,6 +718,7 @@ main {
         border-top: 2px solid $border-color;
         border-bottom: 2px solid #000;
         .cartDelete {
+          padding: 10px;
           font-size: 10px;
           border: 1px solid $gray-color;
           background-color: #fff;
@@ -723,6 +728,9 @@ main {
           align-items: center;
           .bottom {
             padding-bottom: 8px;
+          }
+          strong {
+            font-weight: normal;
           }
           span {
             color: $select-color;

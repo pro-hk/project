@@ -271,9 +271,6 @@
 	    	pname: $("#pname").text(),
 	    	img: $(".visual>li:first").children("img").attr("src"),
 		};
-		console.log("no=="+sendData.no);
-		console.log("pname=="+sendData.pname);
-		console.log("nimgo=="+sendData.img);
 		if(loggedMember==null){
 			if(confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")){
 				location.href="../member/Login";

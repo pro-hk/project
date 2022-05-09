@@ -149,7 +149,6 @@ public class ProductController {
 					// 중복 확인
 					if(cookieNo == no && cookieSizes.equals(sizes)) {
 						cookieCount = count+cookieCount;
-						cookiePrice = Integer.toString(Integer.parseInt(price)*cookieCount);
 						cookieValue = cookieNo+"&"+cookiePname+"&"+cookieImg+"&"+cookieCount+"&"+cookiePrice+"&"+cookieSizes+"&"+cookieId;
 						cookieCheck = true;
 						Cookie addCookie = new Cookie(cookieName, URLEncoder.encode(cookieValue, "UTF-8"));
@@ -174,9 +173,7 @@ public class ProductController {
 				CartDto cartDto = cartList.get(i);
 				if(cartDto.getNo() == no && cartDto.getSizes().equals(sizes)) {
 					int getCount = cartDto.getCount() + count;
-					int getPrice = Integer.parseInt(cartDto.getPrice());
 					cartDto.setCount(getCount);
-					cartDto.setPrice(Integer.toString(getPrice * getCount));
 					cartDao.CartUpdate(cartDto);
 					cookieCheck = true;
 					System.out.println("업데이트 성공");
@@ -272,7 +269,7 @@ public class ProductController {
 		return cartList;
 	}
 	
-	@RequestMapping("Cart")
+	@RequestMapping("/Cart")
 	public String CartList(HttpServletRequest request, HttpSession session, Model model) throws Exception {
 		List<CartDto> cartList = new ArrayList<>();
 		if(session.getAttribute("loggedId")==null) {
@@ -287,11 +284,13 @@ public class ProductController {
 					String cookieImg = cookieValue.split("&")[2];
 					int cookieCount = Integer.parseInt(cookieValue.split("&")[3]);
 					String cookiePrice = cookieValue.split("&")[4];
+					String cookieSizes = cookieValue.split("&")[5];
 					cartDto.setNo(cookieNo);
 					cartDto.setPname(cookiePname);
 					cartDto.setImg(cookieImg);
 					cartDto.setCount(cookieCount);
 					cartDto.setPrice(cookiePrice);
+					cartDto.setSizes(cookieSizes);
 					cartList.add(cartDto);
 				}
 			}
@@ -303,6 +302,70 @@ public class ProductController {
 		}
 		
 		return "product/cart";
+	}
+	
+	@RequestMapping("/CartEdit")
+	@ResponseBody
+	public List<CartDto> CartEdit(HttpServletRequest request,HttpServletResponse response, HttpSession session) throws Exception {
+		int no = Integer.parseInt(request.getParameter("no"));
+		String sizes = request.getParameter("sizes");
+		int count = Integer.parseInt(request.getParameter("count"));
+		String id = " ";
+		
+		List<CartDto> cartList = new ArrayList<>();
+		if(session.getAttribute("loggedMemberDto")==null) {
+			Cookie[] cookieList = request.getCookies();
+			for(int i = 0; i < cookieList.length; i++) {
+				CartDto cartDto = new CartDto();
+				String cookieName = cookieList[i].getName();
+				if(cookieName.contains("cartNo")) {
+					// 쿠키 value 분해
+					String cookieValue = URLDecoder.decode(cookieList[i].getValue(), "UTF-8");
+					int cookieNo = Integer.parseInt(cookieValue.split("&")[0]);
+					String cookiePname = cookieValue.split("&")[1];
+					String cookieImg = cookieValue.split("&")[2];
+					int cookieCount = Integer.parseInt(cookieValue.split("&")[3]);
+					String cookiePrice = cookieValue.split("&")[4];
+					String cookieSizes = cookieValue.split("&")[5];
+					String cookieId = cookieValue.split("&")[6];
+					
+					// 중복 확인
+					if(cookieNo == no && cookieSizes.equals(sizes)) {
+						cookieCount = count;
+						cookieValue = cookieNo+"&"+cookiePname+"&"+cookieImg+"&"+cookieCount+"&"+cookiePrice+"&"+cookieSizes+"&"+cookieId;
+						Cookie addCookie = new Cookie(cookieName, URLEncoder.encode(cookieValue, "UTF-8"));
+						addCookie.setMaxAge(60*60*24*30);
+						addCookie.setPath("/");
+						response.addCookie(addCookie);
+					}
+					// Session용 DTO 추가
+					cartDto.setNo(cookieNo);
+					cartDto.setPname(cookiePname);
+					cartDto.setImg(cookieImg);
+					cartDto.setCount(cookieCount);
+					cartDto.setPrice(cookiePrice);
+					cartDto.setSizes(cookieSizes);
+					cartDto.setId(cookieId);
+					cartList.add(cartDto);
+				}
+			}
+		} else {
+			id = (String)session.getAttribute("loggedId");
+			cartList = cartDao.CartSelectList(id);
+			for(int i = 0; i< cartList.size(); i++) {
+				CartDto cartDto = cartList.get(i);
+				if(cartDto.getNo() == no && cartDto.getSizes().equals(sizes)) {
+					int getCount = count;
+					cartDto.setCount(getCount);
+					cartDao.CartUpdate(cartDto);
+					System.out.println("업데이트 성공");
+				}
+			}
+		}
+		session.setAttribute("cartList", cartList);
+		session.setAttribute("cartCount", cartList.size());
+		System.out.println(cartList);
+		return cartList;
 	}
 	
 	// Recent

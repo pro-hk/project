@@ -98,7 +98,7 @@
 	</select>
 	
 	<update id="CartUpdate" parameterType="cartDto">
-		update cart set count = #{count}, price = #{price} where pname = #{pname} and sizes = #{sizes} and etc = 'cart'
+		update cart set count = #{count} where pname = #{pname} and sizes = #{sizes} and etc = 'cart'
 	</update>
 	
 	<delete id="CartDelete" parameterType="cartDto">

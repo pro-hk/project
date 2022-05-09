@@ -530,8 +530,7 @@ $(".addCart").on("click", function () {
     success: function (res) {
       count = res.length;
       res.forEach(function (item) {
-        console.log(item);
-        let price = item.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        let price = (item.count * item.price).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         console.log("price==" + price);
         output += `
         <li>
@@ -643,6 +642,166 @@ $(".wishDel").on("click", function () {
   } else {
     return false;
   }
+});
+
+// cart checkbox 전체선택
+$(".cartAllCheck").on("click", function () {
+  if ($(this).is(":checked")) {
+    $("input[name=cart]").prop("checked", true);
+  } else {
+    $("input[name=cart]").prop("checked", false);
+  }
+});
+
+// cart 수량 변경
+$(".minusCart").on("click", function () {
+  let cartCount = parseInt($(this).siblings(".cartNum").text());
+  if (cartCount > 1) {
+    $(this)
+      .siblings(".cartNum")
+      .text(cartCount - 1);
+  } else {
+    alert("수량은 최소 1개이상 구매가능합니다.");
+  }
+});
+$(".plusCart").on("click", function () {
+  let cartCount = parseInt($(this).siblings(".cartNum").text());
+  $(this)
+    .siblings(".cartNum")
+    .text(cartCount + 1);
+});
+$(".cartEdit").on("click", function () {
+  const sendData = {
+    no: $(this).parent().siblings(".cartNo").val(),
+    count: parseInt($(this).siblings(".cartNum").text()),
+    sizes: $(this).parent().siblings(".cartLink").children().children(".cartSizes").text(),
+  };
+  const cartPrice = sendData.count * parseInt($(this).parent().siblings(".cartPrice").text().replace(/,/g, ""));
+  $(this)
+    .parent()
+    .siblings(".cartTotalPrice")
+    .text(cartPrice.toLocaleString("ko-KR") + "원");
+  $.ajax({
+    url: "CartEdit",
+    data: sendData,
+    method: "post",
+    success: function (res) {
+      output = "";
+      count = res.length;
+      res.forEach(function (item) {
+        let price = (item.count * item.price).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        output += `
+          <li>
+            <a href="../product/Detail?no=${item.no}">
+              <div class="Title">
+                <h2 id="cartName">${item.pname} ${item.sizes}</h2>
+                <img class="cartDelete" alt="카트 삭제" src="../images/layout/del.png">
+              </div>
+              <div class="Contents">
+                <div class="cartImg">
+                  <img alt="카트 제품 이미지" src="${item.img}">
+                </div>
+                <div class="cartTxt">
+                  <p>수량: ${item.count}개</p>
+                  <p class="cartPrice">￦ ${price}</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          `;
+      });
+      $(".cartProduct").html(output);
+    },
+  });
+});
+
+// cart 삭제
+$(".cartDelete").on("click", function () {
+  console.log("삭제클릭");
+  const checkbox = $("input[name=cart]:checked");
+  checkbox.each(function (idx, item) {
+    pname = $(this).parent().siblings(".cartLink").children().children(".cartPname").text();
+    sizes = $(this).parent().siblings(".cartLink").children().children(".cartSizes").text();
+    const sendData = {
+      pname: pname,
+      sizes: sizes,
+    };
+    let output = "";
+    let cartOutput = "";
+    let count = "";
+    let cartPrice = "";
+    $.ajax({
+      url: "../product/CartDelete",
+      data: sendData,
+      method: "post",
+      success: function (res) {
+        console.log("res==" + res);
+        count = res.length;
+        res.forEach(function (item) {
+          console.log("item==" + item);
+          cartPrice += parseInt(item.count * item.price);
+          console.log("cartPrice==" + cartPrice);
+          let price = (item.count * item.price).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+          output += `
+          <li>
+            <a href="../product/Detail?no=${item.no}">
+              <div class="Title">
+                <h2 id="cartName">${item.pname} ${item.sizes}</h2>
+                <img class="cartDelete" alt="카트 삭제" src="../images/layout/del.png">
+              </div>
+              <div class="Contents">
+                <div class="cartImg">
+                  <img alt="카트 제품 이미지" src="${item.img}">
+                </div>
+                <div class="cartTxt">
+                  <p>수량: ${item.count}개</p>
+                  <p class="cartPrice">￦ ${price}</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          `;
+          cartOutput = `
+          <li>
+            <div>
+              <input type="checkbox" name="cart" />
+              <a href="Detail?no=${item.no}">
+                <img src="${item.img}" class="cartImg" />
+              </a>
+            </div>
+            <div class="cartLink">
+              <a href="Detail?no=${item.no}">
+                <span class="cartPname">${item.pname}</span><br>
+                <span class="cartSizes">${item.sizes}</span>
+              </a>
+            </div>
+            <div class="cartPrice">${item.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}원</div>
+            <div class="cartCounts">
+              <button class="minusCart button">-</button>
+              <span class="cartNum">${item.count}</span>
+              <button class="plusCart button">+</button>
+              <button class="cartEdit">수정</button>
+            </div>
+            <div class="cartTotalPrice">${price}원</div>
+            <input type="hidden" class="cartNo" value="${cart.no}" />
+          </li>
+          `;
+        });
+        $(".cartProduct").html(output);
+        $(".cartContents").html(cartOutput);
+        $(".cartCount").text("(" + count + ")");
+        cartPrice = cartPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        $(".totalPrice strong").text(cartPrice);
+        if (count == 0) {
+          $(".cartProduct").html("<li>카트에 담긴 상품이 없습니다.</li>");
+          $("#cart #cartImg").attr("src", "../images/layout/icon_cart.png");
+          $(".cartContents").html("<li class='cartEmpty'>장바구니에 담긴 상품이 없습니다.</li>");
+          $(".totalPrice strong").text(0);
+        }
+      },
+    });
+  });
+  $(".cartAllCheck").prop("checked", false);
 });
 
 // -------------------------------------------------- manager ---------------------------------------------------

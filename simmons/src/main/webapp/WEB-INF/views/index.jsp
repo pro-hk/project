@@ -212,7 +212,7 @@
            				</div>
            				<div class="cartTxt">
            					<p>수량: ${cart.count }개</p>
-           					<fmt:formatNumber value="${cart.price }" pattern="###,###,###" var="price" />
+           					<fmt:formatNumber value="${cart.price * cart.count }" pattern="###,###,###" var="price" />
            					<p class="cartPrice">￦ ${price }</p>
            				</div>
            			</div>

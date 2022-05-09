@@ -216,27 +216,27 @@ main .container #cart input { margin-right: 30px; }
 
 main .container #cart p { margin: 0; }
 
-main .container #cart #cartList .cartEmpty { height: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 20px; color: #999; }
+main .container #cart #cartList .top { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border-top: 2px solid #000; border-bottom: 1px solid #ccc; padding: 20px 50px 20px 0; }
 
-main .container #cart #cartList .top { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border-top: 2px solid #000; border-bottom: 1px solid #ccc; padding: 20px 0; }
+main .container #cart #cartList .cartContents { padding: 20px 30px 20px 0; }
 
-main .container #cart #cartList .top p { width: 20%; }
+main .container #cart #cartList .cartContents li { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 14px; margin-top: 20px; }
 
-main .container #cart #cartList .cartContents { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 20px 0; }
+main .container #cart #cartList .cartContents li.cartEmpty { height: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 20px; color: #999; }
 
-main .container #cart #cartList .cartContents li { width: 20%; font-size: 14px; }
+main .container #cart #cartList .cartContents li > div { width: 17%; }
 
-main .container #cart #cartList .cartContents li.cartCount { display: -webkit-box; display: -ms-flexbox; display: flex; }
+main .container #cart #cartList .cartContents li .cartTotalPrice { text-align: right; }
 
-main .container #cart #cartList .cartContents li.cartCount .countBtn { display: -webkit-box; display: -ms-flexbox; display: flex; }
+main .container #cart #cartList .cartContents li .cartCounts { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
 
-main .container #cart #cartList .cartContents li.cartCount .countBtn span { width: 25px; text-align: center; }
+main .container #cart #cartList .cartContents li .cartCounts span { width: 25px; text-align: center; }
 
-main .container #cart #cartList .cartContents li.cartCount .countBtn button, main .container #cart #cartList .cartContents li.cartCount .countBtn span { display: block; border: 1px solid #ccc; }
+main .container #cart #cartList .cartContents li .cartCounts button, main .container #cart #cartList .cartContents li .cartCounts span { display: block; border: 1px solid #ccc; }
 
-main .container #cart #cartList .cartContents li .edit { border: none; background-color: #000; color: #fff; font-size: 10px; padding: 5px 10px; }
+main .container #cart #cartList .cartContents li .cartCounts .cartEdit { border: none; background-color: #000; color: #fff; font-size: 10px; padding: 5px 10px; }
 
-main .container #cart #cartList .cartContents li .price { color: #999; }
+main .container #cart #cartList .cartContents li .cartPrice { color: #999; text-align: center; }
 
 main .container #cart #cartList .cartContents li p { font-weight: 500; }
 
@@ -244,11 +244,13 @@ main .container #cart #cartList .cartContents .cartImg { width: 100px; height: 5
 
 main .container #cart .total { padding: 10px 30px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #999; border-top: 2px solid #ccc; border-bottom: 2px solid #000; }
 
-main .container #cart .total .cartDelete { font-size: 10px; border: 1px solid #999; background-color: #fff; }
+main .container #cart .total .cartDelete { padding: 10px; font-size: 10px; border: 1px solid #999; background-color: #fff; }
 
 main .container #cart .total .totalPrice { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
 main .container #cart .total .totalPrice .bottom { padding-bottom: 8px; }
+
+main .container #cart .total .totalPrice strong { font-weight: normal; }
 
 main .container #cart .total .totalPrice span { color: #a57a42; }
 

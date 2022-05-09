@@ -33,15 +33,15 @@
         <tbody>
           <tr class="top">
             <th>제목</th>
-            <td><input type="text" class="full" readonly value="${qnaDto.title }" /></td>
+            <td>${qnaDto.title }</td>
           </tr>
           <tr>
             <th>문의내용</th>
-            <td><textarea readonly>${qnaDto.contents }</textarea></td>
+            <td>${qnaDto.contents }</td>
           </tr>
           <tr class="bottom">
             <th>답변내용</th>
-            <td><textarea readonly>${qnaDto.answer }</textarea></td>
+            <td>${qnaDto.answer }</td>
           </tr>
         </tbody>
       </table>
